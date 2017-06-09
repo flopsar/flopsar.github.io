@@ -1,0 +1,14 @@
+
+.red      { color:red; }
+.green	  { color: green;}
+.agent-conn {color: #6c8ebf; font-weight: bold;}
+.fdb-conn {color: #9673a6; font-weight: bold;}
+.fdbc-conn {color: #d79b00; font-weight: bold;}
+.flp 	{font-variant: small-caps;}
+
+.code 	  {font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	   white-space: pre; font-weight:bold;}
+.opt 	  {font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	   white-space: pre; color: #666666;}	   
+
+
