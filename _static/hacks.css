@@ -1,6 +1,8 @@
 
 .red      { color:red; }
 .green	  { color: green;}
+.quest	  { color: #6ab0de;}
+
 .agent-conn {color: #6c8ebf; font-weight: bold;}
 .fdb-conn {color: #9673a6; font-weight: bold;}
 .fdbc-conn {color: #d79b00; font-weight: bold;}

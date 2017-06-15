@@ -159,6 +159,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#notification-plugin">6.1. Notification Plugin</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#troubleshooting">7. Troubleshooting</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -280,6 +281,10 @@
 </div></blockquote>
 </li>
 </ol>
+<div class="admonition note" id="single-manager">
+<p class="first admonition-title">Note</p>
+<p class="last">There can be no multiple instances of <span class="flp">manager</span> running on the same machine and using the same licence file.</p>
+</div>
 </div>
 <div class="section" id="database">
 <h3>1.1.2. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
@@ -812,7 +817,7 @@ JVM  <span class="p">|</span> 9349FF5C62BEEB7C <span class="p">|</span> kona2...
 <p>The instructions given below are only valid for the Flopsar notification plugin.</p>
 <div class="section" id="notification-plugin">
 <h2>6.1. Notification Plugin<a class="headerlink" href="#notification-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <em>notification</em> plugin is a SMTP client, which sends emails when some conditions are fulfilled. The plugin makes use of <a class="reference external" href="https://curl.haxx.s">CURL</a> library.</p>
+<p>The <em>notification</em> plugin is an SMTP client, which sends emails when some conditions are fulfilled. The plugin makes use of <a class="reference external" href="https://curl.haxx.s">CURL</a> library.</p>
 <p>If you plan to use this feature, you must enable this plugin as well. Follow the instructions below to enable the <em>notification</em> plugin:</p>
 <ol class="arabic">
 <li><p class="first">update the plugins option to include the <code class="file docutils literal"><span class="pre">libfs2plg_smtp.so</span></code> value.</p>
@@ -895,6 +900,16 @@ This is my sample alert message template!<span class="p">&lt;</span><span class=
 <p class="first admonition-title">Note</p>
 <p class="last">You can change the plugin settings in runtime. All the changes will be automatically reloaded in runtime, after you save the configuration files.</p>
 </div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h1>7. Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">When I start <span class="flp">manager</span> I get the following error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">There</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">Flopsar</span> <span class="n">Database</span> <span class="n">Manager</span> <span class="n">running</span><span class="o">.</span> <span class="n">You</span> <span class="n">cannot</span> <span class="n">run</span> <span class="n">another</span> <span class="n">Flopsar</span> <span class="n">Database</span> <span class="n">Manager</span> <span class="n">using</span> <span class="n">the</span> <span class="n">same</span> <span class="n">license</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This message means you are attempting to start a <span class="flp">manager</span> instance on a machine, which already has another <span class="flp">manager</span> instance running on. Either use <a class="reference internal" href="#single-manager"><span class="std std-ref">another licence</span></a> file or another machine.</p>
 </div>
 </div>
 
