@@ -38,7 +38,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Flopsar Documentation" href="index.html"/>
-        <link rel="next" title="1. Workstation" href="user.html"/>
+        <link rel="next" title="1. Workstation" href="workstation.html"/>
         <link rel="prev" title="1. Versioning" href="overview.html"/> 
 
   
@@ -163,7 +163,8 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workstation.html">1. Workstation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">2. Demo</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
 <ul>
@@ -410,11 +411,11 @@
 <div class="section" id="data-collecting-considerations">
 <span id="data-collecting"></span><h2>3.3. Data Collecting Considerations<a class="headerlink" href="#data-collecting-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Although, <span class="flp">agent</span> is designed to collect as much data as possible, we are not able to guarantee that all the instrumented methods calls data will be collected. It is because <span class="flp">agent</span> priority is not to crash the application it monitors. That has some serious implications on the <span class="flp">agent</span> design and operation. We just favor stability and reliability over data completeness.</p>
-<p>Each call of an instrumented method, symbol or metric value is represented as a serialized entity called <em>packet</em>. As soon as the packet is created it is ready to be sent to a database. In order the packet to be sent it must be first put to the outbound queue. This is the point where <span class="flp">agent</span> decides whether put it or not. The packet is put to the queue if and only if the connection to the database is established and there is enough space in the outbound queue (the size of the outbound queue can be <a class="reference internal" href="#agent-conf"><span class="std std-ref">customized</span></a>). Otherwise, the packet is dropped. This scenerio holds for each packet.</p>
+<p>Each call of an instrumented method, symbol or metric value is represented as a serialized entity called <em>packet</em>. As soon as the packet is created it is ready to be sent to a database. In order the packet to be sent it must be first put to the outbound queue. This is the point where <span class="flp">agent</span> decides whether put it or not. The packet is put to the queue if and only if the connection to the database is established and there is enough space in the outbound queue (the size of the outbound queue can be <a class="reference internal" href="#agent-conf"><span class="std std-ref">customized</span></a>). Otherwise, the packet is dropped. This scenario holds for each packet.</p>
 </div>
 <div class="section" id="instrumentation">
 <h2>3.4. Instrumentation<a class="headerlink" href="#instrumentation" title="Permalink to this headline">¶</a></h2>
-<p>The fundamental feature of <span class="flp">agent</span> is instrumentation. This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework. A user configuration describes what and where to instrument (see <a class="reference internal" href="user.html#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). However, there are some classes which are always excluded from instrumentation:</p>
+<p>The fundamental feature of <span class="flp">agent</span> is instrumentation. This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework. A user configuration describes what and where to instrument (see <a class="reference internal" href="workstation.html#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). However, there are some classes which are always excluded from instrumentation:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>com.flopsar.*
 org.objectweb.*
 javassist.*
@@ -439,7 +440,7 @@ sun.*
 <div class="section" id="hot-methods">
 <h2>3.5. Hot Methods<a class="headerlink" href="#hot-methods" title="Permalink to this headline">¶</a></h2>
 <p>This feature enables you to record instrumented methods executions. The Hot methods feature is very useful, when you tune your configuration for minimal performance impact. In this way, you can easily detect the most frequently executed methods and exclude them from instrumentation, unless you really need to instrument them.</p>
-<p>When <span class="flp">agent</span> starts, this feature is enabled by default. <span class="flp">agent</span> simply registers the number of instrumented methods executions. The Hot Methods statistics are dumped every 30 seconds to a log file (see the example below), provided that the logger level is set to at least <strong>fine</strong> level. This is done for 30 cycles and then is disabled. You can enable it later from <span class="flp">workstation</span> (see <a class="reference internal" href="user.html#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
+<p>When <span class="flp">agent</span> starts, this feature is enabled by default. <span class="flp">agent</span> simply registers the number of instrumented methods executions. The Hot Methods statistics are dumped every 30 seconds to a log file (see the example below), provided that the logger level is set to at least <strong>fine</strong> level. This is done for 30 cycles and then is disabled. You can enable it later from <span class="flp">workstation</span> (see <a class="reference internal" href="workstation.html#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hot Methods Report <span class="o">[</span>Cycles left <span class="m">27</span><span class="o">]</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
 HM <span class="o">[</span><span class="m">206633</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>checkClosed<span class="se">\^\_</span><span class="o">()</span>V<span class="o">]</span>
 HM <span class="o">[</span><span class="m">166145</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>versionMeetsMinimum<span class="se">\^\_</span><span class="o">(</span>III<span class="o">)</span>Z<span class="o">]</span>
@@ -802,7 +803,7 @@ JVM  <span class="p">|</span> 9349FF5C62BEEB7C <span class="p">|</span> kona2...
 </div>
 <div class="section" id="alerts">
 <span id="id13"></span><h1>6. Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h1>
-<p>Alerts are <a class="reference internal" href="user.html#alerts-manage"><span class="std std-ref">managed</span></a> from <span class="flp">workstation</span>, however alerts feature must be enabled and configured before any alert rule can be added. Whenever some alert rule is <a class="reference internal" href="user.html#alerts-manage"><span class="std std-ref">defined</span></a> in <span class="flp">workstation</span> it is persisted in the corresponding <span class="flp">manager</span> instance. If there are any databases connected to that instance, they get notified about the alert change instantly. They update their set of rules and start to evaluate them. How the notifications are performed is determined by the corresponding notification plugin. The notification feature is implemented as a plugin and is disabled by default. In order to enable it you must add a valid notification plugin name to the <span class="opt">plugins</span> option in the <span class="flp">manager</span> <a class="reference internal" href="#manager-conf"><span class="std std-ref">configuration</span></a> file. You can either provide your <a class="reference internal" href="developer.html#plugins-notify"><span class="std std-ref">own implementation</span></a> of the notification plugin or use the one shipped with Flopsar.</p>
+<p>Alerts are <a class="reference internal" href="workstation.html#alerts-manage"><span class="std std-ref">managed</span></a> from <span class="flp">workstation</span>, however alerts feature must be enabled and configured before any alert rule can be added. Whenever some alert rule is <a class="reference internal" href="workstation.html#alerts-manage"><span class="std std-ref">defined</span></a> in <span class="flp">workstation</span> it is persisted in the corresponding <span class="flp">manager</span> instance. If there are any databases connected to that instance, they get notified about the alert change instantly. They update their set of rules and start to evaluate them. How the notifications are performed is determined by the corresponding notification plugin. The notification feature is implemented as a plugin and is disabled by default. In order to enable it you must add a valid notification plugin name to the <span class="opt">plugins</span> option in the <span class="flp">manager</span> <a class="reference internal" href="#manager-conf"><span class="std std-ref">configuration</span></a> file. You can either provide your <a class="reference internal" href="developer.html#plugins-notify"><span class="std std-ref">own implementation</span></a> of the notification plugin or use the one shipped with Flopsar.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>You can always check what alert rules are currently deployed on a database by executing the following command:</p>
@@ -919,7 +920,7 @@ This is my sample alert message template!<span class="p">&lt;</span><span class=
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="user.html" class="btn btn-neutral float-right" title="1. Workstation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="workstation.html" class="btn btn-neutral float-right" title="1. Workstation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="overview.html" class="btn btn-neutral" title="1. Versioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
