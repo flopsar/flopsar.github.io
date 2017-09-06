@@ -220,8 +220,7 @@
 <dt>Prepare your machine</dt>
 <dd><ol class="first last loweralpha simple">
 <li>Make sure you have <a class="reference external" href="https://www.docker.com">Docker</a> installed and running on your machine.</li>
-<li>Make sure you do not have any services bound to ports: 8780,9000,10000,10001.</li>
-<li>Find the IP address of your machine (<strong>MY_IP</strong>). Please, replace all <strong>MY_IP</strong> occurrences with your machine IP address throughout the instructions.</li>
+<li>Make sure you do not have any services bound to ports: 8780,9000,10001.</li>
 </ol>
 </dd>
 </dl>
@@ -250,29 +249,11 @@ $ docker pull flopsar/ecommerce-load:latest
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Setup eCommerce container</dt>
+<dt>Setup Docker network</dt>
 <dd><ol class="first last loweralpha">
-<li><p class="first">Start a container from <span class="opt">flopsar/ecommerce:2.1</span> image:</p>
+<li><p class="first">Create Docker network bridge</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --network=&quot;bridge&quot; -p 8780:8780 --name myFlopsarEcommerce \
--e &quot;FLOPSAR_MANAGER=MY_IP:9000&quot; -d flopsar/ecommerce:2.1 /start-flopsar.sh
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">Verify the container is up and running. You should see it on the docker list of running containers:</p>
-<blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker ps
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">Verify the eCommerce application is up and running. Open your Internet browser and type <a class="reference external" href="http://localhost:8780">http://localhost:8780</a>. Refresh the page a few times if nothing is displayed.</p>
-</li>
-<li><p class="first">Optionally, you can start the loader:</p>
-<blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --add-host=&quot;konakart:MY_IP&quot; --name myFlopsarLoad \
-      -d flopsar/ecommerce-load:latest /start-load.sh
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker network create -d bridge flopsar_bridge
 </pre></div>
 </div>
 </div></blockquote>
@@ -286,8 +267,8 @@ $ docker pull flopsar/ecommerce-load:latest
 <dd><ol class="first last loweralpha">
 <li><p class="first">Start a container from <span class="opt">flopsar/flopsar:2.1</span> image:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -it --network=&quot;bridge&quot; -p 9000:9000 -p 10000:10000 -p 10001:10001 \
---name myFlopsarDB -e &quot;MACHINE_IP=MY_IP&quot; -d flopsar/flopsar:2.1
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --net flopsar_bridge -p 9000:9000 -p 10001:10001 \
+        --name myFlopsarDB -d flopsar/flopsar:2.1
 </pre></div>
 </div>
 </div></blockquote>
@@ -313,6 +294,53 @@ $ docker pull flopsar/ecommerce-load:latest
 </div>
 </div></blockquote>
 </div>
+</div></blockquote>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Setup eCommerce container</dt>
+<dd><ol class="first last loweralpha">
+<li><p class="first">Start a container from <span class="opt">flopsar/ecommerce:2.1</span> image:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --net flopsar_bridge -p 8780:8780 --name myFlopsarEcommerce \
+-e FLOPSAR_MANAGER=myFlopsarDB -d flopsar/ecommerce:2.1 /start-flopsar.sh
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Verify the container is up and running. You should see it on the docker list of running containers:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker ps
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Verify the eCommerce application is up and running. Open your Internet browser and type <a class="reference external" href="http://localhost:8780">http://localhost:8780</a>. Refresh the page a few times if nothing is displayed.</p>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Optionally, you can start the load generator</dt>
+<dd><ol class="first last loweralpha">
+<li><p class="first">Find the IP address (<span class="opt">FLOPSAR_IP</span>) of <span class="opt">myFlopsarDB</span> container:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; myFlopsarDB
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Start the load container and put</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --net flopsar_bridge --add-host=&quot;konakart:&lt;FLOPSAR_IP&gt;&quot; --name myFlopsarLoad \
+      -d flopsar/ecommerce-load:latest /start-load.sh
+</pre></div>
+</div>
+<p>where &lt;FLOPSAR_IP&gt; is the IP address of the <span class="opt">myFlopsarDB</span> container.</p>
 </div></blockquote>
 </li>
 </ol>
@@ -350,6 +378,13 @@ $ docker pull flopsar/ecommerce-load:latest
 <p class="first admonition-title">Note</p>
 <p>If you want to instrument your own application you can always get Flopsar agent from <span class="opt">flopsar/flopsar</span> images:</p>
 <div class="last highlight-default"><div class="highlight"><pre><span></span>$ docker cp myFlopsarDB:/home/flopsar/flopsar-agent-2.1.jar .
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can also download <a class="reference external" href="https://github.com/flopsar/docker">a script</a> and run the above commands in one turn:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ docker2.1.sh path/to/your/license.key
 </pre></div>
 </div>
 </div>
