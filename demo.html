@@ -197,7 +197,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">You should have basic knowledge of <a class="reference external" href="https://www.docker.com">Docker</a>  and know how to use it.</p>
 </div>
-<p>We have <a class="reference external" href="https://hub.docker.com/u/flopsar/">Flopsar Docker repositories</a> available publicly. There are two of them:</p>
+<p>We have <a class="reference external" href="https://hub.docker.com/u/flopsar/">Flopsar Docker repositories</a> available publicly:</p>
 <div class="topic">
 <p class="topic-title first">flopsar/flopsar</p>
 <p>This repository contains base images of Flopsar Database and Manager. These images contain also <span class="flp">workstation</span> and <span class="flp">agent</span> binaries.</p>
@@ -205,6 +205,10 @@
 <div class="topic">
 <p class="topic-title first">flopsar/ecommerce</p>
 <p>This repository contains a <a class="reference external" href="https://www.konakart.com/downloads/community_edition/">KonaKart</a> application with Flopsar agent installed.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">flopsar/ecommerce-load</p>
+<p>This repository contains JMeter load generator for <span class="opt">flopsar/ecommerce</span> application.</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -229,6 +233,7 @@
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker pull flopsar/ecommerce:2.1
 $ docker pull flopsar/flopsar:2.1
+$ docker pull flopsar/ecommerce-load:latest
 </pre></div>
 </div>
 </div></blockquote>
@@ -250,7 +255,7 @@ $ docker pull flopsar/flopsar:2.1
 <li><p class="first">Start a container from <span class="opt">flopsar/ecommerce:2.1</span> image:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --network=&quot;bridge&quot; -p 8780:8780 --name myFlopsarEcommerce \
-        -e &quot;FLOPSAR_MANAGER=MY_IP:9000&quot; -d flopsar/ecommerce:2.1 /start-flopsar.sh
+-e &quot;FLOPSAR_MANAGER=MY_IP:9000&quot; -d flopsar/ecommerce:2.1 /start-flopsar.sh
 </pre></div>
 </div>
 </div></blockquote>
@@ -264,6 +269,14 @@ $ docker pull flopsar/flopsar:2.1
 </li>
 <li><p class="first">Verify the eCommerce application is up and running. Open your Internet browser and type <a class="reference external" href="http://localhost:8780">http://localhost:8780</a>. Refresh the page a few times if nothing is displayed.</p>
 </li>
+<li><p class="first">Optionally, you can start the loader:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --add-host=&quot;konakart:MY_IP&quot; --name myFlopsarLoad \
+      -d flopsar/ecommerce-load:latest /start-load.sh
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ol>
 </dd>
 </dl>
@@ -274,7 +287,7 @@ $ docker pull flopsar/flopsar:2.1
 <li><p class="first">Start a container from <span class="opt">flopsar/flopsar:2.1</span> image:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -it --network=&quot;bridge&quot; -p 9000:9000 -p 10000:10000 -p 10001:10001 \
-        --name myFlopsarDB -e &quot;MACHINE_IP=MY_IP&quot; -d flopsar/flopsar:2.1
+--name myFlopsarDB -e &quot;MACHINE_IP=MY_IP&quot; -d flopsar/flopsar:2.1
 </pre></div>
 </div>
 </div></blockquote>
