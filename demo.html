@@ -306,7 +306,7 @@ $ docker pull flopsar/ecommerce-load:latest
 <li><p class="first">Start a container from <span class="opt">flopsar/ecommerce:2.1</span> image:</p>
 <blockquote>
 <div><div class="highlight-default"><div class="highlight"><pre><span></span>$ docker run -t --net flopsar_bridge -p 8780:8780 --name myFlopsarEcommerce \
--e FLOPSAR_MANAGER=myFlopsarDB -e FLOPSAR_ID=ecommerce -d flopsar/ecommerce:2.1 /start-flopsar.sh
+-e FLOPSAR_MANAGER=myFlopsarDB -e FLOPSAR_ID=konakart -d flopsar/ecommerce:2.1 /start-flopsar.sh
 </pre></div>
 </div>
 </div></blockquote>
