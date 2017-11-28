@@ -38,8 +38,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Flopsar Documentation" href="index.html"/>
-        <link rel="next" title="1. Workstation" href="workstation.html"/>
-        <link rel="prev" title="1. Versioning" href="overview.html"/> 
+        <link rel="next" title="4. Manager" href="manager.html"/>
+        <link rel="prev" title="1. What is Flopsar" href="overview.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.1
+                2.2
               </div>
             
           
@@ -97,19 +97,22 @@
             
               <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">2. Releasing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">3. Licensing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">4. Architectural Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">5. Supported Platforms and Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">6. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Administrator Guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#manager-and-database-binaries-installation">1.1. Manager and Database Binaries Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#manager">1.1.1. Manager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#database">1.1.2. Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flopsar-dependencies">1.1.1. Flopsar Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manager">1.1.2. Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">1.1.3. Database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#agent">1.2. Agent</a></li>
@@ -128,43 +131,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id5">4. Manager</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#manager-conf">4.1. Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">4.2. Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">4.2.1. Logger messages</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#fdbc-clients-authentication">4.3. FDBC Clients Authentication</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#internal-authentication">4.3.1. Internal Authentication</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-agents-database-connections">4.4. Managing Agents Database Connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-clients-connections">4.5. Managing Clients Connections</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#id9">5. Database</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#database-conf">5.1. Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">5.2. Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id12">5.2.1. Logger messages</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#database-management">5.3. Database Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#database-archiving">5.4. Database Archiving</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#extraction">5.4.1. Extraction</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#alerts">6. Alerts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#notification-plugin">6.1. Notification Plugin</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#troubleshooting">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alerts.html">6. Alerts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workstation.html">1. Workstation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo.html">2. Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
 <ul>
@@ -172,6 +145,12 @@
 <li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
 </ul>
 
             
@@ -237,23 +216,52 @@
 <div class="section" id="installation">
 <h1>1. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>Each component is installed separately but there is a common initial installation procedure for both <span class="flp">manager</span> and <span class="flp">database</span>. This procedure must be performed before any further steps can be made.</p>
-<p>In order to run the Flopsar environment successfully, you must prepare your network so that it allows all the required connections (<a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 4.2</span></a>) to be established:</p>
+<p>In order to run the Flopsar environment successfully, you must prepare your network so that it allows all the required connections (<a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 5.2</span></a>) to be established:</p>
 <ul class="simple">
 <li><span class="agent-conn">outgoing</span> TCP connections from <span class="flp">agent</span> to <span class="flp">database</span> instances.</li>
 <li><span class="fdb-conn">outgoing</span> TCP connections from <span class="flp">database</span> instances to <span class="flp">manager</span>.</li>
 <li><span class="fdbc-conn">outgoing</span> TCP connections from <span class="flp">workstation</span> instances to <span class="flp">manager</span> and <span class="flp">database</span> instances.</li>
 </ul>
 <div class="section" id="manager-and-database-binaries-installation">
-<h2>1.1. Manager and Database Binaries Installation<a class="headerlink" href="#manager-and-database-binaries-installation" title="Permalink to this headline">¶</a></h2>
-<p>Follow the instructions below carefully:</p>
-<ol class="arabic simple">
-<li>copy the file <code class="file docutils literal"><span class="pre">database-2.1.tar.gz</span></code> to your destination machine and uncompress it.</li>
-<li>set <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">FLOPSAR_HOME</span></code> environment variable, so that it points to the extracted directory.</li>
-<li>optionally you can update <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal"><span class="pre">PATH</span></code> environment variable to include <code class="file docutils literal"><span class="pre">FLOPSAR_HOME/bin</span></code> directory. In next examples we assume that this variable has been updated accordingly.</li>
-<li>optionally you can update <span class="target" id="index-2"></span><code class="xref std std-envvar docutils literal"><span class="pre">MANPATH</span></code> environment variable to include <code class="file docutils literal"><span class="pre">FLOPSAR_HOME/man</span></code> directory. This will allow you to make use of man pages of the Flopsar binaries.</li>
-</ol>
+<span id="bin-install"></span><h2>1.1. Manager and Database Binaries Installation<a class="headerlink" href="#manager-and-database-binaries-installation" title="Permalink to this headline">¶</a></h2>
+<p>There are two packages available for installation: <code class="file docutils literal"><span class="pre">flopsar-2.2-Linux.deb</span></code> and <code class="file docutils literal"><span class="pre">flopsar-2.2-Linux.rpm</span></code>. For Debian based distributions you can install it
+by executing the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ dpkg -i flopsar-2.2-Linux.deb
+</pre></div>
+</div>
+<p>For Red Hat based distributions you can install it by executing the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ rpm -ih flopsar-2.2-Linux.rpm
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ zypper install flopsar-2.2-Linux.rpm
+</pre></div>
+</div>
+<p>Flopsar installs several files in your system. You can inspect these files by querying contents of the Flopsar package:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ rpm -qlp flopsar-2.2-Linux.rpm
+$ dpkg -c flopsar-2.2-Linux.deb
+</pre></div>
+</div>
+<div class="section" id="flopsar-dependencies">
+<h3>1.1.1. Flopsar Dependencies<a class="headerlink" href="#flopsar-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>Flopsar base configuration (without plugins) should be able to run on your system successfully.
+However, if your installation cannot run due to missing libraries, use <span class="opt">ldd</span> tool to check which libraries are missing.
+Below, a list of known Flopsar dependencies is specified:</p>
+<div class="topic">
+<p class="topic-title first">Flopsar base</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">libncurses</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">SMTP plugin</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">libcurl</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="manager">
-<h3>1.1.1. Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.2. Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">make sure you have completed the binaries installation procedure.</p>
 </li>
@@ -261,18 +269,18 @@
 </li>
 <li><p class="first">initialize a new environment working directory <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;</span></code> by executing the following command:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr --init &lt;manager_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr init &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">put your license file into the <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/lic</span></code> directory.</p>
 </li>
-<li><p class="first"><a class="reference internal" href="#manager-conf"><span class="std std-ref">configure</span></a> the manager</p>
+<li><p class="first"><a class="reference internal" href="manager.html#manager-conf"><span class="std std-ref">configure</span></a> the manager</p>
 </li>
 <li><p class="first">start <span class="flp">manager</span> by executing:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr --start &lt;manager_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr start &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -284,22 +292,22 @@
 </div>
 </div>
 <div class="section" id="database">
-<h3>1.1.2. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.3. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">make sure you have completed the binaries installation procedure.</p>
 </li>
-<li><p class="first">initialize a new environment working directory <code class="file docutils literal"><span class="pre">&lt;database_home&gt;</span></code> by executing the following command:</p>
+<li><p class="first">initialize a new database working directory <code class="file docutils literal"><span class="pre">&lt;database_home&gt;</span></code> by executing the following command:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --init &lt;database_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db init &lt;database_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><a class="reference internal" href="#database-conf"><span class="std std-ref">configure</span></a> the database</p>
+<li><p class="first"><a class="reference internal" href="database.html#database-conf"><span class="std std-ref">configure</span></a> the database</p>
 </li>
 <li><p class="first">start <span class="flp">database</span> by executing:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --start &lt;database_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db start &lt;database_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -311,7 +319,7 @@
 <h2>1.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
 <p>In order to install <span class="flp">agent</span>, follow carefully the instructions below:</p>
 <ol class="arabic simple">
-<li>copy the agent file <code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code> to your server machine.</li>
+<li>copy the agent file <code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code> to your server machine.</li>
 <li><a class="reference internal" href="#agent-conf"><span class="std std-ref">configure</span></a> the agent.</li>
 <li>optionally add your <a class="reference internal" href="#formatters"><span class="std std-ref">formatters</span></a>.</li>
 <li>restart your application.</li>
@@ -319,8 +327,8 @@
 <p>When the agent starts for the first time it does not have any configuration deployed. It just registers itself to the <span class="flp">manager</span>, after successful connection, and does not instrument anything.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>You can verify if the agent registered to the <span class="flp">manager</span> by executing the following command:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr --list agents &lt;manager_home&gt;
+<p>You can verify if the agent is registered to the <span class="flp">manager</span> by executing the following command:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
 </pre></div>
 </div>
 </div>
@@ -356,7 +364,7 @@
 <dt><span class="opt">-Dflopsar.id</span></dt>
 <dd>Primary identifier of a server instance. It should consist of only word characters and have no more than 62 characters. If you provide a name consisting of more characters, the agent will truncate the name.</dd>
 <dt><span class="opt">-javaagent</span></dt>
-<dd>Path to your agent file <code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code>.</dd>
+<dd>Path to your agent file <code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code>.</dd>
 <dt><span class="opt">-Dflopsar.manager</span></dt>
 <dd>Socket address of the <span class="flp">manager</span> TCP server. Agents initiate connections to this server and the connections are maintained until the agents are shutdown.</dd>
 <dt><span class="opt">-Dflopsar.home</span></dt>
@@ -411,11 +419,11 @@
 <div class="section" id="data-collecting-considerations">
 <span id="data-collecting"></span><h2>3.3. Data Collecting Considerations<a class="headerlink" href="#data-collecting-considerations" title="Permalink to this headline">¶</a></h2>
 <p>Although, <span class="flp">agent</span> is designed to collect as much data as possible, we are not able to guarantee that all the instrumented methods calls data will be collected. It is because <span class="flp">agent</span> priority is not to crash the application it monitors. That has some serious implications on the <span class="flp">agent</span> design and operation. We just favor stability and reliability over data completeness.</p>
-<p>Each call of an instrumented method, symbol or metric value is represented as a serialized entity called <em>packet</em>. As soon as the packet is created it is ready to be sent to a database. In order the packet to be sent it must be first put to the outbound queue. This is the point where <span class="flp">agent</span> decides whether put it or not. The packet is put to the queue if and only if the connection to the database is established and there is enough space in the outbound queue (the size of the outbound queue can be <a class="reference internal" href="#agent-conf"><span class="std std-ref">customized</span></a>). Otherwise, the packet is dropped. This scenario holds for each packet.</p>
+<p>Each call of an instrumented method, symbol or metric value is represented as a serialized entity called <em>packet</em>. As soon as the packet is created it is ready to be sent to a database. In order the packet to be sent it must be first put to the outbound queue. This is the point where <span class="flp">agent</span> decides whether put it or not. The packet is put to the queue if and only if the connection to the database is established and there is enough space in the outbound queue (the size of the outbound queue can be <a class="reference internal" href="#agent-conf"><span class="std std-ref">customized</span></a>). Otherwise, the packet is dropped. This scenerio holds for each packet.</p>
 </div>
 <div class="section" id="instrumentation">
 <h2>3.4. Instrumentation<a class="headerlink" href="#instrumentation" title="Permalink to this headline">¶</a></h2>
-<p>The fundamental feature of <span class="flp">agent</span> is instrumentation. This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework. A user configuration describes what and where to instrument (see <a class="reference internal" href="workstation.html#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). However, there are some classes which are always excluded from instrumentation:</p>
+<p>The fundamental feature of <span class="flp">agent</span> is instrumentation. This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework. A user configuration describes what and where to instrument (see <a class="reference internal" href="user.html#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). However, there are some classes which are always excluded from instrumentation:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>com.flopsar.*
 org.objectweb.*
 javassist.*
@@ -429,18 +437,18 @@ sun.*
 </pre></div>
 </div>
 <p>When <span class="flp">agent</span> receives a configuration to load, it first parses it and then sorts its instrumentation rules. If there are any changes in the configuration that requires configuration reloading, <span class="flp">agent</span> reloads those classes that have been instrumented earlier and those which are required by this new configuration. This classes flow is passed through the configuration filters (<a class="reference internal" href="#instrumentation-filter"><span class="std std-numref">Fig. 3.1</span></a>). The are a few filters operating on two levels: <em>class</em> and <em>method</em> ones. The first filter excludes all the classes from packages, which match the internal exclusion set. Next, it goes through the second, user defined, exclusion class filter. At this point, we have all the classes we want to instrument. In the next step, all the methods from each, selected class are passed through the method filters. At this point, a class can also be excluded from configuration if any of its methods does not satisfy the filters conditions. At the end, we obtain a set of methods which are selected for instrumentation.</p>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id5">
 <span id="instrumentation-filter"></span><img alt="_images/instrumentation.svg" src="_images/instrumentation.svg" /><p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Instrumentation Filter</span></p>
 </div>
 <p>The methods instrumentation is performed in a specific order (<a class="reference internal" href="#instrumentation-order"><span class="std std-numref">Fig. 3.2</span></a>). First, rules with custom formatters are applied, then rules with standard formatters and finally rules without formatters at the end. For example, if there are two method rules, one instrumenting with a custom formatter and the other one instrumenting only <span class="code">public</span> methods and our method is both <span class="code">public</span> and its signature matches the one specified in the first rule, then the rule with the formatter will be applied.</p>
-<div class="figure align-center" id="id15">
+<div class="figure align-center" id="id6">
 <span id="instrumentation-order"></span><img alt="_images/instrumentation2.svg" src="_images/instrumentation2.svg" /><p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Instrumentation Order</span></p>
 </div>
 </div>
 <div class="section" id="hot-methods">
 <h2>3.5. Hot Methods<a class="headerlink" href="#hot-methods" title="Permalink to this headline">¶</a></h2>
 <p>This feature enables you to record instrumented methods executions. The Hot methods feature is very useful, when you tune your configuration for minimal performance impact. In this way, you can easily detect the most frequently executed methods and exclude them from instrumentation, unless you really need to instrument them.</p>
-<p>When <span class="flp">agent</span> starts, this feature is enabled by default. <span class="flp">agent</span> simply registers the number of instrumented methods executions. The Hot Methods statistics are dumped every 30 seconds to a log file (see the example below), provided that the logger level is set to at least <strong>fine</strong> level. This is done for 30 cycles and then is disabled. You can enable it later from <span class="flp">workstation</span> (see <a class="reference internal" href="workstation.html#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
+<p>When <span class="flp">agent</span> starts, this feature is enabled by default. <span class="flp">agent</span> simply registers the number of instrumented methods executions. The Hot Methods statistics are dumped every 30 seconds to a log file (see the example below), provided that the logger level is set to at least <strong>fine</strong> level. This is done for 30 cycles and then is disabled. You can enable it later from <span class="flp">workstation</span> (see <a class="reference internal" href="user.html#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hot Methods Report <span class="o">[</span>Cycles left <span class="m">27</span><span class="o">]</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
 HM <span class="o">[</span><span class="m">206633</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>checkClosed<span class="se">\^\_</span><span class="o">()</span>V<span class="o">]</span>
 HM <span class="o">[</span><span class="m">166145</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>versionMeetsMinimum<span class="se">\^\_</span><span class="o">(</span>III<span class="o">)</span>Z<span class="o">]</span>
@@ -483,432 +491,6 @@ HM <span class="o">[</span><span class="m">109807</span><span class="o">]</span>
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h1>4. Manager<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
-<p><span class="flp">manager</span> is a key Flopsar component, which is responsible for managing the entire Flopsar environment.</p>
-<div class="section" id="manager-conf">
-<span id="id6"></span><h2>4.1. Configuration<a class="headerlink" href="#manager-conf" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">manager</span> is managed by its configuration file <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/flopsar.conf</span></code>.</p>
-<dl class="docutils">
-<dt><span class="opt">server.bind.port</span></dt>
-<dd>This is a port of the TCP server.</dd>
-<dt><span class="opt">server.bind.address</span></dt>
-<dd>This is an IP address of the TCP server. This option is not mandatory. When the option is either empty or missing, the IP address is read from the license file. If the option value is set to <span class="opt">*</span>, the TCP server will bind to all existing IP addresses.</dd>
-<dt><span class="opt">plugins</span></dt>
-<dd>This is a list of enabled plugins. This option contains full names of the plugins.  Entries must be comma separated. By default only one plugin is enabled: <code class="file docutils literal"><span class="pre">libfs2plg_authbasic.so</span></code>. If you want to use additional plugins, add their names and separate them with a comma. Flopsar Suite <span class="flp">manager</span> currently uses two plugins: <em>authentication</em> and <em>notification</em>. The first one is used for authentication purposes and the second one is used for notification. You can easily replace these plugins with custom ones (see <a class="reference internal" href="developer.html#plugins"><span class="std std-ref">Plugins</span></a> for details).</dd>
-</dl>
-</div>
-<div class="section" id="id7">
-<h2>4.2. Logging<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">manager</span> has a single log file <code class="file docutils literal"><span class="pre">fs2adm.log</span></code>. It is stored in <code class="file docutils literal"><span class="pre">manager_home/logs</span></code> directory. The logging levels are defined in <a class="reference internal" href="#logging"><span class="std std-ref">Logging</span></a>.</p>
-<p>You can set the logger level either during the startup procedure or in runtime. For example, to set the <span class="opt">fine</span> level during <span class="flp">manager</span> startup use the following options:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>fs2mgr --start --loglevel fine &lt;manager_home&gt;
-</pre></div>
-</div>
-<p>In order to change it in runtime, execute the following command:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>fs2mgr --loglevel fine &lt;manager_home&gt;
-</pre></div>
-</div>
-<div class="section" id="id8">
-<h3>4.2.1. Logger messages<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>Each logger message entry has the following structure:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">]</span> Message content
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">][</span>PLG<span class="o">]</span> Message content
-</pre></div>
-</div>
-<p>The only difference between these two types is an additional <span class="opt">PLG</span> entry. This entry denotes that this particular message comes from a plugin. The rest of the entries denote:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">DATE:</th><td class="field-body">current date.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">LEVEL:</th><td class="field-body">current logger level.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">PID:</th><td class="field-body">system process ID number of the logging process.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Message content:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">is self-explanatory.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="section" id="fdbc-clients-authentication">
-<h2>4.3. FDBC Clients Authentication<a class="headerlink" href="#fdbc-clients-authentication" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">manager</span> accepts connections from three types of clients: <span class="flp">fdbc</span>, <span class="flp">agent</span> and <span class="flp">database</span> ones. The explicit authentication is required only for <span class="flp">fdbc</span> clients. <span class="flp">workstation</span> is a <span class="flp">fdbc</span> client too, so when a user logs to the <span class="flp">workstation</span> they are required to authenticate to <span class="flp">manager</span> by providing their credentials. Flopsar supports one type of authentication mechanisms: <em>internal</em>.</p>
-<div class="section" id="internal-authentication">
-<h3>4.3.1. Internal Authentication<a class="headerlink" href="#internal-authentication" title="Permalink to this headline">¶</a></h3>
-<p>In order to enable the internal authentication mechanism you must add the <code class="file docutils literal"><span class="pre">libfs2plg_authbasic</span></code> plugin library to the configuration option in the <code class="file docutils literal"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libfs2plg_authbasic</span>. This operation requires <span class="flp">manager</span> to be restarted. Users management is done by means of <strong class="command">fs2auth</strong> executable. The following operations are supported:</p>
-<div class="topic">
-<p class="topic-title first">Listing users</p>
-<p>To list all the stored users execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth --user-list &lt;manager_home&gt;
-</pre></div>
-</div>
-</div>
-<div class="topic">
-<p class="topic-title first">Adding users</p>
-<p>To add a new <span class="opt">username</span> user execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth --user-add username &lt;manager_home&gt;
-</pre></div>
-</div>
-</div>
-<div class="topic">
-<p class="topic-title first">Deleting users</p>
-<p>To delete <span class="opt">username</span> user execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth --user-del username &lt;manager_home&gt;
-</pre></div>
-</div>
-</div>
-<div class="topic">
-<p class="topic-title first">Checking user password
-To verify <span class="opt">username</span> user password execute the following command:
-::</p>
-<blockquote>
-<div>$ fs2auth –user-check username &lt;manager_home&gt;</div></blockquote>
-</div>
-</div>
-</div>
-<div class="section" id="managing-agents-database-connections">
-<h2>4.4. Managing Agents Database Connections<a class="headerlink" href="#managing-agents-database-connections" title="Permalink to this headline">¶</a></h2>
-<p>Each agent must be connected to some database in order to send its data. The procedure of attaching agents to databases is performed by <span class="flp">manager</span>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The agent must be connected to the manager before you can attach it to any database.</p>
-</div>
-<p>Suppose you have a running <em>myAgent1</em> agent and want to attach it to a database, which server listens on <em>172.16.0.12:8000</em>. In order to do it you must execute the following command:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr --retarget <span class="nv">myAgent1</span><span class="o">=</span><span class="m">172</span>.16.0.12:8000 &lt;manager_home&gt;
-</pre></div>
-</div>
-<p>This operation will store this change in <span class="flp">manager</span> and makes the agent drop its current database connection and connect to a new database. You can see if the change has been stored by executing the following command:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr --list agents &lt;manager_home&gt;
-</pre></div>
-</div>
-<p>As a result you should see something similar:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>TYPE   ID                 AGENT                                DATABASE                   CONFIGURATION
-JVM  <span class="p">|</span> 49132292717FA021 <span class="p">|</span> kona1...........................   <span class="p">|</span> <span class="m">172</span>.16.0.12:8000         <span class="p">|</span> c1
-JVM  <span class="p">|</span> 9349FF5C62BEEB7C <span class="p">|</span> kona2...........................   <span class="p">|</span> <span class="m">172</span>.16.0.13:8000         <span class="p">|</span> c1
-</pre></div>
-</div>
-</div>
-<div class="section" id="managing-clients-connections">
-<h2>4.5. Managing Clients Connections<a class="headerlink" href="#managing-clients-connections" title="Permalink to this headline">¶</a></h2>
-<p>You can always check what clients are currently connected to the manager. You can simply do it by executing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr --list clients &lt;manager_home&gt;
-</pre></div>
-</div>
-<p>This operation will print a list of the connected clients to your console. The result will be similar to the one below:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CTYPE</span> <span class="n">CID</span>              <span class="n">SRC</span>                <span class="n">CONNID</span>             <span class="n">CONNECTION</span> <span class="n">TIME</span>       <span class="n">TOTAL</span> <span class="n">RCV</span>    <span class="n">TOTAL</span> <span class="n">SNT</span>
-<span class="n">agent</span> <span class="mi">9349</span><span class="n">FF5C62BEEB7C</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">0.11</span><span class="p">:</span><span class="mi">41827</span>  <span class="mi">0000000000000001</span>   <span class="mi">2016</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">31</span> <span class="mi">20</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">46</span>   <span class="mf">41.01</span> <span class="n">KB</span>     <span class="mf">26.00</span> <span class="n">B</span>
-<span class="n">agent</span> <span class="mi">49132292717</span><span class="n">FA021</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">0.10</span><span class="p">:</span><span class="mi">47977</span>  <span class="mi">0000000000000002</span>   <span class="mi">2016</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">31</span> <span class="mi">20</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">49</span>   <span class="mf">41.01</span> <span class="n">KB</span>     <span class="mf">26.00</span> <span class="n">B</span>
-</pre></div>
-</div>
-<p>where:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">CTYPE:</th><td class="field-body">denotes a client type. There are four types: <em>agent</em>, <em>fdbc</em>, <em>database</em> and <em>unknown</em>. The last one is set when a client is connected but not yet authenticated.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">CID:</th><td class="field-body">denotes a client identifier. This value is useful when you search for this client activity in the manager log files.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">SRC:</th><td class="field-body">denotes a client source socket address.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">CONNID:</th><td class="field-body">denotes a client connection identifier. This value is used when you want to specify a client connection to drop.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">CONNECTION TIME:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">denotes a time at which a client connected to the manager.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">TOTAL RCV:</th><td class="field-body">denotes a total size of data received from a client.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">TOTAL SNT:</th><td class="field-body">denotes a total size of data sent to a client.</td>
-</tr>
-</tbody>
-</table>
-<p>If you want to disconnect a client, you need to execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr --drop-client CONNID &lt;manager_home&gt;
-</pre></div>
-</div>
-<p>where <span class="opt">CONNID</span> is a connection identifier.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">You will not be asked to confirm whether you really want to drop a client connection. This operation will be executed immediately.</p>
-</div>
-</div>
-</div>
-<div class="section" id="id9">
-<h1>5. Database<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
-<p><span class="flp">database</span> is a component, which provides persistence features to the Flopsar environment.</p>
-<div class="section" id="database-conf">
-<span id="id10"></span><h2>5.1. Configuration<a class="headerlink" href="#database-conf" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">database</span> is configured in its configuration file <code class="file docutils literal"><span class="pre">&lt;database_home&gt;/conf/flopsar.conf</span></code>. The file contains the following options:</p>
-<dl class="docutils">
-<dt><span class="opt">server.agent.address</span></dt>
-<dd>This is a socket address of a TCP server, which receives agents data (see <a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 4.2</span></a>).</dd>
-<dt><span class="opt">server.fdbc.address</span></dt>
-<dd>This is a socket address of a TCP server, which handles <span class="flp">fdbc</span> requests (see <a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 4.2</span></a>). Every <span class="flp">workstation</span> client connects to this socket automatically.</dd>
-<dt><span class="opt">fdm.address</span></dt>
-<dd>This is the <span class="flp">manager</span> socket address. You must set this option value to your manager TCP server address.</dd>
-<dt><span class="opt">archive.enable</span></dt>
-<dd>This option enables/disables the data archiving feature. It can take one of the two values: <span class="opt">true</span> or <span class="opt">false</span>.</dd>
-<dt><span class="opt">archive.schedule.time</span></dt>
-<dd>This option sets the time of day to start the data archiving procedure. This option is ignored if the <span class="opt">archive</span> option is set to <span class="opt">false</span>. It takes the value in the form <span class="opt">HH:MM</span>, where <span class="opt">HH</span> denotes an hour (0-23) and <span class="opt">MM</span> denotes minutes (0-59). If, for example, you want the procedure to start every day at 5:20, you just need to set this option as follows <span class="opt">archive.schedule.time=5:20</span>.</dd>
-<dt><span class="opt">archive.base.retention</span></dt>
-<dd>This option sets the number of hours the <span class="opt">base</span> data should be archived if they are older than the specified hours value. See <a class="reference internal" href="#archive"><span class="std std-ref">Database Archiving</span></a> for details.</dd>
-<dt><span class="opt">archive.ext.retention</span></dt>
-<dd>This option sets the number of hours the <span class="opt">ext</span> data should be archived if they are older than the specified hours value. See <a class="reference internal" href="#archive"><span class="std std-ref">Database Archiving</span></a> for details.</dd>
-<dt><span class="opt">archive.retention.policy</span></dt>
-<dd>This options sets the data archiving policy. It can take one of the two values: <span class="opt">archive</span> or <span class="opt">purge</span>. If the latter value is set, then the procedure will remove all the data that would be archived in the former case. In other words, if you want to keep your database volume size under control and you are not interested in archiving old data, you just need to set <span class="opt">archive.retention.policy=purge</span>. Otherwise, you must use <span class="opt">archive</span> value.</dd>
-</dl>
-</div>
-<div class="section" id="id11">
-<h2>5.2. Logging<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>There is a single log file <code class="file docutils literal"><span class="pre">fs2db.log</span></code> for <span class="flp">database</span>. It is stored in <code class="file docutils literal"><span class="pre">database_home/logs</span></code> directory. The logging levels are defined in <a class="reference internal" href="#logging"><span class="std std-ref">Logging</span></a> section.</p>
-<p>You can set the logger level either during the startup procedure or in runtime. For example, to set the <strong>fine</strong> level during <span class="flp">database</span> startup use the following options:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --start --loglevel fine &lt;database_home&gt;
-</pre></div>
-</div>
-<p>In order to change it in runtime, execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --loglevel fine &lt;database_home&gt;
-</pre></div>
-</div>
-<div class="section" id="id12">
-<h3>5.2.1. Logger messages<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>Each logger message entry has the following structure:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DATE</span> <span class="p">[</span><span class="n">LEVEL</span><span class="p">][</span><span class="n">PID</span><span class="p">]</span> <span class="n">Message</span> <span class="n">content</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DATE</span> <span class="p">[</span><span class="n">LEVEL</span><span class="p">][</span><span class="n">PID</span><span class="p">][</span><span class="n">PLG</span><span class="p">]</span> <span class="n">Message</span> <span class="n">content</span>
-</pre></div>
-</div>
-<p>The only difference between these two types is an additional <span class="opt">PLG</span> entry. This entry denotes that this particular message comes from a plugin. The rest of the entries denote:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">DATE:</th><td class="field-body">current date.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">LEVEL:</th><td class="field-body">current logger level.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">PID:</th><td class="field-body">system process ID number of the logging process.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Message content:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">is self-explanatory.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="section" id="database-management">
-<h2>5.3. Database Management<a class="headerlink" href="#database-management" title="Permalink to this headline">¶</a></h2>
-<p>You can monitor a database instance health by dumping various statistics. These statistics include collectors subsystem states and others. You can dump the statistics on the console by executing the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --stats &lt;database_home&gt;
-</pre></div>
-</div>
-<p>The output <a class="reference internal" href="#stats-out"><span class="std std-numref">Fig. 5.1</span></a> consists of collectors and overall statistics. Each collector is a matrix, whose rows represent 5-minute slots and columns 1-hour slots. When a call arrives its collector cell must be found. When the cell is found, it is appended to its execution stack and stays there until its root call arrives. Then the entire execution stack is removed from the collector. Collectors are combined into workers, which manage the collectors. Each worker has its own queue of incoming calls to process. The numbers in cells show how many execution stacks (root calls) are being collected.</p>
-<div class="figure align-center" id="id16">
-<span id="stats-out"></span><img alt="_images/stats.png" src="_images/stats.png" />
-<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Flopsar <span class="flp">database</span> Statistics Dump</span></p>
-</div>
-<p>For each worker, there are three metrics, which give information about its state:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Collectors registry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">index of the worker.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Collectors registry capacity:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">number of collectors.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Data queue depth:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">worker’s queue depth.</td>
-</tr>
-</tbody>
-</table>
-<p>For each collector, there are two metrics, which give information about the collector state:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">TRC:</th><td class="field-body">Total Root Calls: the number of root calls being collected.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">TS:</th><td class="field-body">Total Size: the total size of the collector.</td>
-</tr>
-</tbody>
-</table>
-<p>The overall statistics (covering all the available collectors) contain the following information:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Number of collector threads:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of collecting threads (workers). Each thread can handle multiple collectors.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Total IPC writes:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of root calls transferred to the FPU process successfully.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Total IPC write errors:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of failures in transferring root calls to the FPU process due to write error.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Total IPC writes dropped:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of failures in transferring root calls to the FPU process due to thread contention.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Total collected root calls:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of root calls collected and removed from their collectors.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Total persistence root calls fails:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of root calls, which have not been persisted. If this value is greater than zero, investigate the database logs.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Total received calls:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of calls, received by collectors.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Total dropped calls:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of dropped calls. A call is dropped when it is corrupted.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="database-archiving">
-<span id="archive"></span><h2>5.4. Database Archiving<a class="headerlink" href="#database-archiving" title="Permalink to this headline">¶</a></h2>
-<p>Data archiving is a feature, which helps you to keep your database volume under control. If enabled, it runs every day at the scheduled time, compresses part of the data and moves the compressed data to the <code class="file docutils literal"><span class="pre">&lt;database_home&gt;/storage/arch</span></code> directory. After this operation, your database volume is smaller. There are a few configuration options, which govern this procedure, the ones with prefix <span class="opt">archive</span>.</p>
-<p>First of all, in order to enable the archive feature, you must set <span class="opt">archive.enable=true</span> option in the configuration file. To make the archiving procedure start at the <span class="opt">HH:MM</span> time, you must set the option <span class="opt">archive.schedule.time=HH:MM</span>. When the time comes, the <span class="flp">database</span> master process spawns a new archive process, which does the archiving. When the archiving procedure starts, it must know which data it should archive. This is managed by two, additional options:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">archive</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">retention</span>
-<span class="n">archive</span><span class="o">.</span><span class="n">ext</span><span class="o">.</span><span class="n">retention</span>
-</pre></div>
-</div>
-<p>We distinguish two tiers of data to archive: <em>base</em> and <em>ext</em>. The latter covers all the extensions data, which are parameters and exceptions stack traces, while the former covers the remaining data. First, the procedure archives the <em>ext</em> data which are older than the specified number of hours of the <span class="opt">archive.ext.retention</span> option. Next, it archives the rest of the data, which are older than the specified number of hours of the <span class="opt">archive.base.retention</span> option. The idea standing behind these tiers of data is to keep the base data a little longer than parameters and exceptions. This imposes a condition on the values of these retention options, namely:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">archive</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">retention</span> <span class="o">&gt;=</span> <span class="n">archive</span><span class="o">.</span><span class="n">ext</span><span class="o">.</span><span class="n">retention</span>
-</pre></div>
-</div>
-<p>The procedure always produces a single file. The file is stored in the directory <code class="file docutils literal"><span class="pre">&lt;database_home&gt;/storage/arch</span></code> and its name is of the form <code class="file docutils literal"><span class="pre">fs2.arch-YYYY-MM-DD_HHMM</span></code>, where <span class="opt">YYYY-MM-DD_HHMM</span> is a date time of the procedure beginning. Besides the output file, there is a log file <code class="file docutils literal"><span class="pre">fs2.arch-YYYY-MM-DD_HHMM.log</span></code> created in the same directory. The log file contains some information about the archiving operation.</p>
-<p>If you want to only keep your database volume under control and you are not interested in old data, then you can set the option <span class="opt">archive.retention.policy=purge</span>. This policy makes the database delete the old data.</p>
-<div class="section" id="extraction">
-<h3>5.4.1. Extraction<a class="headerlink" href="#extraction" title="Permalink to this headline">¶</a></h3>
-<p>If you want to extract the archived file, you just need to execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --archive-extract &lt;arch&gt;
-</pre></div>
-</div>
-<p>This command will extract the specified <code class="file docutils literal"><span class="pre">&lt;arch&gt;</span></code> file in the current working directory. A new <code class="file docutils literal"><span class="pre">storage</span></code> directory will be created with extracted database data. Additionally, a log file <code class="file docutils literal"><span class="pre">fs2-arch-extract.log</span></code> will be stored with extraction procedure logs. Optionally, you can set the logger level, for example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db --loglevel fine --archive-extract &lt;arch&gt;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="alerts">
-<span id="id13"></span><h1>6. Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h1>
-<p>Alerts are <a class="reference internal" href="workstation.html#alerts-manage"><span class="std std-ref">managed</span></a> from <span class="flp">workstation</span>, however alerts feature must be enabled and configured before any alert rule can be added. Whenever some alert rule is <a class="reference internal" href="workstation.html#alerts-manage"><span class="std std-ref">defined</span></a> in <span class="flp">workstation</span> it is persisted in the corresponding <span class="flp">manager</span> instance. If there are any databases connected to that instance, they get notified about the alert change instantly. They update their set of rules and start to evaluate them. How the notifications are performed is determined by the corresponding notification plugin. The notification feature is implemented as a plugin and is disabled by default. In order to enable it you must add a valid notification plugin name to the <span class="opt">plugins</span> option in the <span class="flp">manager</span> <a class="reference internal" href="#manager-conf"><span class="std std-ref">configuration</span></a> file. You can either provide your <a class="reference internal" href="developer.html#plugins-notify"><span class="std std-ref">own implementation</span></a> of the notification plugin or use the one shipped with Flopsar.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p>You can always check what alert rules are currently deployed on a database by executing the following command:</p>
-<div class="last highlight-shell"><div class="highlight"><pre><span></span>$ fs2db --list alerts &lt;database_home&gt;
-</pre></div>
-</div>
-</div>
-<p>The instructions given below are only valid for the Flopsar notification plugin.</p>
-<div class="section" id="notification-plugin">
-<h2>6.1. Notification Plugin<a class="headerlink" href="#notification-plugin" title="Permalink to this headline">¶</a></h2>
-<p>The <em>notification</em> plugin is an SMTP client, which sends emails when some conditions are fulfilled. The plugin makes use of <a class="reference external" href="https://curl.haxx.s">CURL</a> library.</p>
-<p>If you plan to use this feature, you must enable this plugin as well. Follow the instructions below to enable the <em>notification</em> plugin:</p>
-<ol class="arabic">
-<li><p class="first">update the plugins option to include the <code class="file docutils literal"><span class="pre">libfs2plg_smtp.so</span></code> value.</p>
-</li>
-<li><p class="first">copy <code class="file docutils literal"><span class="pre">FLOPSAR_HOME/resources/fs2plg_smtp</span></code> directory to <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/</span></code>.</p>
-</li>
-<li><p class="first">edit <code class="file docutils literal"><span class="pre">smtp.conf</span></code> file and set your SMTP server options:</p>
-<blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">smtp.host:</th><td class="field-body">Address of your SMTP server.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">smtp.port:</th><td class="field-body">Port of your SMTP server.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">smtp.username:</th><td class="field-body">If your SMTP server requires authentication, put a valid user name here. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_USERNAME.html">CURLOPT_USERNAME</a>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">smtp.password:</th><td class="field-body">If your SMTP server requires authentication, put a valid password here. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_PASSWORD.html">CURLOPT_PASSWORD</a> option.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">smtp.subject:</th><td class="field-body">Subject of each notification email.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">smtp.from:</th><td class="field-body">SMTP sender address. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_MAIL_FROM.html">CURLOPT_MAIL_FROM</a> option.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">smtp.verbose:</th><td class="field-body">Verbose mode used to display a lot of verbose information. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_VERBOSE.html">CURLOPT_VERBOSE</a> option.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">smtp.ssl.enabled:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html">CURLOPT_USE_SSL</a> option.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">smtp.ssl.verify_peer:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYPEER.html">CURLOPT_SSL_VERIFYPEER</a> option.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">smtp.ssl.verify_host:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYHOST.html">CURLOPT_SSL_VERIFYHOST</a> option.</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-</li>
-<li><p class="first">edit the <code class="file docutils literal"><span class="pre">smtp.recipients</span></code> and add subscribers’ email addresses (one per line).</p>
-</li>
-<li><p class="first">edit the <code class="file docutils literal"><span class="pre">smtp.text</span></code> and set your own message template.</p>
-</li>
-</ol>
-<p>When you set your own message template, you have some variables at your disposal:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$FS2_AID:</th><td class="field-body">Alert identifier.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$FS2_VAL:</th><td class="field-body">The monitored component value.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$FS2_DATE:</th><td class="field-body">Alert generation time.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$FS2_AGENT:</th><td class="field-body"><span class="flp">agent</span> identifier.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$FS2_COMPONENT:</th><td class="field-body">Component name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$FS2_TWINDOW:</th><td class="field-body">Time window of the alert rule.</td>
-</tr>
-</tbody>
-</table>
-<p>These variables will be replaced with their corresponding values. Below, you can see a sample message (<code class="file docutils literal"><span class="pre">smtp.text</span></code> content):</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-This is my sample alert message template!<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Agent<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>: $FS2_AGENT<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Component<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>: $FS2_COMPONENT<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>If you want to check if the plugin configuration is valid, you can execute the following command (see <a class="reference internal" href="developer.html#plugins"><span class="std std-ref">Plugins</span></a> for more details):</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr --plugins <span class="nb">test</span> &lt;manager_home&gt;
-</pre></div>
-</div>
-<p>In this case, this command will make the plugin send an email to all the subscribers.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You can change the plugin settings in runtime. All the changes will be automatically reloaded in runtime, after you save the configuration files.</p>
-</div>
-</div>
-</div>
-<div class="section" id="troubleshooting">
-<h1>7. Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
-<div class="topic">
-<p class="topic-title first">When I start <span class="flp">manager</span> I get the following error:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">There</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">Flopsar</span> <span class="n">Database</span> <span class="n">Manager</span> <span class="n">running</span><span class="o">.</span> <span class="n">You</span> <span class="n">cannot</span> <span class="n">run</span> <span class="n">another</span> <span class="n">Flopsar</span> <span class="n">Database</span> <span class="n">Manager</span> <span class="n">using</span> <span class="n">the</span> <span class="n">same</span> <span class="n">license</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>This message means you are attempting to start a <span class="flp">manager</span> instance on a machine, which already has another <span class="flp">manager</span> instance running on. Either use <a class="reference internal" href="#single-manager"><span class="std std-ref">another licence</span></a> file or another machine.</p>
-</div>
-</div>
 
 
            </div>
@@ -920,10 +502,10 @@ This is my sample alert message template!<span class="p">&lt;</span><span class=
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="workstation.html" class="btn btn-neutral float-right" title="1. Workstation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="manager.html" class="btn btn-neutral float-right" title="4. Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="overview.html" class="btn btn-neutral" title="1. Versioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="overview.html" class="btn btn-neutral" title="1. What is Flopsar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -953,7 +535,7 @@ This is my sample alert message template!<span class="p">&lt;</span><span class=
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.1',
+            VERSION:'2.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Alerts &mdash; Flopsar Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Flopsar Documentation" href="index.html"/>
+        <link rel="next" title="1. Workstation" href="user.html"/>
+        <link rel="prev" title="5. Database" href="database.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/flopsar_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administrator Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#logging">2. Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#id2">3. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Alerts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notification-plugin">6.1. Notification Plugin</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flopsar</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6. Alerts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="alerts">
+<span id="id1"></span><h1>6. Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h1>
+<p>Alerts are <a class="reference internal" href="user.html#alerts-manage"><span class="std std-ref">managed</span></a> from <span class="flp">workstation</span>, however alerts feature must be enabled and configured before any alert rule can be added. Whenever some alert rule is <a class="reference internal" href="user.html#alerts-manage"><span class="std std-ref">defined</span></a> in <span class="flp">workstation</span> it is persisted in the corresponding <span class="flp">manager</span> instance. If there are any databases connected to that instance, they get notified about the alert change instantly. They update their set of rules and start to evaluate them. How the notifications are performed is determined by the corresponding notification plugin. The notification feature is implemented as a plugin and is disabled by default. In order to enable it you must add a valid notification plugin name to the <span class="opt">plugins</span> option in the <span class="flp">manager</span> <a class="reference internal" href="manager.html#manager-conf"><span class="std std-ref">configuration</span></a> file. You can either provide your <a class="reference internal" href="developer.html#plugins-notify"><span class="std std-ref">own implementation</span></a> of the notification plugin or use the one shipped with Flopsar.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>You can always check what alert rules are currently deployed on a database by executing the following command:</p>
+<div class="last highlight-shell"><div class="highlight"><pre><span></span>$ fs2db get --target alerts &lt;database_home&gt;
+</pre></div>
+</div>
+</div>
+<p>The instructions given below are only valid for the Flopsar notification plugin.</p>
+<div class="section" id="notification-plugin">
+<h2>6.1. Notification Plugin<a class="headerlink" href="#notification-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <em>notification</em> plugin is an SMTP client, which sends emails when some conditions are fulfilled. The plugin makes use of <a class="reference external" href="https://curl.haxx.s">CURL</a> library.</p>
+<p>If you plan to use this feature, you must enable this plugin as well. Follow the instructions below to enable the <em>notification</em> plugin:</p>
+<ol class="arabic">
+<li><p class="first">update the plugins option to include the <code class="file docutils literal"><span class="pre">libflopsar-smtp.so</span></code> value.</p>
+</li>
+<li><p class="first">copy <code class="file docutils literal"><span class="pre">/usr/share/flopsar/templates/plugins/flopsar-smtp</span></code> directory to <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/</span></code>.</p>
+</li>
+<li><p class="first">edit <code class="file docutils literal"><span class="pre">smtp.conf</span></code> file and set your SMTP server options:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">smtp.host:</th><td class="field-body">Address of your SMTP server.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">smtp.port:</th><td class="field-body">Port of your SMTP server.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">smtp.username:</th><td class="field-body">If your SMTP server requires authentication, put a valid user name here. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_USERNAME.html">CURLOPT_USERNAME</a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">smtp.password:</th><td class="field-body">If your SMTP server requires authentication, put a valid password here. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_PASSWORD.html">CURLOPT_PASSWORD</a> option.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">smtp.subject:</th><td class="field-body">Subject of each notification email.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">smtp.from:</th><td class="field-body">SMTP sender address. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_MAIL_FROM.html">CURLOPT_MAIL_FROM</a> option.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">smtp.verbose:</th><td class="field-body">Verbose mode used to display a lot of verbose information. Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_VERBOSE.html">CURLOPT_VERBOSE</a> option.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">smtp.ssl.enabled:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html">CURLOPT_USE_SSL</a> option.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">smtp.ssl.verify_peer:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYPEER.html">CURLOPT_SSL_VERIFYPEER</a> option.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">smtp.ssl.verify_host:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Corresponds to the <a class="reference external" href="https://curl.haxx.se/libcurl/c/CURLOPT_SSL_VERIFYHOST.html">CURLOPT_SSL_VERIFYHOST</a> option.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p class="first">edit the <code class="file docutils literal"><span class="pre">smtp.recipients</span></code> and add subscribers’ email addresses (one per line).</p>
+</li>
+<li><p class="first">edit the <code class="file docutils literal"><span class="pre">smtp.text</span></code> and set your own message template.</p>
+</li>
+</ol>
+<p>When you set your own message template, you have some variables at your disposal:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$FS2_AID:</th><td class="field-body">Alert identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$FS2_VAL:</th><td class="field-body">The monitored component value.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$FS2_DATE:</th><td class="field-body">Alert generation time.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$FS2_AGENT:</th><td class="field-body"><span class="flp">agent</span> identifier.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$FS2_COMPONENT:</th><td class="field-body">Component name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$FS2_TWINDOW:</th><td class="field-body">Time window of the alert rule.</td>
+</tr>
+</tbody>
+</table>
+<p>These variables will be replaced with their corresponding values. Below, you can see a sample message (<code class="file docutils literal"><span class="pre">smtp.text</span></code> content):</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+This is my sample alert message template!<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Agent<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>: $FS2_AGENT<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Component<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>: $FS2_COMPONENT<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If you want to check if the plugin configuration is valid, you can execute the following command (see <a class="reference internal" href="developer.html#plugins"><span class="std std-ref">Plugins</span></a> for more details):</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr --plugins <span class="nb">test</span> &lt;manager_home&gt;
+</pre></div>
+</div>
+<p>In this case, this command will make the plugin send an email to all the subscribers.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can change the plugin settings in runtime. All the changes will be automatically reloaded in runtime, after you save the configuration files.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="user.html" class="btn btn-neutral float-right" title="1. Workstation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database.html" class="btn btn-neutral" title="5. Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Flopsar Technology Sp. z o.o..
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

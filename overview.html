@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Versioning &mdash; Flopsar Documentation</title>
+  <title>1. What is Flopsar &mdash; Flopsar Documentation</title>
   
 
   
@@ -39,7 +39,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Flopsar Documentation" href="index.html"/>
         <link rel="next" title="1. Installation" href="admin.html"/>
-        <link rel="prev" title="Flopsar 2.1 Documentation" href="index.html"/> 
+        <link rel="prev" title="Flopsar 2.2 Documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -71,7 +71,7 @@
             
             
               <div class="version">
-                2.1
+                2.2
               </div>
             
           
@@ -97,34 +97,41 @@
             
               <p class="caption"><span class="caption-text">Overview</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#releasing">2. Releasing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#licensing">3. Licensing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#architectural-fundamentals">4. Architectural Fundamentals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#networking">4.1. Networking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#agent">4.2. Agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manager">4.3. Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#database">4.4. Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workstation">4.5. Workstation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#architectural-fundamentals">5. Architectural Fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#networking">5.1. Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agent">5.2. Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manager">5.3. Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#database">5.4. Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workstation">5.5. Workstation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#supported-platforms-and-requirements">5. Supported Platforms and Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#distribution-package">6. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#release-notes">8. Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-upgrade-from-flopsar-2-1">8.1. How to upgrade from Flopsar 2.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upgrading-database">8.1.1. Upgrading Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upgrading-manager">8.1.2. Upgrading Manager</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Administrator Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html#logging">2. Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html#id2">3. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#id5">4. Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#id9">5. Database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#alerts">6. Alerts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#troubleshooting">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alerts.html">6. Alerts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workstation.html">1. Workstation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo.html">2. Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
 <ul>
@@ -132,6 +139,12 @@
 <li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
 </ul>
 
             
@@ -176,7 +189,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>1. Versioning</li>
+      <li>1. What is Flopsar</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,15 +206,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>Flopsar is an alternative approach to the systems monitoring. It cannot be compared to other APM tools directly, since the approach itself does not make any room for comparison, at least at the level of root cause analyses.</p>
-<p>First of all, we must state the problem itself before we can try to solve it. What is the most important thing in systems maintenance? Systems maintenance relies on making the systems highly available and responsive. This implies that we must maintain the number of outages as low as possible and the time needed to resolve any issues must be as short as possible. However, if the worst happens and the system fails, besides the fact it failed we need to know why. Knowing why is not sufficient if finding the cause lasts for a whole day or even longer. These are the main problems which need to be addressed.</p>
-<p>Flopsar is a <em>Fault Detection and Diagnosis</em> software for Java systems. Its main goal is to detect errors and problems in your Java systems and help to find the root cause quickly. Unlike other APM-like tools, Flopsar does not require users to predict what may go wrong in their systems. Moreover, we do not lose information about your business processing by collecting only some vague averages and aggregated data. Flopsar is highly customizable and extensible product. It does not adhere to any specific Java applications. It just needs JVM.</p>
+  <div class="section" id="what-is-flopsar">
+<h1>1. What is Flopsar<a class="headerlink" href="#what-is-flopsar" title="Permalink to this headline">¶</a></h1>
+<p>Flopsar is an alternative approach to the systems diagnosis. It cannot be compared to APM tools directly, since the approach itself does not make any room for comparison.</p>
+<p>First of all, we must state a problem itself before we can try to solve it, so what is the most important thing in systems maintenance? Systems maintenance relies on making the systems highly available and responsive. This implies that we must maintain the number of outages as low as possible and the time needed to resolve any issues must be as short as possible. However, if the worst happens and the system fails, besides the fact it failed we need to know why. Knowing why is not sufficient if finding the cause lasts for a whole day or even longer. These are the main problems which need to be addressed.</p>
+<p>Flopsar is a <em>Fault Detection and Diagnosis</em> software for Java systems. Its main goal is to detect errors and problems in your Java systems and help to find the root cause quickly. Unlike other APM-like tools, Flopsar does not require users to predict what may go wrong in their systems. Moreover, we do not lose information about your business processing by collecting only some vague averages and aggregated data. Flopsar is highly customizable and extensible product. It does not adhere to any specific Java applications, it just needs JVM.</p>
 <p>How do we help users to find the root cause of problems, actually? Flopsar GUI application has a novel feature, called <em>Galaxy</em> view. This is a system overview, which enables users to observe any suspicious behavior. Usually, when something goes wrong in the system it is clearly visible in the Galaxy view. It is manifested by some anomaly patterns emergence. Users can quickly investigate what causes such patterns. In fact, by two-step drill down users are able to know the root cause of the problems represented by these patterns very quickly.</p>
 <p>The whole idea standing behind our Galaxy view is simply a human brilliant feature of pattern recognition. It is so powerful, that the more users work with the Galaxy view, the faster he or she is able to find the root cause of the problem. If users are experienced enough they do not have to investigate deeper, they just know what goes wrong only by the pattern itself!</p>
 <p>Flopsar has more key features which helps users to maintain their systems better. Its area of application is not only limited to systems maintenance, it is also used in applications development processes successfully. Its features can be extended by using so-called <em>formatters</em>, which enable users to perform extra processing at runtime, with no application source code changes.</p>
+</div>
 <div class="section" id="versioning">
-<h1>1. Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h1>
-<p>Every version label is composed of three numbers <span class="code">X.Y.0</span>:</p>
+<h1>2. Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h1>
+<p>Every version label is composed of three numbers <span class="code">X.Y.Z</span>:</p>
 <dl class="docutils">
 <dt><span class="code">X</span></dt>
 <dd>Major version number: major changes, e.g. architecture change.</dd>
@@ -216,31 +232,31 @@
 </div>
 </div>
 <div class="section" id="releasing">
-<h1>2. Releasing<a class="headerlink" href="#releasing" title="Permalink to this headline">¶</a></h1>
-<p>Either major or minor (<span class="code">X.Y</span>) Flopsar versions are released twice a year: 1st June and 1st December. Bug fixes releases (<span class="code">X.Y.Z</span>) do not follow this rule, which means they can be released more often.</p>
+<h1>3. Releasing<a class="headerlink" href="#releasing" title="Permalink to this headline">¶</a></h1>
+<p>Both major and minor (<span class="code">X.Y</span>) Flopsar versions are released twice a year: 1st June and 1st December. Bug fixes releases (<span class="code">X.Y.Z</span>) do not follow this rule, which means they can be released more often.</p>
 </div>
 <div class="section" id="licensing">
-<h1>3. Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h1>
-<p>Flopsar is a proprietary software and you need a valid license to run it. The license is a <code class="docutils literal"><span class="pre">license.key</span></code> file, which should be obtained separately. There are some restrictions on the Flopsar Suite usage depending on the license type you purchased. Contact your distributor for details.</p>
+<h1>4. Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h1>
+<p>Flopsar is a proprietary software and you need a valid license to run it. The license is a <code class="docutils literal"><span class="pre">license.key</span></code> file, which should be obtained separately. There are some restrictions on the Flopsar usage depending on the license type you purchased. Contact your distributor for details.</p>
 </div>
 <div class="section" id="architectural-fundamentals">
-<h1>4. Architectural Fundamentals<a class="headerlink" href="#architectural-fundamentals" title="Permalink to this headline">¶</a></h1>
+<h1>5. Architectural Fundamentals<a class="headerlink" href="#architectural-fundamentals" title="Permalink to this headline">¶</a></h1>
 <p>Flopsar consists of four main components, i.e. <a class="reference internal" href="#agent"><span class="std std-ref">Agent</span></a>, <a class="reference internal" href="#manager"><span class="std std-ref">Manager</span></a>, <a class="reference internal" href="#database"><span class="std std-ref">Database</span></a> and <a class="reference internal" href="#workstation"><span class="std std-ref">Workstation</span></a>. There is one extra component Flopsar Database Connector (<span class="flp">fdbc</span>), which allow to access Flopsar environment.</p>
-<div class="figure align-center" id="id7">
-<img alt="_images/architecture.svg" src="_images/architecture.svg" /><p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Flopsar Architecture</span></p>
-</div>
-<p>The picture above shows the Flopsar architecture of an entire environment. There can be only one <span class="flp">manager</span> instance per environment. The rest of the components can run in multiple instances. The links denote all the TCP connections in the environment. The arrows denote data flow direction. Almost all of the connections are bidirectional except the ones from <span class="flp">agent</span> to <span class="flp">database</span> instances.</p>
-<div class="section" id="networking">
-<h2>4.1. Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h2>
-<p>There are three TCP servers running in the Flopsar environment. In order to run the environment successfully, you must prepare your network so that it allows all the required connections to be established.</p>
 <div class="figure align-center" id="id8">
-<span id="id1"></span><img alt="_images/networking.svg" src="_images/networking.svg" /><p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Flopsar Environment Networking</span></p>
+<img alt="_images/architecture.svg" src="_images/architecture.svg" /><p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Flopsar Architecture</span></p>
 </div>
-<p>The servers addresses are configured in the corresponding configuration files of each relevant component (see <a class="reference internal" href="admin.html#manager-conf"><span class="std std-ref">Configuration</span></a> and <a class="reference internal" href="admin.html#database-conf"><span class="std std-ref">Configuration</span></a> for details). Each FDBC client establishes two TCP connections per single database instance. The first connection is responsible for providing online data, while the second one for handling user queries.</p>
+<p>The picture above shows the Flopsar architecture of the entire environment. There can be only one <span class="flp">manager</span> instance per environment. The rest of the components can run in multiple instances. The links denote all the TCP connections in the environment. The arrows denote data flow direction. Almost all of the connections are bidirectional except the ones from <span class="flp">agent</span> to <span class="flp">database</span> instances.</p>
+<div class="section" id="networking">
+<h2>5.1. Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h2>
+<p>There are three TCP servers running in the Flopsar environment. In order to run the environment successfully, you must prepare your network so that it allows all the required connections to be established.</p>
+<div class="figure align-center" id="id9">
+<span id="id1"></span><img alt="_images/networking.svg" src="_images/networking.svg" /><p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Flopsar Environment Networking</span></p>
+</div>
+<p>The servers addresses are configured in the corresponding configuration files of each relevant component (see <a class="reference internal" href="manager.html#manager-conf"><span class="std std-ref">Configuration</span></a> and <a class="reference internal" href="database.html#database-conf"><span class="std std-ref">Configuration</span></a> for details). Each FDBC client establishes two TCP connections per single database instance. The first connection is responsible for providing online data, while the second one for handling user queries.</p>
 </div>
 <div class="section" id="agent">
-<span id="id2"></span><h2>4.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
-<p>The agent is a single jar file <code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code>. It is written entirely in Java and is based on <a class="reference external" href="http://asm.ow2.org">ASM</a> instrumentation framework. It was designed with performance in mind, so that it has a minimal impact on the JVM performance. It does not perform any processing, it just collects the data and sends them as soon as possible.</p>
+<span id="id2"></span><h2>5.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
+<p>The agent is a single jar file <code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code>. It is written entirely in Java and is based on <a class="reference external" href="http://asm.ow2.org">ASM</a> instrumentation framework. It was designed with performance in mind, so that it has a minimal impact on the JVM performance. It does not perform any processing, it just collects the data and sends them as soon as possible.</p>
 <p>When a JVM starts, the agent connects to the <span class="flp">manager</span> instance. It is the agent that initiates a connection to the <span class="flp">manager</span>, i.e. there is no agent internal server, waiting for connections. When the agent establishes its connection to the <span class="flp">manager</span>, it starts a separate thread which opens a channel for incoming <span class="flp">manager</span> messages. The communication between agent and <span class="flp">manager</span> is bidirectional. If the agent loses its connection to the <span class="flp">manager</span> it will try to reconnect automatically.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -248,22 +264,26 @@
 </div>
 </div>
 <div class="section" id="manager">
-<span id="id3"></span><h2>4.3. Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">manager</span> is a central point of the entire environment. It stores and serves Agent configurations, manages users authentication, forwards data from agents to <span class="flp">fdbc</span> clients, etc. It is a single point of failure because there is only one instance of it per environment. However, when the environment is set, i.e. agents configurations are deployed and agents are attached to their databases, <span class="flp">manager</span> is not required as long as no configuration changes or data query operations is needed. In other words, if <span class="flp">manager</span> is down the data acquisition process goes on.</p>
-<div class="figure align-center" id="id9">
-<img alt="_images/manager.svg" src="_images/manager.svg" /><p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text"><span class="flp">manager</span> Processes</span></p>
+<span id="id3"></span><h2>5.3. Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">manager</span> is a central point of the entire environment. It stores and serves Agent configurations, manages users authentication, forwards data from agents to <span class="flp">fdbc</span> clients, etc. It is a single point of failure because there is only one instance of it per environment. However, when the environment is set, i.e. agents configurations are deployed and agents are attached to their databases, <span class="flp">manager</span> is not required as long as no configuration changes or data query operations are needed.
+In other words, if <span class="flp">manager</span> is down the data acquisition process goes on.</p>
+<div class="figure align-center" id="id10">
+<img alt="_images/manager.svg" src="_images/manager.svg" /><p class="caption"><span class="caption-number">Fig. 5.3 </span><span class="caption-text"><span class="flp">manager</span> Processes</span></p>
 </div>
-<p><span class="flp">manager</span> operates two processes, the <span class="opt">MASTER</span> process and its child <span class="opt">FSM</span> process. If the child process crashes <span class="opt">MASTER</span> will spawn a new one immediately. <span class="flp">manager</span> runs a single TCP server, which accepts connections from three types of clients: <span class="flp">agent</span>, <span class="flp">database</span> and <span class="flp">fdbc</span>. There can be multiple Flopsar environments running on the same server machine as long as they use their own license files with distinct IP addresses.</p>
+<p><span class="flp">manager</span> operates two processes, the <span class="opt">MASTER</span> process and its child process: <span class="opt">FSM</span>.
+If a child process crashes <span class="opt">MASTER</span> will spawn a new one immediately.
+<span class="flp">manager</span> runs a single TCP server, which accepts connections from three types of clients: <span class="flp">agent</span>, <span class="flp">database</span> and <span class="flp">fdbc</span>.
+There can be multiple Flopsar environments running on the same server machine as long as they use their own license files with distinct IP addresses.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">Licence file cannot be shared between different Flopsar Suite environments that run on the very same machine.</p>
+<p class="last">License file cannot be shared between different Flopsar environments that run on the very same machine.</p>
 </div>
 </div>
 <div class="section" id="database">
-<span id="id4"></span><h2>4.4. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>5.4. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
 <p><span class="flp">database</span> operates four processes: <span class="opt">MASTER</span>, <span class="opt">FDB</span>, <span class="opt">FPU</span> and <span class="opt">ADM</span>. When <span class="flp">database</span> starts it creates its <span class="opt">MASTER</span> process, which spawns the other processes. Whenever one of the child processes crashes (except <span class="opt">ARCH</span>), <span class="opt">MASTER</span> respawns it immediately. There is an additional child process <span class="opt">ARCH</span>, which is spawned periodically to do its job. When the job is done it is closed.</p>
-<div class="figure align-center" id="id10">
-<img alt="_images/database.svg" src="_images/database.svg" /><p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text"><span class="flp">database</span> Processes</span></p>
+<div class="figure align-center" id="id11">
+<img alt="_images/database.svg" src="_images/database.svg" /><p class="caption"><span class="caption-number">Fig. 5.4 </span><span class="caption-text"><span class="flp">database</span> Processes</span></p>
 </div>
 <p>Each child process has its own area of responsibility:</p>
 <dl class="docutils">
@@ -276,37 +296,55 @@
 <dt><span class="opt">ADM</span></dt>
 <dd>This process runs a TCP client, which communicates with <span class="flp">manager</span>.</dd>
 <dt><span class="opt">ARCH</span></dt>
-<dd>This process is responsible for data archiving (see <a class="reference internal" href="admin.html#archive"><span class="std std-ref">Database Archiving</span></a> for details). It is spawned if and only if the archive feature is enabled in the configuration file.</dd>
+<dd>This process is responsible for data archiving (see <a class="reference internal" href="database.html#archive"><span class="std std-ref">Data Archiving</span></a> for details). It is spawned if and only if the archive feature is enabled in the configuration file.</dd>
 </dl>
 <p><span class="flp">database</span> is a native application and it supports platforms specified in <a class="reference internal" href="#support"><span class="std std-ref">Supported Platforms and Requirements</span></a>. The memory and CPU requirements strongly depend on how much data the database will be receiving and how many clients will be handling.</p>
 <p><span class="flp">database</span> is designed to take advantage of multiple CPU cores. There are internal tasks that can run in parallel provided that there are enough CPU cores. These tasks are responsible for collecting and persisting data. Every four additional CPU cores enable to run a new, additional task. How many tasks <span class="flp">database</span> will run is decided at the database initialization step and cannot be changed later. So if you can provide a multiple cores CPU, do it before you initialize a database environment.</p>
 <p><span class="flp">database</span> collects received method calls in so-called collectors in memory. The collector is assigned to each agent connection and its size depends on methods instrumentation and your application. 8 GB of RAM is a reasonable minimum you should provide.</p>
 </div>
 <div class="section" id="workstation">
-<span id="id5"></span><h2>4.5. Workstation<a class="headerlink" href="#workstation" title="Permalink to this headline">¶</a></h2>
-<p>It is purely written in Java and based on the <a class="reference external" href="http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784">JavaFX</a> platform. The workstation accesses the Flopsar environment by means of the <span class="flp">fdbc</span> connector.</p>
+<span id="id5"></span><h2>5.5. Workstation<a class="headerlink" href="#workstation" title="Permalink to this headline">¶</a></h2>
+<p>It is written in <a class="reference external" href="http://kotlinlang.org">Kotlin</a> and based on the <a class="reference external" href="http://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm#JFXST784">JavaFX</a> platform. The workstation accesses the Flopsar environment by means of the <span class="flp">fdbc</span> connector.</p>
 </div>
 </div>
 <div class="section" id="supported-platforms-and-requirements">
-<span id="support"></span><h1>5. Supported Platforms and Requirements<a class="headerlink" href="#supported-platforms-and-requirements" title="Permalink to this headline">¶</a></h1>
-<p><span class="flp">agent</span> and <span class="flp">workstation</span> are written entirely in Java. Agent component supports JVM 1.6, 1.7 and 1.8. <span class="flp">workstation</span> requires JVM 1.8u102+ and it can be run only on those platforms which are supported by <a class="reference external" href="http://docs.oracle.com/javase/8/javase-clienttechnologies.htm">JavaFX</a>.</p>
+<span id="support"></span><h1>6. Supported Platforms and Requirements<a class="headerlink" href="#supported-platforms-and-requirements" title="Permalink to this headline">¶</a></h1>
+<p><span class="flp">agent</span> is written entirely in Java and supports JVM 1.6, 1.7 and 1.8.
+<span class="flp">workstation</span> is written in <a class="reference external" href="http://kotlinlang.org">Kotlin</a> and requires JVM 1.8u131+. It can be run only on those platforms which are supported by <a class="reference external" href="http://docs.oracle.com/javase/8/javase-clienttechnologies.htm">JavaFX</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Virtual Machine</th>
+<th class="head">Version</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>JVM</td>
+<td>1.8u131+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><span class="flp">workstation</span> does not support JVM 9.</p>
+</div>
 <p>Both <span class="flp">manager</span> and <span class="flp">database</span> are native executables and they can be run only on the platforms listed below:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="50%" />
-<col width="29%" />
-<col width="21%" />
+<col width="63%" />
+<col width="37%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operating System</th>
 <th class="head">Architecture</th>
-<th class="head">Alias</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>GNU/Linux 2.6.33+</td>
 <td>x86_64</td>
-<td>linux</td>
 </tr>
 </tbody>
 </table>
@@ -316,26 +354,154 @@
 </div>
 </div>
 <div class="section" id="distribution-package">
-<h1>6. Distribution Package<a class="headerlink" href="#distribution-package" title="Permalink to this headline">¶</a></h1>
+<h1>7. Distribution Package<a class="headerlink" href="#distribution-package" title="Permalink to this headline">¶</a></h1>
 <p>Flopsar distribution binaries include:</p>
 <dl class="docutils">
-<dt><code class="file docutils literal"><span class="pre">database-2.1.tar.gz</span></code></dt>
-<dd>Flopsar <span class="flp">manager</span> and <span class="flp">database</span> binaries.</dd>
+<dt><code class="file docutils literal"><span class="pre">flopsar-2.2-Linux.deb</span></code></dt>
+<dd>Flopsar <span class="flp">manager</span> and <span class="flp">database</span> Debian package.</dd>
+<dt><code class="file docutils literal"><span class="pre">flopsar-2.2-Linux.rpm</span></code></dt>
+<dd>Flopsar <span class="flp">manager</span> and <span class="flp">database</span> RPM package.</dd>
 <dt><code class="file docutils literal"><span class="pre">workstation.zip</span></code></dt>
 <dd>Flopsar Workstation application.</dd>
-<dt><code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code></dt>
 <dd>Flopsar Agent.</dd>
-<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.2.jar</span></code></dt>
 <dd>Flopsar Database Connector.</dd>
-<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1-javadoc.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.2-javadoc.jar</span></code></dt>
 <dd>Flopsar Database Connector API.</dd>
-<dt><code class="file docutils literal"><span class="pre">documentation.pdf</span></code></dt>
-<dd>Flopsar Documentation</dd>
 <dt><code class="file docutils literal"><span class="pre">SHA256</span></code></dt>
 <dd>sha256 checksums of all the binaries.</dd>
 <dt><code class="file docutils literal"><span class="pre">SHA256.sig</span></code></dt>
 <dd>PGP signed <code class="docutils literal"><span class="pre">SHA256</span></code> file. In order to verify the signature use our <a class="reference external" href="http://flopsar.com/pgp">PGP public key</a>. You can find it at <a class="reference external" href="http://flopsar.com/pgp">http://flopsar.com/pgp</a>.</dd>
 </dl>
+</div>
+<div class="section" id="release-notes">
+<h1>8. Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Are there any changes in <span class="flp">workstation</span>?</p>
+<ul class="simple">
+<li>UI look has been changed to <a class="reference external" href="https://material.io">Material Design</a>.</li>
+<li>UI has been redesigned.</li>
+<li>Migration features from Flopsar 1.6 have been removed.</li>
+<li>Permissions have been added.</li>
+<li>Agents have customizable colors.</li>
+<li>Execution stacks can be exported to XML.</li>
+<li>New releases can be checked online.</li>
+<li>Optimizations.</li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Are there any changes in <span class="flp">database</span>/<span class="flp">manager</span>?</p>
+<ul class="simple">
+<li>A new CLI.</li>
+<li>New statistics features in <span class="flp">database</span>.</li>
+<li>Agents can be removed from <span class="flp">manager</span>.</li>
+<li>New plugin available: LDAP authentication.</li>
+<li>Optimizations.</li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Are there any changes in <span class="flp">agent</span>?</p>
+<ul class="simple">
+<li>Optimizations.</li>
+</ul>
+</div>
+<div class="section" id="how-to-upgrade-from-flopsar-2-1">
+<h2>8.1. How to upgrade from Flopsar 2.1<a class="headerlink" href="#how-to-upgrade-from-flopsar-2-1" title="Permalink to this headline">¶</a></h2>
+<p>Flopsar 2.2 introduces new features so in order to upgrade to 2.2 you need to replace each 2.1 component with the new one.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">License keys have been changed. Please, request a new license key before upgrade. Your current license files will not work with Flopsar 2.2.</p>
+</div>
+<p>Before you start upgrading you should stop all your running Flopsar instances, delete your current Flopsar binaries and install the new ones according to the <a class="reference internal" href="admin.html#bin-install"><span class="std std-ref">instructions</span></a>.</p>
+<div class="section" id="upgrading-database">
+<h3>8.1.1. Upgrading Database<a class="headerlink" href="#upgrading-database" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to upgrade your database is to replace its configuration file with a new one. You can override the configuration file with a template <code class="file docutils literal"><span class="pre">/usr/share/flopsar/templates/fs2db.conf</span></code> and set your options. Please note, the following options have changed their names:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Flopsar 2.1</th>
+<th class="head">Flopsar 2.2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>server.agent.address</td>
+<td>agent.bind.address</td>
+</tr>
+<tr class="row-odd"><td>server.fdbc.address</td>
+<td>ui.bind.address</td>
+</tr>
+<tr class="row-even"><td>fdm.address</td>
+<td>manager.address</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="upgrading-manager">
+<h3>8.1.2. Upgrading Manager<a class="headerlink" href="#upgrading-manager" title="Permalink to this headline">¶</a></h3>
+<p>In order to migrate your <span class="flp">manager</span> instance, you need to take a few steps:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">replace your current <code class="docutils literal"><span class="pre">license.key</span></code> with a new one.</p>
+</li>
+<li><p class="first">migrate your users database by executing the following command:</p>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth set --migrate &lt;manager_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">replace the authentication plugin name in the <code class="file docutils literal"><span class="pre">fs2mgr.conf</span></code> file:</p>
+</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Flopsar 2.1</th>
+<th class="head">Flopsar 2.2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>libfs2plg_authbasic.so</td>
+<td>libflopsar-authbasic.so</td>
+</tr>
+<tr class="row-odd"><td>libfs2plg_smtp.so</td>
+<td>libflopsar-smtp.so</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>replace the following configuration option in the <code class="file docutils literal"><span class="pre">fs2mgr.conf</span></code>:</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Flopsar 2.1</th>
+<th class="head">Flopsar 2.2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>server.bind.address</td>
+<td>server.bind.ip</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When you migrate your users database, each user has a minimal set of permissions. You should review your users’ permissions and update them if necessary (see <a class="reference internal" href="manager.html#authorization"><span class="std std-ref">Authorization</span></a> for details).</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -351,7 +517,7 @@
         <a href="admin.html" class="btn btn-neutral float-right" title="1. Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Flopsar 2.1 Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Flopsar 2.2 Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -381,7 +547,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.1',
+            VERSION:'2.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

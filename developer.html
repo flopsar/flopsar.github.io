@@ -38,7 +38,8 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Flopsar Documentation" href="index.html"/>
-        <link rel="prev" title="2. Demo" href="demo.html"/> 
+        <link rel="next" title="Troubleshooting" href="tshooting.html"/>
+        <link rel="prev" title="1. Workstation" href="user.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -70,7 +71,7 @@
             
             
               <div class="version">
-                2.1
+                2.2
               </div>
             
           
@@ -96,27 +97,27 @@
             
               <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Versioning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">2. Releasing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">3. Licensing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">4. Architectural Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">5. Supported Platforms and Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">6. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Administrator Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html#logging">2. Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html#id2">3. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#id5">4. Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#id9">5. Database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#alerts">6. Alerts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="admin.html#troubleshooting">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alerts.html">6. Alerts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="workstation.html">1. Workstation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo.html">2. Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
 <ul class="current">
@@ -135,6 +136,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#plugin-notification">4.2. Plugin: Notification</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
 </ul>
 
             
@@ -198,9 +205,12 @@
             
   <div class="section" id="agent-api">
 <span id="id1"></span><h1>1. Agent API<a class="headerlink" href="#agent-api" title="Permalink to this headline">¶</a></h1>
-<p>If you want to provide your own, non-JVM, data and store them in the Flopsar Suite environment, you can do it using the agent API. This functionality is embedded in the Flopsar Agent. In order to make use of the API, you must add <code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code> as a dependency to your project. The API contains a single class <span class="code">com.flopsar.agent.api.Agent</span> with the following methods:</p>
+<p>If you want to provide your own, non-JVM, data and store them in the Flopsar Suite environment, you can do it using the agent API. This functionality is embedded in the Flopsar Agent. In order to make use of the API, you must add <code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code> as a dependency to your project. The API contains a single class <span class="code">com.flopsar.agent.api.Agent</span> with the following methods:</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Agent</span> <span class="nf">createConnection</span><span class="o">(</span><span class="n">String</span> <span class="n">flopsarId</span><span class="o">,</span><span class="n">String</span> <span class="n">fsmHost</span><span class="o">,</span>
                                         <span class="kt">int</span> <span class="n">fsmPort</span><span class="o">,</span><span class="kt">long</span> <span class="n">outboundQueueSize</span><span class="o">);</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setupLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">loggerDirectory</span><span class="o">,</span><span class="kt">int</span> <span class="n">logSize</span><span class="o">,</span>
+                                <span class="n">AbstractLoggerLevel</span> <span class="n">level</span><span class="o">);</span>
 
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isConnected</span><span class="o">();</span>
 
@@ -275,7 +285,7 @@
 </div>
 <div class="section" id="fdbc">
 <h1>3. FDBC<a class="headerlink" href="#fdbc" title="Permalink to this headline">¶</a></h1>
-<p><span class="flp">workstation</span> makes use of <span class="flp">fdbc</span> in order to access data stored in both <span class="flp">manager</span> and <span class="flp">database</span>. <span class="flp">fdbc</span> is a single jar file <code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1.jar</span></code> and it provides whatever is necessary to access data from any client. This includes remote access to <span class="flp">manager</span> and <span class="flp">database</span> instances, managing Flopsar environment and querying data. You can even write your own GUI client to manage your entire Flopsar environment without using <span class="flp">workstation</span>. Beside the <span class="flp">fdbc</span> jar file, the Flopsar distribution contains the FDBC API documentation in the <code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1-javadoc.jar</span></code> file.</p>
+<p><span class="flp">workstation</span> makes use of <span class="flp">fdbc</span> in order to access data stored in both <span class="flp">manager</span> and <span class="flp">database</span>. <span class="flp">fdbc</span> is a single jar file <code class="file docutils literal"><span class="pre">flopsar-fdbc-2.2.jar</span></code> and it provides whatever is necessary to access data from any client. This includes remote access to <span class="flp">manager</span> and <span class="flp">database</span> instances, managing Flopsar environment and querying data. You can even write your own GUI client to manage your entire Flopsar environment without using <span class="flp">workstation</span>. Beside the <span class="flp">fdbc</span> jar file, the Flopsar distribution contains the FDBC API documentation in the <code class="file docutils literal"><span class="pre">flopsar-fdbc-2.2-javadoc.jar</span></code> file.</p>
 <div class="section" id="api">
 <h2>3.1. API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="flp">fdbc</span> API is divided into two parts with respect to the instance it wants to access. The <span class="code">com.flopsar.fdbc.api.fsm</span> package contains classes reponsible for accessing <span class="flp">manager</span> instances, while <span class="code">com.flopsar.fdbc.api.fdb</span> package <span class="flp">database</span> instances.</p>
@@ -373,8 +383,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="tshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="demo.html" class="btn btn-neutral" title="2. Demo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="user.html" class="btn btn-neutral" title="1. Workstation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -404,7 +416,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.1',
+            VERSION:'2.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
