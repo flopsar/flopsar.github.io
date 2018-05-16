@@ -1,0 +1,917 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Workstation &mdash; Flopsar Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Agent API" href="developer.html" />
+    <link rel="prev" title="6. Alerts" href="alerts.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/flopsar_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administrator Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#logging">2. Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#id2">3. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alerts.html">6. Alerts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Workstation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">1.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-flopsar-environment">1.2. Accessing Flopsar Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#remote-access">1.2.1. Remote Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-access">1.2.2. Local Access</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#start-page">1.3. Start Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">1.4. Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general">1.4.1. General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connections">1.4.2. Connections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permissions">1.4.3. Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-agent-configurations">1.5. Managing Agent Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instrumentation-rules">1.5.1. Instrumentation Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hot-methods">1.5.2. Hot Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jmx">1.5.3. JMX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deploying-configurations">1.5.4. Deploying Configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#galaxies">1.6. Galaxies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#online-galaxy">1.6.1. Online Galaxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#historical-galaxy">1.6.2. Historical Galaxy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exploring-instrumentation-data">1.7. Exploring Instrumentation Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#execution-stack-interpretation">1.7.1. Execution Stack Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flame-graph">1.7.2. Flame Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#threads-subview">1.7.3. Threads Subview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components-subview">1.7.4. Components Subview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#errors-subview">1.7.5. Errors Subview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#root-cause">1.7.6. Root Cause</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-and-duration-subviews">1.7.7. Time and Duration Subviews</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exploring-environment-data">1.8. Exploring Environment Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring-agents-health">1.9. Monitoring Agents Health</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-properties">1.9.1. System Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#threads-dump">1.9.2. Threads Dump</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-alerts">1.10. Managing Alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analytics">1.11. Analytics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#managing-analytics-sets">1.11.1. Managing Analytics Sets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flopsar</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1. Workstation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="workstation">
+<h1>1. Workstation<a class="headerlink" href="#workstation" title="Permalink to this headline">¶</a></h1>
+<p>Flopsar Workstation is a GUI client of the Flopsar environment.</p>
+<div class="section" id="installation">
+<h2>1.1. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Installation is straightforward, just copy the <code class="file docutils literal notranslate"><span class="pre">workstation-2.2.zip</span></code> file to your machine and uncompress it. Next, run a <span class="opt">workstation</span> script from <code class="file docutils literal notranslate"><span class="pre">bin</span></code> directory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You should have your Java environment set before you try to run the workstation application.</p>
+</div>
+</div>
+<div class="section" id="accessing-flopsar-environment">
+<h2>1.2. Accessing Flopsar Environment<a class="headerlink" href="#accessing-flopsar-environment" title="Permalink to this headline">¶</a></h2>
+<p>When you execute the above command a logon window <a class="reference internal" href="#gui-logon"><span class="std std-numref">Fig. 1.1</span></a> should appear.</p>
+<div class="figure align-center" id="id4">
+<span id="gui-logon"></span><img alt="_images/logon.png" src="_images/logon.png" />
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Workstation Logon: Remote Access</span></p>
+</div>
+<p>If you want to connect to some remote <span class="flp">manager</span>, select the <span class="guilabel">Remote</span> radio button. If you want to access your local copy of some database, select the <span class="guilabel">Local</span> radio button.</p>
+<div class="section" id="remote-access">
+<h3>1.2.1. Remote Access<a class="headerlink" href="#remote-access" title="Permalink to this headline">¶</a></h3>
+<p>If you run <span class="flp">workstation</span> for the first time, the <span class="guilabel">Connection ID</span> combo box control is empty. In order to connect to your <span class="flp">manager</span> instance, you must specify some connection identifier (label) and input <span class="flp">manager</span> socket address in the form <span class="opt">host:port</span>. You must also provide your credentials and then click the <span class="guilabel">Connect</span> button. When you log to the <span class="flp">manager</span> instance successfully, the logon window disappears and the main application window <a class="reference internal" href="#gui-start"><span class="std std-numref">Fig. 1.3</span></a> appears instead. After a successful connection, your connection data are stored locally so that next time you start the application, the combo box will be filled with this stored connection information.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Default credentials when using Flopsar Internal Authentication are as follows: the username is <strong>admin</strong> and the password is <strong>flopsar</strong>.</p>
+</div>
+</div>
+<div class="section" id="local-access">
+<h3>1.2.2. Local Access<a class="headerlink" href="#local-access" title="Permalink to this headline">¶</a></h3>
+<p>In order to access your database locally, you just need to get the archive file from a selected database instance and copy it to your local disk. Next, select the <span class="guilabel">Local</span> tab in the logon window <a class="reference internal" href="#gui-logon"><span class="std std-numref">Fig. 1.1</span></a> and then select the <span class="guilabel">Archive file</span> radio button. Click on the <span class="guilabel">BROWSE</span> button and select your archive file. When you press the <span class="guilabel">Connect</span> button, the archive will be decompressed and a new <span class="flp">workstation</span> window <a class="reference internal" href="#gui-local-storage2"><span class="std std-numref">Fig. 1.4</span></a> will appear.</p>
+<div class="figure align-center" id="id5">
+<span id="gui-logon2"></span><img alt="_images/logon2.png" src="_images/logon2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Workstation Logon: Local Access</span></p>
+</div>
+<p>Next time you access the local storage, select <span class="guilabel">Storage</span> radio button and point to the uncompressed storage directory.</p>
+</div>
+</div>
+<div class="section" id="start-page">
+<h2>1.3. Start Page<a class="headerlink" href="#start-page" title="Permalink to this headline">¶</a></h2>
+<p>After you logged to the application remotely, you should see its start page <a class="reference internal" href="#gui-start"><span class="std std-numref">Fig. 1.3</span></a>. You can see there six tiles, which take you to different areas of the application. At the bottom, there is your current connection information to your <span class="flp">manager</span>, your current time zone and the number of connected databases. On the right side, there is a memory usage information of the application.</p>
+<div class="figure align-center" id="id6">
+<span id="gui-start"></span><img alt="_images/screen1.png" src="_images/screen1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Workstation: Remote Start Page</span></p>
+</div>
+<p>If you access your local storage, you do not see the same <span class="flp">workstation</span> functionalities as in the remote access. That is because you do not connect to any <span class="flp">manager</span> instance, and the <span class="flp">workstation</span> runs in a <em>viewer</em> mode. At the bottom, there is the current local storage identifier, your current time zone and the number of connected databases (only one in this case).</p>
+<div class="figure align-center" id="id7">
+<span id="gui-local-storage2"></span><img alt="_images/local1.png" src="_images/local1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Workstation: Local Start Page</span></p>
+</div>
+<p>In both cases (remote and local), if you click the database icon, a popup window <a class="reference internal" href="#gui-databases"><span class="std std-numref">Fig. 1.5</span></a> with a list will appear. This list contains addresses of databases your manager is aware of. There is a link icon, at the beginning of each entry, which denotes a connection status. If the link is green, then the corresponding database connection is established. The link turns red if the connection is lost or does not exist.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In case of local access, the database address is always <em>localhost</em>.</p>
+</div>
+<div class="figure align-center" id="id8">
+<span id="gui-databases"></span><img alt="_images/screen17.png" src="_images/screen17.png" />
+<p class="caption"><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Connected Databases</span></p>
+</div>
+<p>The start pages contain a few tiles with captions and descriptions. By clicking you are accessing different functionalities of the application: the <span class="guilabel">Galaxies</span> tile will take you to a view where you can manage your galaxies (see <a class="reference internal" href="#galaxies"><span class="std std-ref">Galaxies</span></a> for details). The <span class="guilabel">Configurations</span> tile will take you to a view where you can manage your configurations (see <a class="reference internal" href="#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). The <span class="guilabel">Agents Health</span> leads to a view where you can observe all the available agents (see <a class="reference internal" href="#agents-health"><span class="std std-ref">Monitoring Agents Health</span></a> for details). The <span class="guilabel">Alerts</span> tile leads to a view where you can manage your alert rules (see <a class="reference internal" href="#alerts-manage"><span class="std std-ref">Managing Alerts</span></a> for details), the <span class="guilabel">Analytics</span> tile leads to a view where you can manage and analyze your selected metrics (see <a class="reference internal" href="#analytics"><span class="std std-ref">Analytics</span></a> for details). The <span class="guilabel">Data Explorer</span> tile leads to a view, where you can query the databases for <a class="reference internal" href="#explore-inst"><span class="std std-ref">instrumentation</span></a> and <a class="reference internal" href="#explore-env"><span class="std std-ref">environment</span></a> data.</p>
+</div>
+<div class="section" id="settings">
+<h2>1.4. Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">workstation</span> stores its settings locally, on the machine it runs on. It makes use of <a class="reference external" href="http://docs.oracle.com/javase/7/docs/technotes/guides/preferences/">Java Preferences API</a> to store its configuration. The physical location of the settings depends on a platform the workstation runs.</p>
+<p>When you exit the application, it stores its current settings. These settings include the main application window size, some tables columns width, galaxy colors and the like.</p>
+<div class="section" id="general">
+<h3>1.4.1. General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<p>By default, all the <span class="flp">workstation</span> logs are stored in a user home directory. This can be changed in the preferences window <a class="reference internal" href="#gui-pref-logger"><span class="std std-numref">Fig. 1.6</span></a>, where you can set both the logger level and the logs location. The logging levels are defined in <a class="reference internal" href="admin.html#logging"><span class="std std-ref">Logging</span></a>.</p>
+<div class="figure align-center" id="id9">
+<span id="gui-pref-logger"></span><img alt="_images/pref1.png" src="_images/pref1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.6 </span><span class="caption-text">Preferences: General</span></p>
+</div>
+<p>You can also check if there is a new Flopsar version available. In order to check it, just click the
+<span class="guilabel">CHECK NOW</span> button. If you enable the <span class="guilabel">Check automatically</span>, then whenever you
+start the workstation, it will check for updates automatically.</p>
+</div>
+<div class="section" id="connections">
+<h3>1.4.2. Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h3>
+<p>Besides the layout settings, your <span class="flp">manager</span> connections information is also stored in these settings.
+You can either edit or delete these connections in the preferences window <a class="reference internal" href="#gui-pref-conns"><span class="std std-numref">Fig. 1.7</span></a>.</p>
+<div class="figure align-center" id="id10">
+<span id="gui-pref-conns"></span><img alt="_images/pref2.png" src="_images/pref2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Preferences: Connections</span></p>
+</div>
+</div>
+<div class="section" id="permissions">
+<h3>1.4.3. Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
+<p>In this view, you can check which permissions you are granted. These settings are read-only and can be changed only in <span class="flp">manager</span>.</p>
+<div class="figure align-center" id="id11">
+<img alt="_images/perms.png" src="_images/perms.png" />
+<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Preferences: Permissions</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="managing-agent-configurations">
+<span id="manage-agent-conf"></span><h2>1.5. Managing Agent Configurations<a class="headerlink" href="#managing-agent-configurations" title="Permalink to this headline">¶</a></h2>
+<p>Agents configurations are managed from <span class="flp">workstation</span>. You must click the configuration tile in <a class="reference internal" href="#gui-start"><span class="std std-numref">Fig. 1.3</span></a> view to get the list of all the configurations.</p>
+<div class="figure align-center" id="id12">
+<span id="gui-conf"></span><img alt="_images/configurations.png" src="_images/configurations.png" />
+<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Agents’ Configurations</span></p>
+</div>
+<p>In order to add a new configuration, click the <span class="guilabel">+</span> button. A popup window will appear where you must specify a label for the configuration. When you click the <span class="guilabel">Save</span> button, a new tile will appear in the configurations set. Click the tile to edit the configuration.</p>
+<div class="figure align-center" id="id13">
+<span id="gui-conf-edit"></span><img alt="_images/cedit.png" src="_images/cedit.png" />
+<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Configuration Editor</span></p>
+</div>
+<p>The edit view <a class="reference internal" href="#gui-conf-edit"><span class="std std-numref">Fig. 1.10</span></a> is divided into two parts. The left side is where you define instrumentation rules and the right one is where you define JMX beans to collect data from.</p>
+<div class="section" id="instrumentation-rules">
+<h3>1.5.1. Instrumentation Rules<a class="headerlink" href="#instrumentation-rules" title="Permalink to this headline">¶</a></h3>
+<p>There are two <span class="guilabel">+</span> buttons in the list of instrumentation rules <a class="reference internal" href="#gui-conf-edit"><span class="std std-numref">Fig. 1.10</span></a>. In the <span class="guilabel">Threshold</span> field you can specify a threshold value for methods duration. In other words, you specify the lowest value of instrumented methods execution time above which these method calls will be reported. In the <span class="guilabel">CPU Time enabled</span> field you can select whether you want agents to report CPU time or not.</p>
+<p>You have two types of rules at your disposal <span class="red">exclusions</span> and <span class="green">inclusions</span> and two levels of rules: <em>class</em> and <em>method</em> ones. Basically, you should specify at least one inclusion rule for classes and one for methods to have a valid configuration.</p>
+<div class="figure align-center" id="id14">
+<span id="gui-include"></span><img alt="_images/rinclude1.png" src="_images/rinclude1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Include Edit Form</span></p>
+</div>
+<div class="figure align-center" id="id15">
+<span id="gui-exclude"></span><img alt="_images/rexclude1.png" src="_images/rexclude1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.12 </span><span class="caption-text">Exclude Edit Form</span></p>
+</div>
+<div class="topic">
+<p class="topic-title first">Excluding Classes</p>
+<p>If you want to exclude some classes from the configuration, click the <span class="guilabel">Class</span> tab in <a class="reference internal" href="#gui-exclude"><span class="std std-numref">Fig. 1.12</span></a>. Then, specify the pattern for fully qualified class names. If you specify the asterisk at the end, the rule will match every class, whose fully qualified name starts with the specified pattern. Otherwise, the exact match will be checked.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Including Classes</p>
+<p>In order to determine which classes you want to instrument, you should select the <span class="guilabel">Class</span> tab in <a class="reference internal" href="#gui-include"><span class="std std-numref">Fig. 1.11</span></a>. If you want to match classes by their names, you should select the <span class="guilabel">Class name</span> radio button. If you want to instrument classes, which extend some super class, you should select the <span class="guilabel">Super class</span>. In this case you need to specify the fully qualified super class name. If you select the <span class="guilabel">Entire Hierarchy</span> checkbox additionally, every class which extends the specified super class will be instrumented regardless of its place in the inheritance hierarchy. Otherwise, only those classes will be instrumented, which extends the super class directly. If you want to instrument classes which implement some interface, you should select the <span class="guilabel">Interface</span>. You must then specify a fully qualified name of the interface. Finally, if you want to instrument classes, which are annotated by some annotation, you should select the <span class="guilabel">Annotation</span>. You must then specify a fully qualified name of the annotation.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Excluding Methods</p>
+<p>When you are done with classes rules, you need to specify some method rules. If you want to exclude some methods from the configuration, you should select the <span class="guilabel">Method</span> tab in the <a class="reference internal" href="#gui-exclude"><span class="std std-numref">Fig. 1.12</span></a>. If you do not want to instrument getter/setter methods, you should select the <span class="guilabel">Exclude setters and getters</span> radio button.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By setters/getters we mean accessor methods of a private instance field.</p>
+</div>
+<p>If you want to exclude some methods basing on their names, you should select the <span class="guilabel">Exclude by name pattern</span> radio button. Here, you must specify a regular expression pattern for names. Finally, you can also exclude specific methods by selecting them from a list retrieved from running agents by selecting the <span class="guilabel">Hot Methods</span> tab (see <a class="reference internal" href="#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
+<div class="figure align-center" id="id16">
+<span id="gui-exclude-m"></span><img alt="_images/rexclude2.png" src="_images/rexclude2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.13 </span><span class="caption-text">Exclude Methods Edit Form</span></p>
+</div>
+<div class="topic">
+<p class="topic-title first">Including Methods</p>
+<p>Your final step is to define which methods instrument and how to do it. This can be achieved by selecting the <span class="guilabel">Method</span> tab.</p>
+<p>You can select methods for instrumentation by their access modifiers. Just select the modifier so that those methods are instrumented, whose modifiers match one of the selected.</p>
+</div>
+<div class="figure align-center" id="id17">
+<span id="gui-include2"></span><img alt="_images/rinclude2.png" src="_images/rinclude2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.14 </span><span class="caption-text">Include Methods Edit Form</span></p>
+</div>
+<p>You can also select method by exceptions they throw. Just select the <span class="guilabel">Exception</span> radio button and specify the exception class.</p>
+<div class="figure align-center" id="id18">
+<span id="gui-include3"></span><img alt="_images/rinclude3.png" src="_images/rinclude3.png" />
+<p class="caption"><span class="caption-number">Fig. 1.15 </span><span class="caption-text">Include Method by Exception</span></p>
+</div>
+<p>If you want to instrument methods with formatters, you should select the <span class="guilabel">Formatter</span> tab <a class="reference internal" href="#gui-conf-frule"><span class="std std-numref">Fig. 1.16</span></a>:</p>
+<div class="figure align-center" id="id19">
+<span id="gui-conf-frule"></span><img alt="_images/fr.png" src="_images/fr.png" />
+<p class="caption"><span class="caption-number">Fig. 1.16 </span><span class="caption-text">Formatter Rule</span></p>
+</div>
+<p>There are some input fields that need to be filled.
+In the <span class="guilabel">Class</span> field you can specify the exact class, your instrumented method should belong to. If you do not want to determine the class, than you should select the <span class="guilabel">Any</span> checkbox.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please note that any method, which matches the specified pattern, in any class will be instrumented with the formatter if you select <span class="guilabel">Any</span> checkbox.</p>
+</div>
+<p>In the second field (text area), you must specify the exact method signature you want to instrument. You should ignore argument names and specify fully qualified class names of all objects. In the <span class="guilabel">Options</span> row you have three, additional options to select. If you want to ignore the configuration <span class="guilabel">Threshold</span>, select the <span class="guilabel">Ignore threshold</span> checkbox. If you want to instrument the method on exit, select the <span class="guilabel">Instrument on exit</span> checkbox. If you do not want the agent to report exceptions stack traces from this method, select the <span class="guilabel">Discard exception</span> checkbox.</p>
+<p>The <span class="guilabel">Parameters</span> table contains all your method arguments. You must populate this table by clicking the <span class="guilabel">Import Parameters</span>. This will import all the arguments from the method signature you specified above. Next, you should select which arguments you want the agent to pass to your formatter. You should also select which type of formatter you want to use: <em>standard</em> or <em>custom</em>. If you select the <em>standard</em> one, then you are done and you can click the <span class="guilabel">Save</span> button. If you select the <em>custom</em> formatter, you must then specify the formatter signature. There are two ways of specifying the formatter signature. The first one is to specify it manually by entering the signature in a form of <span class="code">class.method_name</span>. The second one is used when you already have some implemented formatters. You just need to click the <span class="guilabel">Import</span> button and select a jar file with your formatters. The application will scan the jar and populate the formatters combo box with all the found and valid formatters. Select one of the formatters, click the <span class="guilabel">Save</span> button and you have your formatter rule created.</p>
+<p>When you finished defining your configuration, you should get a similar view <a class="reference internal" href="#gui-configuration"><span class="std std-numref">Fig. 1.17</span></a>:</p>
+<div class="figure align-center" id="id20">
+<span id="gui-configuration"></span><img alt="_images/aconf.png" src="_images/aconf.png" />
+<p class="caption"><span class="caption-number">Fig. 1.17 </span><span class="caption-text">Agent Configuration</span></p>
+</div>
+<p>There is either red or green bar at the beginning of each instrumentation rules entry. Exclusion rules are red and inclusion rules are green.</p>
+</div>
+<div class="section" id="hot-methods">
+<span id="gui-hot-methods"></span><h3>1.5.2. Hot Methods<a class="headerlink" href="#hot-methods" title="Permalink to this headline">¶</a></h3>
+<p>This feature enables you to record instrumented methods executions. The Hot methods feature is very useful, when you tune your configuration for minimal performance impact. In this way, you can easily detect the most frequently executed methods and exclude them from instrumentation, unless you really need to instrument them. You can also exclude classes using this feature.</p>
+<p>You can use this feature only when you have some agents attached to your configuration. In other words, agents are able to report their hot methods if and only if they instrumented these methods earlier. That means, you cannot use this feature when you create a new configuration and the configuration has not been deployed yet. You must first deploy the configuration, attach some agents to it and then edit the configuration again. Only then, this feature will be available to you.</p>
+<p>In order to make use of Hot Methods, you should click the <span class="guilabel">Hot Methods</span> tab in the <a class="reference internal" href="#gui-exclude"><span class="std std-numref">Fig. 1.12</span></a>. If you cannot see any entries in the table, click the <span class="guilabel">Collect</span> button in the bottom-left corner. This will trigger an operation of retrieving hot methods from all the attached agents.</p>
+<div class="figure align-center" id="id21">
+<span id="gui-conf-hm"></span><img alt="_images/hm2.png" src="_images/hm2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.18 </span><span class="caption-text">Hot Methods</span></p>
+</div>
+<p>All the retrieved methods will populate the table <a class="reference internal" href="#gui-conf-hm"><span class="std std-numref">Fig. 1.18</span></a>. The results are always grouped by <span class="guilabel">classes</span>, <span class="guilabel">methods</span>, <span class="guilabel">classes &amp; methods</span> or <span class="guilabel">agents</span>. You can exclude classes or methods only from views grouped by either emph{classes} or emph{methods} respectively. Views grouped by emph{classes &amp; methods} and emph{agents} are only for information purposes. In order to exclude some entries, use a context menu over the table.</p>
+<p>You can reset the results anytime and start to collect new results by clicking the <span class="guilabel">Reset</span> button. This will clear all the previous results and re-enable the Hot Methods feature on all the attached agents.</p>
+</div>
+<div class="section" id="jmx">
+<h3>1.5.3. JMX<a class="headerlink" href="#jmx" title="Permalink to this headline">¶</a></h3>
+<p>Configuring JMX for agents relies on specifying <span class="code">ObjectName</span> patterns and the data collecting frequency. In the <span class="guilabel">Period</span> field you can specify how frequently agents must report data. In order to add some patterns, you must click the <span class="guilabel">Manage MBeans</span> menu.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to add new <span class="code">ObjectName</span> patterns, you must have some configuration deployed and some agents attached.</p>
+</div>
+<p>Adding new patterns requires you to deploy some configuration and attach some agents in the first place. MBeans can be imported only from running agents, so there must be some agents attached to the configuration. Assuming your setup fullfills the aforementioned conditions, click the <span class="guilabel">Import MBeans…</span> menu item. You should get a popup window with a list of available ObjectNames <a class="reference internal" href="#gui-conf-jmx1"><span class="std std-numref">Fig. 1.19</span></a>.</p>
+<div class="figure align-center" id="id22">
+<span id="gui-conf-jmx1"></span><img alt="_images/jmx1.png" src="_images/jmx1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.19 </span><span class="caption-text">Importing JMX ObjectNames</span></p>
+</div>
+<p>If the list is empty, click the <span class="guilabel">Collect</span> button in the bottom-left corner. This operation will collect all the available ObjectNames from all the attached agents. In order to add some selected record, either double-click the record or use the list context menu. When you are done with importing ObjectNames, click the <span class="guilabel">Close</span> button. Now, you should have the selected records added to the MBeans list in the <a class="reference internal" href="#gui-conf-edit"><span class="std std-numref">Fig. 1.10</span></a> view.</p>
+<p>Usually, most of ObjectNames is specific to the servers they come from. Their names contain a server specific data such as IP addresses, ports etc. That means there are ObjectNames that are available only on particular servers. In order to make them available on most of the servers and simplify the configuration we need to modify their ObjectNames. This can be achieved by clicking the <span class="guilabel">Transform to Pattern…</span> menu item in the list context menu. As a result you should get a similar popup window to this one <a class="reference internal" href="#gui-conf-jmx2"><span class="std std-numref">Fig. 1.20</span></a>.</p>
+<div class="figure align-center" id="id23">
+<span id="gui-conf-jmx2"></span><img alt="_images/jmx2.png" src="_images/jmx2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.20 </span><span class="caption-text">Transforming ObjectName</span></p>
+</div>
+<p>This is a view of a decomposed ObjectName into keys and values. The <span class="guilabel">Value</span> column is editable so that you can replace values with custom ones and transform some specific ObjectName into a pattern. In order to edit the values just double-click the record and modify it. The <span class="guilabel">Remove similar</span> checkbox is used if you want to get rid of other, similar ObjectNames, whose name matches your pattern.</p>
+<div class="figure" id="id24">
+<span id="gui-conf-jmxp"></span><a class="reference internal image-reference" href="_images/jmxp1.png"><img alt="_images/jmxp1.png" src="_images/jmxp1.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.21 </span><span class="caption-text">Before Transformation</span></p>
+</div>
+<div class="figure" id="id25">
+<a class="reference internal image-reference" href="_images/jmxp2.png"><img alt="_images/jmxp2.png" src="_images/jmxp2.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.22 </span><span class="caption-text">After Transformation</span></p>
+</div>
+<p>In order to illustrate the transformation procedure see <a class="reference internal" href="#gui-conf-jmxp"><span class="std std-numref">Fig. 1.21</span></a>. There are multiple ObjectNames, which are very similar and the only key they differ is the <span class="opt">name</span>. By transforming the <span class="opt">name</span> value to <span class="opt">*</span> of just one of these similar records, we can easily simplify the entire set of similar records into a single ObjectName. That is exactly how the transformation procedure works.</p>
+</div>
+<div class="section" id="deploying-configurations">
+<h3>1.5.4. Deploying Configurations<a class="headerlink" href="#deploying-configurations" title="Permalink to this headline">¶</a></h3>
+<p>When your configuration is ready to be deployed, you should first save it by clicking the <span class="guilabel">Save</span> button in <a class="reference internal" href="#gui-conf-edit"><span class="std std-numref">Fig. 1.10</span></a>. This operation will only persist the configuration in the <span class="flp">manager</span>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you do not save your configuration before you exit <span class="flp">workstation</span>, all the changes you made will be lost.</p>
+</div>
+<p>In order to activate the configuration, you must click the <span class="guilabel">Deploy</span> button. This operation will make the configuration active. When the configuration is active, you can attach agents to it by clicking <span class="guilabel">+</span> button in <a class="reference internal" href="#gui-configuration"><span class="std std-numref">Fig. 1.17</span></a>.</p>
+<p>During deployment operation all the attached agents are notified about it and the configuration is uploaded to them. The agents will check whether there are any changes between their current configuration and the new one. If the agents detect instrumentation rules changes, they will reload their configuration. The reloading operation duration can vary and it strongly depends on the configuration and application itself. It can take from a few seconds to a minute.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Configuration reloading is a heavy operation and will degrade your application performance temporarily. It can even halt the entire application for the time of reloading operation. Do not reload a configuration when your application is under heavy load.</p>
+</div>
+</div>
+</div>
+<div class="section" id="galaxies">
+<span id="id1"></span><h2>1.6. Galaxies<a class="headerlink" href="#galaxies" title="Permalink to this headline">¶</a></h2>
+<p><em>Galaxies</em> are special views of collected data. Basically, this is an alternative view of stacks executions, where stacks are represented as dots. We distinguish two kinds of the views, i.e. historical and online ones.</p>
+<div class="section" id="online-galaxy">
+<h3>1.6.1. Online Galaxy<a class="headerlink" href="#online-galaxy" title="Permalink to this headline">¶</a></h3>
+<p>The online galaxy is used to monitor recent 15 minutes of selected <span class="flp">agent</span> instances. They can be managed from the galaxy explorer <a class="reference internal" href="#gui-galaxy"><span class="std std-numref">Fig. 1.23</span></a>.</p>
+<div class="figure align-center" id="id26">
+<span id="gui-galaxy"></span><img alt="_images/screen11.png" src="_images/screen11.png" />
+<p class="caption"><span class="caption-number">Fig. 1.23 </span><span class="caption-text">Galaxies Explorer</span></p>
+</div>
+<p>A new galaxy can be added by double-clicking the <span class="guilabel">+</span> button. You can see the galaxy details by double-clicking the corresponding galaxy entry in the list on the left.</p>
+<p>This view contains a table with three columns. There is an agent name along with a small, colored square in the first column. The color of the square is used to distinguish among various agents on the galaxy view. If you want to change the color, just click the square. The second column is editable and allows you to decide whether you want the agent to be displayed on the galaxy view. The third column shows the current uptime of the agent. If you want to open the galaxy view <a class="reference internal" href="#gui-galaxy-view"><span class="std std-numref">Fig. 1.24</span></a>, just click the <span class="guilabel">Show</span> button.</p>
+<div class="figure align-center" id="id27">
+<span id="gui-galaxy-view"></span><img alt="_images/screen26.png" src="_images/screen26.png" />
+<p class="caption"><span class="caption-number">Fig. 1.24 </span><span class="caption-text">Galaxy View</span></p>
+</div>
+<p>This is a live view of your attached agents. Each dot represents a single method execution. The method duration is displayed on the vertical axis. The horizontal axis shows a time axis and the whole view moves from right to the left as time goes by. If you want to change the graph scale, you can use your mouse scroll. In order to customize the graph, use its context menu <a class="reference internal" href="#gui-galaxy-ctx"><span class="std std-numref">Fig. 1.25</span></a>.</p>
+<div class="figure align-center" id="id28">
+<span id="gui-galaxy-ctx"></span><img alt="_images/screen28.png" src="_images/screen28.png" />
+<p class="caption"><span class="caption-number">Fig. 1.25 </span><span class="caption-text">Galaxy Context Menu</span></p>
+</div>
+<p>The context menu has several options, which enable you to customize your galaxy. It also provides auxiliary information about your data reported by the agents. If you want to see the total load of the attached agents, select the <span class="guilabel">Load</span> checkbox item. It will display a stacked area graph of the load for all the attached agents <a class="reference internal" href="#gui-galaxy-load"><span class="std std-numref">Fig. 1.26</span></a>. The bottom area denotes those calls which threw exceptions. When the load is displayed, the number of total calls is displayed in the veritcal axis on the ride side of the graph.</p>
+<div class="figure align-center" id="id29">
+<span id="gui-galaxy-load"></span><img alt="_images/screen27.png" src="_images/screen27.png" />
+<p class="caption"><span class="caption-number">Fig. 1.26 </span><span class="caption-text">Galaxy View: Load</span></p>
+</div>
+<p>This load view is an aggregated one so if you want to see how the load looks for each agent, click the <span class="guilabel">Load details…</span> menu item. You should see a view <a class="reference internal" href="#gui-galaxy-loadpa"><span class="std std-numref">Fig. 1.27</span></a> with the table and the graph on it. The <span class="guilabel">Errors</span> column shows the total number of calls that threw exceptions. The <span class="guilabel">Calls</span> column shows the total number of calls.</p>
+<div class="figure align-center" id="id30">
+<span id="gui-galaxy-loadpa"></span><img alt="_images/screen30.png" src="_images/screen30.png" />
+<p class="caption"><span class="caption-number">Fig. 1.27 </span><span class="caption-text">Galaxy View: Load per Agent</span></p>
+</div>
+<p>If you want to customize some galaxy colors and scale, click the <span class="guilabel">Settings…</span> menu item. In the settings window <a class="reference internal" href="#gui-galaxy-settings"><span class="std std-numref">Fig. 1.28</span></a> you can change background, selection, load backgrounds colors. You can also change the duration range on the vertical axis.</p>
+<div class="figure align-center" id="id31">
+<span id="gui-galaxy-settings"></span><img alt="_images/screen29.png" src="_images/screen29.png" />
+<p class="caption"><span class="caption-number">Fig. 1.28 </span><span class="caption-text">Galaxy View Settings</span></p>
+</div>
+<p>Your can switch between two types of galaxies: <em>flat</em> and <em>radar</em> ones. If you want to switch to the radar <a class="reference internal" href="#gui-galaxy-radar"><span class="std std-numref">Fig. 1.29</span></a>, select the <span class="guilabel">View Mode –&gt; Radar</span> menu item.</p>
+<div class="figure align-center" id="id32">
+<span id="gui-galaxy-radar"></span><img alt="_images/screen31.png" src="_images/screen31.png" />
+<p class="caption"><span class="caption-number">Fig. 1.29 </span><span class="caption-text">Galaxy View: Radar</span></p>
+</div>
+<p>If you want to display only those method calls, which throw exception then select the <span class="guilabel">Errors only</span> checkbox item.</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bwEKkCF-8qE?rel=0" frameborder="0" allowfullscreen></iframe>
+<p class="caption">
+<span class="caption-text">Galaxy Radar</span>
+</p>
+</center></div>
+<div class="section" id="historical-galaxy">
+<h3>1.6.2. Historical Galaxy<a class="headerlink" href="#historical-galaxy" title="Permalink to this headline">¶</a></h3>
+<p>Unlike the online galaxy a historical one is used to analyze historical data, which satisfy some conditions specified in the search form. In order to display the results in a galaxy form, you must select the <span class="guilabel">Galaxy</span> mode in the search form <a class="reference internal" href="#gui-explorer"><span class="std std-numref">Fig. 1.30</span></a>.</p>
+<div class="figure align-center" id="id33">
+<span id="gui-explorer"></span><img alt="_images/screen8.png" src="_images/screen8.png" />
+<p class="caption"><span class="caption-number">Fig. 1.30 </span><span class="caption-text">Data Explorer Search Form</span></p>
+</div>
+<p>When you click the <span class="guilabel">Search</span> button, you should get a similar result to <a class="reference internal" href="#gui-galaxy-result"><span class="std std-numref">Fig. 1.31</span></a>. The view is divided into two regions. The left view presents your query results in a form of galaxy. The right view contains a table of those agents, whose data are displayed on the galaxy. In the first column, there is an agent name and its color. You can change this color by clicking the small square and selecting a new color. In the second column, you can either show or hide the data corresponding to the selected agent. The third column contains a total share of calls of the corresponding agent on the galaxy. The last column contains a total share of exceptions throws by calls of the corresponding agent. You can either show or hide this table by clicking on the toggle button <span class="guilabel">Agents</span> in the right-top corner of the view.</p>
+<div class="figure align-center" id="id34">
+<span id="gui-galaxy-result"></span><img alt="_images/screen33.png" src="_images/screen33.png" />
+<p class="caption"><span class="caption-number">Fig. 1.31 </span><span class="caption-text">Galaxy Result</span></p>
+</div>
+<p>The galaxy context menu <a class="reference internal" href="#gui-galaxy-result-ctx"><span class="std std-numref">Fig. 1.32</span></a> allows you to extend the analysis. If you select the <span class="guilabel">Load</span> menu item, you will get the load view in a form of a stacked area graph. The area colors correspond to the agents data. When the load is displayed, the calls count values are displayed on the right vertical axis.</p>
+<div class="figure align-center" id="id35">
+<span id="gui-galaxy-result-ctx"></span><img alt="_images/screen35.png" src="_images/screen35.png" />
+<p class="caption"><span class="caption-number">Fig. 1.32 </span><span class="caption-text">Galaxy Result Context Menu</span></p>
+</div>
+<p>Using the <span class="guilabel">Scale</span> submenu you can change the graph scale which can be either linear or logarithmic. If you click the <span class="guilabel">Settings</span> menu item you can change the galaxy background and foreground colors.</p>
+<p>If you want to find out what method calls are displayed, just click and drag your mouse to create a rectangle which covers the area you are interested in. If you release the mouse button, you will be taken to the tabular mode where the calls will be presented to you.</p>
+<p>Besides, the galaxy flat view, your query results can be presented in a form of galaxy clock view <a class="reference internal" href="#gui-galaxy-clock"><span class="std std-numref">Fig. 1.33</span></a>. The view projects data onto a clock face. You can see only data from twelve hours range at a time. Use the <span class="guilabel">AM</span>, <span class="guilabel">PM</span> radio buttons and the date picker to change time.</p>
+<div class="figure align-center" id="id36">
+<span id="gui-galaxy-clock"></span><img alt="_images/screen36.png" src="_images/screen36.png" />
+<p class="caption"><span class="caption-number">Fig. 1.33 </span><span class="caption-text">Galaxy Clock View</span></p>
+</div>
+<p>Additionally, there are two extra views available. They can be displayed by clicking the <span class="guilabel">Manage –&gt; Switch View</span> submenu and selecting one of the available items. If the <span class="guilabel">Duration Distribution</span> item is selected, <a class="reference internal" href="#gui-galaxy-dist-dur"><span class="std std-numref">Fig. 1.35</span></a> view will be displayed. If the <span class="guilabel">Calls Distribution</span> is selected, <a class="reference internal" href="#gui-galaxy-dist-calls"><span class="std std-numref">Fig. 1.34</span></a> view will be displayed.</p>
+<div class="topic">
+<p class="topic-title first">Calls Distribution</p>
+<p>This stacked-bar chart <a class="reference internal" href="#gui-galaxy-dist-calls"><span class="std std-numref">Fig. 1.34</span></a> presents methods calls distribution with respect to duration. Each color represents a single agent. The y-axis presents the number of calls. You can adjust both bar width (in milliseconds) and duration range (in milliseconds).</p>
+<div class="figure align-center" id="id37">
+<span id="gui-galaxy-dist-calls"></span><img alt="_images/screen40.png" src="_images/screen40.png" />
+<p class="caption"><span class="caption-number">Fig. 1.34 </span><span class="caption-text">Galaxy Calls Distribution</span></p>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">Duration Distribution</p>
+<p>This stacked-bar chart <a class="reference internal" href="#gui-galaxy-dist-dur"><span class="std std-numref">Fig. 1.35</span></a> presents methods duration distribution with respect to time. Each color represents a single agent. The y-axis presents the number of calls. You can adjust both bar width (in milliseconds) and duration range (in milliseconds).</p>
+<div class="figure align-center" id="id38">
+<span id="gui-galaxy-dist-dur"></span><img alt="_images/screen39.png" src="_images/screen39.png" />
+<p class="caption"><span class="caption-number">Fig. 1.35 </span><span class="caption-text">Galaxy Duration Distribution</span></p>
+</div>
+</div>
+<p>When you double-click on a bar in either <a class="reference internal" href="#gui-galaxy-dist-calls"><span class="std std-numref">Fig. 1.34</span></a> or <a class="reference internal" href="#gui-galaxy-dist-dur"><span class="std std-numref">Fig. 1.35</span></a>, you will get a view <a class="reference internal" href="#gui-galaxy-bar-content"><span class="std std-numref">Fig. 1.36</span></a>, with list of methods from this bar.</p>
+<div class="figure align-center" id="id39">
+<span id="gui-galaxy-bar-content"></span><img alt="_images/screen32.png" src="_images/screen32.png" />
+<p class="caption"><span class="caption-number">Fig. 1.36 </span><span class="caption-text">Galaxy Duration Distribution: Bar Content</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="exploring-instrumentation-data">
+<span id="explore-inst"></span><h2>1.7. Exploring Instrumentation Data<a class="headerlink" href="#exploring-instrumentation-data" title="Permalink to this headline">¶</a></h2>
+<p>If you click <span class="guilabel">Data Explorer</span> tile in <a class="reference internal" href="#gui-start"><span class="std std-numref">Fig. 1.3</span></a> you should obtain the view <a class="reference internal" href="#gui-inst-form"><span class="std std-numref">Fig. 1.37</span></a>. This view has a search form in the center. The search form is used to explore both instrumentation and environment data. For instrumentation data toggle <span class="guilabel">Instrumentation</span> button and for environment data toggle the other one.</p>
+<p>In order to explore instrumentation data, you need to fill the search form (<a class="reference internal" href="#gui-explorer"><span class="std std-numref">Fig. 1.30</span></a>). First, in the <span class="guilabel">RESULT</span> row you must select which type of result you want to get. If you want to explore tabular data, then you must select <span class="guilabel">Table</span>. If you want to get the result in a form of galaxy view, you must select <span class="guilabel">Galaxy</span>. The second row <span class="guilabel">TIME</span> enables you to specify a time range. You can choose either sliders to set the time range quickly or date time pickers to specify a custom range. The <span class="guilabel">AGENTS</span> entry, requires you to specify a regular expression for an agent name (5 recent entries are always stored in the entry).</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">When you click the <span class="guilabel">AGENTS</span> label, a popup window will appear. This window contains a list of all available agents. If you click one of the agents from this list, its name will be copied to the <span class="guilabel">AGENTS</span> entry field.</p>
+</div>
+<p>If you are done, you can simply click the <span class="guilabel">Search</span> button.</p>
+<div class="figure align-center" id="id40">
+<span id="gui-inst-form"></span><img alt="_images/screen15.png" src="_images/screen15.png" />
+<p class="caption"><span class="caption-number">Fig. 1.37 </span><span class="caption-text">Instrumentation Expanded Form</span></p>
+</div>
+<p>If you want to narrow your search results, you can use <span class="guilabel">Advanced Options</span> menu to specify additional conditions (<a class="reference internal" href="#gui-inst-form"><span class="std std-numref">Fig. 1.37</span></a>). The <span class="guilabel">DURATION</span> row enables you to specify a duration range. In the <span class="guilabel">CLASS NAME</span> entry you can specify a regular expression pattern for a class name. In the <span class="guilabel">METHOD NAME</span> entry you can specify a regular expression pattern for a method name, and finally in the <span class="guilabel">PARAMETER</span> entry you can set a regular expression for a parameter. Each additional condition will narrow your search results. This means that only those results will be returned which satisfy all the specified conditions.</p>
+<p>When you click the <span class="guilabel">Search</span> button, you should see the similar view to <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a>, provided that you selected the <span class="guilabel">Table</span> result type.</p>
+<div class="figure align-center" id="id41">
+<span id="gui-table-view"></span><img alt="_images/screen18.png" src="_images/screen18.png" />
+<p class="caption"><span class="caption-number">Fig. 1.38 </span><span class="caption-text">Table results: Records View</span></p>
+</div>
+<p>Each time when you search instrumentation data you receive only a part of the response data. If you get more, you must click the <span class="guilabel">Load More Data</span> button. You can repeat this procedure to receive more data until the button changes its label to <em>No More Data</em>.</p>
+<div class="section" id="execution-stack-interpretation">
+<h3>1.7.1. Execution Stack Interpretation<a class="headerlink" href="#execution-stack-interpretation" title="Permalink to this headline">¶</a></h3>
+<p>When you double-click on some selected record in table <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a>, you will get a window <a class="reference internal" href="#gui-stack"><span class="std std-numref">Fig. 1.39</span></a> with this record details. The window presents a tree representing an execution stack of the selected method call. This tree view is self-explanatory but there can be situations where this view can be a bit confusing. This can happen when the displayed execution stack does not exactly correspond to the execution flow you see in your application source code. In order to understand why this situation takes place you must understand how the execution stack tree is built.</p>
+<div class="figure align-center" id="id42">
+<span id="gui-stack"></span><img alt="_images/screen24.png" src="_images/screen24.png" />
+<p class="caption"><span class="caption-number">Fig. 1.39 </span><span class="caption-text">Execution Stack</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><span class="guilabel">CPU Time</span> column values are calculated as CPU percentage usage with respect to the corresponding duration value.</p>
+</div>
+<p>If you want to know the exact location of a method call within the execution stack, you can select the <span class="guilabel">Elements Position</span> in the tree options on the stack details. Next time, you expand a branch on the execution stack you should see the positions of methods <a class="reference internal" href="#gui-stack-debug"><span class="std std-numref">Fig. 1.40</span></a>. The position is determined by two numbers, the first one denotes the sequence number within the stack and the second one denotes the stack depth.</p>
+<div class="figure align-center" id="id43">
+<span id="gui-stack-debug"></span><img alt="_images/stack_debug.png" src="_images/stack_debug.png" />
+<p class="caption"><span class="caption-number">Fig. 1.40 </span><span class="caption-text">Execution Stack: Methods Calls Position</span></p>
+</div>
+<p>When you click the <span class="guilabel">View –&gt; Table</span> menu item, you will get a spectrum view <a class="reference internal" href="#gui-stack-spectrum"><span class="std std-numref">Fig. 1.41</span></a>. This view presents a <em>spectrum</em> of the execution stack, in other words it shows a collection of all the components which constitute the stack along with their calls and errors statistics.</p>
+<div class="figure align-center" id="id44">
+<span id="gui-stack-spectrum"></span><img alt="_images/rctable.png" src="_images/rctable.png" />
+<p class="caption"><span class="caption-number">Fig. 1.41 </span><span class="caption-text">Execution Stack: Spectrum</span></p>
+</div>
+<p>In <a class="reference internal" href="#gui-assembly"><span class="std std-numref">Fig. 1.42</span></a> picture you can see four, sample execution stacks of some <span class="code">A</span> method call. The first <em>a</em> view shows how the real execution stack looks. This is a real execution flow that takes place in your application. The second <em>b</em> view, presents the same stack instrumented by your agent. Depending on your configuration, the instrumentation may not cover the entire stack. The empty, gray boxes represent missed, uninstrumented methods. As you can see, at this very point your instrumented execution flow is not complete. Moreover, in your application runtime there can be situations when some of the instrumented method calls will not be reported (refer to <a class="reference internal" href="admin.html#data-collecting"><span class="std std-ref">Data Collecting Considerations</span></a> for details). The empty, red boxes in the third <em>c</em> view represent this situation. Finally, what you actually observe in <span class="flp">workstation</span> is the last <em>d</em> view. This view presents an assembled stack with missing calls ignored. Now you know how to interpret the execution stack in <span class="flp">workstation</span> and why the resulting stack can differ from the original one.</p>
+<div class="figure align-center" id="id45">
+<span id="gui-assembly"></span><img alt="_images/assembly.png" src="_images/assembly.png" />
+<p class="caption"><span class="caption-number">Fig. 1.42 </span><span class="caption-text">Execution Stack Assembly</span></p>
+</div>
+</div>
+<div class="section" id="flame-graph">
+<span id="id2"></span><h3>1.7.2. Flame Graph<a class="headerlink" href="#flame-graph" title="Permalink to this headline">¶</a></h3>
+<p>When you click the <span class="guilabel">View –&gt; Flame Graph</span> menu item on <a class="reference internal" href="#gui-stack"><span class="std std-numref">Fig. 1.39</span></a>, you will get a Flame Graph view <a class="reference internal" href="#gui-stack-fgraph1"><span class="std std-numref">Fig. 1.43</span></a>. This view presents an aggregated form of the execution stack. It is composed of frames (rectangles), which represent aggregated methods executions. The y-axis presents the stack depth. Although the x-axis itself has no meaning, the width of frames has one. There are three criteria, that change the way you define the frames width. These criteria can be selected exclusively on the top pane by clicking one of the radio buttons: <span class="guilabel">CALLS</span>, <span class="guilabel">CPU</span> and <span class="guilabel">OFF-CPU</span>. When the <span class="guilabel">CALLS</span> is selected, the frames width denotes how often a particular method was executed within the stack.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please, note there can be multiple frames representing the same method. This situation happens when a method is called in multiple places (on different execution levels) within the stack.</p>
+</div>
+<p>When the <span class="guilabel">CPU</span> is selected, the frames width shows how long methods spend on the CPU executing their code. Finally, when the <span class="guilabel">OFF-CPU</span> is selected, the frames width shows how long methods spend off the CPU.</p>
+<p>The right side view of <a class="reference internal" href="#gui-stack-fgraph1"><span class="std std-numref">Fig. 1.43</span></a> presents a distribution of calls in the flame graph. Only top 20 calls are displayed for both <span class="guilabel">CPU</span> and <span class="guilabel">OFF-CPU</span> sets. By right-clicking on a selected record, you get a single menu item <span class="guilabel">Find on Flame Graph</span> from the context menu. When you click the menu item, each corresponding frame will be highlighted. In this way you can easily find where your method is located in the Flame Graph.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Flame Graph visualizations were introduced by <a class="reference external" href="http://www.brendangregg.com">Brendan Gregg</a>. For more details about flame graphs please refer to <a class="reference external" href="http://www.brendangregg.com/flamegraphs.html">http://www.brendangregg.com/flamegraphs.html</a>.</p>
+</div>
+<div class="figure align-center" id="id46">
+<span id="gui-stack-fgraph1"></span><img alt="_images/fg1.png" src="_images/fg1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.43 </span><span class="caption-text">Execution Stack: Flame Graph</span></p>
+</div>
+</div>
+<div class="section" id="threads-subview">
+<h3>1.7.3. Threads Subview<a class="headerlink" href="#threads-subview" title="Permalink to this headline">¶</a></h3>
+<p>If you want to classify your query results by threads, just click the <span class="guilabel">threads</span> button in <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a> and you will get a view similar to <a class="reference internal" href="#gui-threads-view"><span class="std std-numref">Fig. 1.44</span></a>.</p>
+<div class="figure align-center" id="id47">
+<span id="gui-threads-view"></span><img alt="_images/screen37.png" src="_images/screen37.png" />
+<p class="caption"><span class="caption-number">Fig. 1.44 </span><span class="caption-text">Data Explorer: Threads Subview</span></p>
+</div>
+<p>The view contains a treetable with the following columns:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Component:</th><td class="field-body">A tree item, structured as <em>agent</em> –&gt; <em>thread</em> –&gt; <em>class</em> –&gt; <em>method</em>. There are four component levels so the values in each column correspond to the current level.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Total Calls:</th><td class="field-body">A total number of calls.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Total Errors:</th><td class="field-body">A total number of exceptions thrown.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">CPU Time:</th><td class="field-body">A total CPU time (if enabled).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Duration Median:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">A median of duration.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Duration 90th Percentile:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">A 90th percentile of duration.</td>
+</tr>
+</tbody>
+</table>
+<p>In the <a class="reference internal" href="#gui-threads-view"><span class="std std-numref">Fig. 1.44</span></a> we can see there are 9613 calls reported by <em>kona2</em> agent, where 191 calls were executed within <em>http-nio-172.16.0.4-8780-exec-9</em> thread, 160 calls within <span class="code">org.apache.tomcat.websocket.server.WsFilter</span> class and 160 <span class="code">doFilter</span> method executions.</p>
+</div>
+<div class="section" id="components-subview">
+<h3>1.7.4. Components Subview<a class="headerlink" href="#components-subview" title="Permalink to this headline">¶</a></h3>
+<p>When you can click the <span class="guilabel">components</span> button in <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a> you will get <a class="reference internal" href="#gui-components-view"><span class="std std-numref">Fig. 1.45</span></a> a view:</p>
+<div class="figure align-center" id="id48">
+<span id="gui-components-view"></span><img alt="_images/screen19.png" src="_images/screen19.png" />
+<p class="caption"><span class="caption-number">Fig. 1.45 </span><span class="caption-text">Data Explorer: Components Subview</span></p>
+</div>
+</div>
+<div class="section" id="errors-subview">
+<h3>1.7.5. Errors Subview<a class="headerlink" href="#errors-subview" title="Permalink to this headline">¶</a></h3>
+<p>When you can click the <span class="guilabel">errors</span> button in <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a> you will get <a class="reference internal" href="#gui-errors-view"><span class="std std-numref">Fig. 1.46</span></a> view. In this view you can see what exceptions have been thrown and how their distribution looks like with respect to agents. When you click one of the exceptions you will get its distribution with respect to the agents.</p>
+<div class="figure align-center" id="id49">
+<span id="gui-errors-view"></span><img alt="_images/screen23.png" src="_images/screen23.png" />
+<p class="caption"><span class="caption-number">Fig. 1.46 </span><span class="caption-text">Data Explorer: Errors Subview</span></p>
+</div>
+</div>
+<div class="section" id="root-cause">
+<h3>1.7.6. Root Cause<a class="headerlink" href="#root-cause" title="Permalink to this headline">¶</a></h3>
+<p>If you click the <span class="guilabel">root cause</span> button in the summary pane ref{fig:fw:rcause}, you will get a <a class="reference internal" href="#flame-graph"><span class="std std-ref">Flame Graph</span></a> generated from all the requests.</p>
+<div class="figure align-center" id="id50">
+<span id="gui-root-cause"></span><img alt="_images/root-cause.png" src="_images/root-cause.png" />
+<p class="caption"><span class="caption-number">Fig. 1.47 </span><span class="caption-text">Data Explorer: Root Cause</span></p>
+</div>
+</div>
+<div class="section" id="time-and-duration-subviews">
+<h3>1.7.7. Time and Duration Subviews<a class="headerlink" href="#time-and-duration-subviews" title="Permalink to this headline">¶</a></h3>
+<p>If you click the <span class="guilabel">duration median</span> button in <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a>, you will get a bar chart <a class="reference internal" href="#gui-duration-dist"><span class="std std-numref">Fig. 1.48</span></a> representing a distribution of calls duration. The bars colors correspond to agents.</p>
+<div class="figure align-center" id="id51">
+<span id="gui-duration-dist"></span><img alt="_images/screen21.png" src="_images/screen21.png" />
+<p class="caption"><span class="caption-number">Fig. 1.48 </span><span class="caption-text">Data Explorer: Duration Distribution</span></p>
+</div>
+<p>If you click the <span class="guilabel">time range</span> button in <a class="reference internal" href="#gui-table-view"><span class="std std-numref">Fig. 1.38</span></a>, you will get a bar chart <a class="reference internal" href="#gui-calls-dist"><span class="std std-numref">Fig. 1.49</span></a> representing a distribution of calls count. The bars colors correspond to agents.</p>
+<div class="figure align-center" id="id52">
+<span id="gui-calls-dist"></span><img alt="_images/screen22.png" src="_images/screen22.png" />
+<p class="caption"><span class="caption-number">Fig. 1.49 </span><span class="caption-text">Data Explorer: Calls Distribution</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="exploring-environment-data">
+<span id="explore-env"></span><h2>1.8. Exploring Environment Data<a class="headerlink" href="#exploring-environment-data" title="Permalink to this headline">¶</a></h2>
+<p>The environment data covers data of key-value type provided by either <span class="flp">agent</span> (JMX data) or another source of data, which uses <a class="reference internal" href="developer.html#agent-api"><span class="std std-ref">agent API</span></a>.</p>
+<p>In order to explore the data you should toggle the <span class="guilabel">Environment</span> button (<a class="reference internal" href="#gui-inst-form"><span class="std std-numref">Fig. 1.37</span></a>) to get the view <a class="reference internal" href="#gui-explorer-env"><span class="std std-numref">Fig. 1.50</span></a>. This view will allow you to retrieve data keys, which you can use later to draw some graphs. There are only two text input fields: <span class="guilabel">AGENTS</span> and <span class="guilabel">METRICS</span>. The first one is mandatory and you must specify a regular expression pattern for agent identifiers you want the data keys to be retrieved from. The second one is optional and you can specify a regular expression pattern for data keys you want to get.</p>
+<div class="figure align-center" id="id53">
+<span id="gui-explorer-env"></span><img alt="_images/screen7.png" src="_images/screen7.png" />
+<p class="caption"><span class="caption-number">Fig. 1.50 </span><span class="caption-text">Data Explorer: Environment Form</span></p>
+</div>
+<p>When you click the <span class="guilabel">Search</span> button, you will get the output similar to <a class="reference internal" href="#gui-explorer-dkeys"><span class="std std-numref">Fig. 1.51</span></a>. The view contains a tree with all the found metrics keys. Each tree leaf has a context menu, which enables you to make a quick graph for the last 15, 30, 60 or 120 minutes. If you want to specify an exact time range for a graph, use the time range form at the top of the view. If you either use quick graph or time range form, you should get a graph on the right side of the view. Each time you make a graph, it is added to the graphs list on the right. If you want to remove a graph from the list, just click the cross icon in the top-right corner of the selected graph.</p>
+<div class="figure align-center" id="id54">
+<span id="gui-explorer-dkeys"></span><img alt="_images/dkeys.png" src="_images/dkeys.png" />
+<p class="caption"><span class="caption-number">Fig. 1.51 </span><span class="caption-text">Data Explorer: Environment Data Keys</span></p>
+</div>
+<p>When you click the <span class="guilabel">Search</span> button, the workstation sends a request to each database it is connected to and retrieves metrics for each agent, provided that the metric exists for the agent. As a result, there can be multiple graphs on a single graph pane and each graph corresponds to some agent. You can show or hide specific agents graphs by selecting the corresponding menu checkboxes in the <span class="guilabel">Options</span> menu.</p>
+<p>The graphs vertical axis displays raw values, in other words the values that are collected by agents. No unit is displayed because <span class="flp">workstation</span> knows nothing about the data it retrieves. It can be any data, provided by either <span class="flp">agent</span> or some user customized agent. In case of JMX data, please refer to your application documentation to find out what units your JMX metrics use.</p>
+<div class="figure align-center" id="id55">
+<span id="gui-explorer-kvg"></span><img alt="_images/kvg.png" src="_images/kvg.png" />
+<p class="caption"><span class="caption-number">Fig. 1.52 </span><span class="caption-text">Data Explorer: Environment Data Graphs</span></p>
+</div>
+</div>
+<div class="section" id="monitoring-agents-health">
+<span id="agents-health"></span><h2>1.9. Monitoring Agents Health<a class="headerlink" href="#monitoring-agents-health" title="Permalink to this headline">¶</a></h2>
+<p>Agents health can be viewed by double-clicking the <span class="guilabel">Agents Health</span> tile in the main view <a class="reference internal" href="#gui-start"><span class="std std-numref">Fig. 1.3</span></a>. If you click on some selected agent pane, you will see its status and health details.</p>
+<div class="figure align-center" id="id56">
+<span id="gui-agents-health"></span><img alt="_images/screen2.png" src="_images/screen2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.53 </span><span class="caption-text">Agent Status View</span></p>
+</div>
+<p>The view is divided into panes with either text information or graph on them. All the information in this view is reported by the agent.</p>
+<p>The <span class="guilabel">AGENT</span> pane contains the following data:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">version:</th><td class="field-body">Agent version.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">connected from:</th><td class="field-body">Source socket address of the agent. It shows from which socket address the agent connects to <span class="flp">manager</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">started at:</th><td class="field-body">Agent startup time. It shows when the agent started.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">uptime:</th><td class="field-body">Agent uptime time. It shows how long the agent is up.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">last update:</th><td class="field-body">Agent last report time. It shows how much time has passed since the last agent report received by <span class="flp">workstation</span>. When this time is greater than 15 seconds, it color turns from green to red.</td>
+</tr>
+</tbody>
+</table>
+<p>The <span class="guilabel">CONFIGURATION</span> pane contains the following data:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">attached:</th><td class="field-body">Current configuration. It shows the configuration the agent is attached to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">updated at:</th><td class="field-body">Agent configuration deployment time. It shows the last time a configuration has been deployed to the agent.</td>
+</tr>
+</tbody>
+</table>
+<p>The <span class="guilabel">SETTINGS</span> pane contains the following data:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">hot methods:</th><td class="field-body">Hot Methods feature. It shows whether the Hot Methods feature is enabled or disabled.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">CPU time:</th><td class="field-body">CPU time feature. It shows whether the CPU time measurement is enabled or disabled.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">logger:</th><td class="field-body">Logger level. It shows the current logger level set.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">database:</th><td class="field-body">Current database. It shows the database the agent sends its data to.</td>
+</tr>
+</tbody>
+</table>
+<p>The <span class="guilabel">PACKETS TOTAL</span> pane contains the following data:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">sent:</th><td class="field-body">Number of sent packets. Each method call, symbol or some metric value is represented as a single packet. These packets are sent to a database. This shows the total number of such packets sent to the database from the moment of the agent start. If the agent is attached to another database, this value will be reset.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">dropped:</th><td class="field-body">Number of dropped packets. It shows the number of packets that have been dropped inside the agents. There can be a few reasons which make the agent to drop packets. See ref{a-dc} for details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">saturation:</th><td class="field-body">Packets saturation. It shows the ratio of the number of received packets to the total number of packets. This total number is a sum of dropped and received packets. The value is displayed in percentages. If the value is 100% it means that all the packets, that have been collected on the agent, have been received by the database. If this value is low, it means that a large number of packets is dropped for some reason. If the value drops below 50%, then a warning icon is displayed next to the value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">size sent:</th><td class="field-body">Data size sent. It shows how much data has been sent to the database. This value is counted from the moment of the agent start. If the agent is attached to another database, this value will be reset.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="system-properties">
+<h3>1.9.1. System Properties<a class="headerlink" href="#system-properties" title="Permalink to this headline">¶</a></h3>
+<p>If you want to retrieve JVM system properties, just click the <span class="guilabel">AGENT PROPERTIES</span> button in <a class="reference internal" href="#gui-agents-health"><span class="std std-numref">Fig. 1.53</span></a>.</p>
+<div class="figure align-center" id="id57">
+<span id="gui-asysprops"></span><img alt="_images/asysprops.png" src="_images/asysprops.png" />
+<p class="caption"><span class="caption-number">Fig. 1.54 </span><span class="caption-text">JVM System Properties</span></p>
+</div>
+</div>
+<div class="section" id="threads-dump">
+<h3>1.9.2. Threads Dump<a class="headerlink" href="#threads-dump" title="Permalink to this headline">¶</a></h3>
+<p>You can get threads dump from JVM by clicking the <span class="guilabel">THREADS DUMP</span> button in <a class="reference internal" href="#gui-agents-health"><span class="std std-numref">Fig. 1.53</span></a>.</p>
+<div class="figure align-center" id="id58">
+<span id="gui-tdump1"></span><img alt="_images/tdump1.png" src="_images/tdump1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.55 </span><span class="caption-text">Threads Dump: Threads</span></p>
+</div>
+<div class="figure align-center" id="id59">
+<span id="gui-tdump2"></span><img alt="_images/tdump2.png" src="_images/tdump2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.56 </span><span class="caption-text">Threads Dump: Details</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="managing-alerts">
+<span id="alerts-manage"></span><h2>1.10. Managing Alerts<a class="headerlink" href="#managing-alerts" title="Permalink to this headline">¶</a></h2>
+<p>In order to make use of alerts features, you must ensure you have the notification plugin configured successfully (see <a class="reference internal" href="alerts.html#alerts"><span class="std std-ref">Alerts</span></a> for details). The alert feature enables you to set some rules that will trigger notifications whenever the rules conditions are satisfied. You can manage your rules in <a class="reference internal" href="#gui-alerts"><span class="std std-numref">Fig. 1.57</span></a> view. The view contains a list of all rules and the settings pane of a currently selected rule.</p>
+<div class="figure align-center" id="id60">
+<span id="gui-alerts"></span><img alt="_images/screen38.png" src="_images/screen38.png" />
+<p class="caption"><span class="caption-number">Fig. 1.57 </span><span class="caption-text">Alerts View</span></p>
+</div>
+<p>The rules are persisted in <span class="flp">manager</span> and any changes made to them are global. Whenever you edit a rule and click the <span class="guilabel">Save</span> button, the rule is persisted in the <span class="flp">manager</span> and propagated to all the attached databases. Then the databases update their rules registry.</p>
+<p>If you want to edit a rule, just select the rule by clicking the corresponding row of the list. You can either enable or disable the rule by selecting the <span class="guilabel">Enabled</span> checkbox. If the rule is enabled, the envelope icon on the corresponding row is green, otherwise is gray. You change the rule settings by updating the input controls on in the rule settings pane.</p>
+</div>
+<div class="section" id="analytics">
+<span id="id3"></span><h2>1.11. Analytics<a class="headerlink" href="#analytics" title="Permalink to this headline">¶</a></h2>
+<p><em>Analytics</em> is a special view <a class="reference internal" href="#gui-analytics"><span class="std std-numref">Fig. 1.58</span></a>, where you can collect and analyze method calls trends. The view is divided into three regions. The list on the left contains your analytics sets, the top region is a time range form and the central region is a list of a currently selected analytics set.</p>
+<div class="figure align-center" id="id61">
+<span id="gui-analytics"></span><img alt="_images/analytics0.png" src="_images/analytics0.png" />
+<p class="caption"><span class="caption-number">Fig. 1.58 </span><span class="caption-text">Analytics View</span></p>
+</div>
+<div class="section" id="managing-analytics-sets">
+<h3>1.11.1. Managing Analytics Sets<a class="headerlink" href="#managing-analytics-sets" title="Permalink to this headline">¶</a></h3>
+<p>Whenever you add some entry to the analytics it must belong to one of analytics sets. Analytics sets are just logical groups that help you to classify your entries in the way you like. In order to add a new set, click the <span class="guilabel">+</span> button and specify a label for this new set. All the analytics set are stored locally, on your machine you run the workstation on. If you want to use your sets on another machine, you must first export them and then import it on this new machine.</p>
+<p>When you click on some analytics set, its entries are displayed in the list in the center. This list has a context menu, which enables you to either duplicate or delete the selected entries. If you want to edit the selected entry, just double-click on it. A popup window <a class="reference internal" href="#gui-analytics-set"><span class="std std-numref">Fig. 1.59</span></a> should appear then. There are two text inputs where valid <a class="reference external" href="http://www.regular-expressions.info/posix.html">regular expressions</a> are expected. The <span class="guilabel">Agent</span> text field is used to specify a pattern for agents’ names and the <span class="guilabel">Parameter</span> text field to specify a pattern for parameters. The <span class="guilabel">Parameter</span> input is optional and can be empty.</p>
+<div class="figure align-center" id="id62">
+<span id="gui-analytics-set"></span><img alt="_images/analytics4.png" src="_images/analytics4.png" />
+<p class="caption"><span class="caption-number">Fig. 1.59 </span><span class="caption-text">Analytics Set Entry</span></p>
+</div>
+<p>Depending on the <span class="guilabel">Parameter</span> text field value you can obtain different results. If you do not use a subexpression, you will obtain the result similar to <a class="reference internal" href="#gui-analytics-dur"><span class="std std-numref">Fig. 1.61</span></a>. If you use a subexpression, you will get the result similar to <a class="reference internal" href="#gui-analytics-groupby"><span class="std std-numref">Fig. 1.60</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Only a single subexpression in the <span class="guilabel">Parameter</span> text field is allowed.</p>
+</div>
+<p>In other words, if you want to obtain results grouped by some expression, you should put that expression pattern in parentheses so that it forms a subexpression.</p>
+<div class="figure align-center" id="id63">
+<span id="gui-analytics-groupby"></span><img alt="_images/analytics1.png" src="_images/analytics1.png" />
+<p class="caption"><span class="caption-number">Fig. 1.60 </span><span class="caption-text">Analytics Result: Group By</span></p>
+</div>
+<div class="figure align-center" id="id64">
+<span id="gui-analytics-dur"></span><img alt="_images/analytics2.png" src="_images/analytics2.png" />
+<p class="caption"><span class="caption-number">Fig. 1.61 </span><span class="caption-text">Analytics Result: Duration Graph</span></p>
+</div>
+<div class="figure align-center" id="id65">
+<span id="gui-analytics-calls"></span><img alt="_images/analytics3.png" src="_images/analytics3.png" />
+<p class="caption"><span class="caption-number">Fig. 1.62 </span><span class="caption-text">Analytics Result: Calls Graph</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="developer.html" class="btn btn-neutral float-right" title="1. Agent API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="alerts.html" class="btn btn-neutral" title="6. Alerts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Flopsar Technology Sp. z o.o..
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.2',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

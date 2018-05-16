@@ -25,27 +25,19 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Flopsar Documentation" href="index.html"/>
-        <link rel="prev" title="2. Demo" href="demo.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2. Demo" href="demo.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -62,7 +54,7 @@
 
           
             
-            <img src="_static/flopsar_logo.png" class="logo" />
+            <img src="_static/flopsar_logo.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -146,7 +138,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Flopsar</a>
@@ -154,9 +146,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -198,8 +191,8 @@
             
   <div class="section" id="agent-api">
 <span id="id1"></span><h1>1. Agent API<a class="headerlink" href="#agent-api" title="Permalink to this headline">¶</a></h1>
-<p>If you want to provide your own, non-JVM, data and store them in the Flopsar Suite environment, you can do it using the agent API. This functionality is embedded in the Flopsar Agent. In order to make use of the API, you must add <code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code> as a dependency to your project. The API contains a single class <span class="code">com.flopsar.agent.api.Agent</span> with the following methods:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Agent</span> <span class="nf">createConnection</span><span class="o">(</span><span class="n">String</span> <span class="n">flopsarId</span><span class="o">,</span><span class="n">String</span> <span class="n">fsmHost</span><span class="o">,</span>
+<p>If you want to provide your own, non-JVM, data and store them in the Flopsar Suite environment, you can do it using the agent API. This functionality is embedded in the Flopsar Agent. In order to make use of the API, you must add <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.1.jar</span></code> as a dependency to your project. The API contains a single class <span class="code">com.flopsar.agent.api.Agent</span> with the following methods:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Agent</span> <span class="nf">createConnection</span><span class="o">(</span><span class="n">String</span> <span class="n">flopsarId</span><span class="o">,</span><span class="n">String</span> <span class="n">fsmHost</span><span class="o">,</span>
                                         <span class="kt">int</span> <span class="n">fsmPort</span><span class="o">,</span><span class="kt">long</span> <span class="n">outboundQueueSize</span><span class="o">);</span>
 
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isConnected</span><span class="o">();</span>
@@ -219,16 +212,16 @@
 <div class="section" id="agent-formatters">
 <h1>2. Agent Formatters<a class="headerlink" href="#agent-formatters" title="Permalink to this headline">¶</a></h1>
 <p>The formatters enable to extend agent functionalities. Unlike other vendors, we provide a mechanism which you can use to extend your application diagnosis and trace your data flow. It makes Flopsar an open tool, that can be extended. There are two types of formatters, which can be used: <em>standard</em> and <em>custom</em>. The <em>standard</em> formatter is embedded in <span class="flp">agent</span> and all you need to do is to select which arguments you want to dump. This formatter will execute the following method on each of your selected arguments</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">valueOf</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">valueOf</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">);</span>
 </pre></div>
 </div>
 <p>and return a result in a form of concatenated pairs of argument number and the corresponding <span class="code">valueOf</span> function result. However, if you want to extract some additional information you must implement your own, <em>custom</em> formatter.</p>
 <p>Suppose, you have some method</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">FooBar</span> <span class="nf">foo</span><span class="o">(</span><span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object1</span><span class="o">,</span> <span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object2</span><span class="o">,</span> <span class="o">...);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">FooBar</span> <span class="nf">foo</span><span class="o">(</span><span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object1</span><span class="o">,</span> <span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object2</span><span class="o">,</span> <span class="o">...);</span>
 </pre></div>
 </div>
 <p>and you are interested in some additional information extracted from the first and second arguments. Your formatter implementation can look like the one below:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
 
         <span class="kd">final</span> <span class="kt">char</span> <span class="n">SEPARATOR</span> <span class="o">=</span> <span class="mh">0x1E</span><span class="o">;</span>
 
@@ -275,14 +268,14 @@
 </div>
 <div class="section" id="fdbc">
 <h1>3. FDBC<a class="headerlink" href="#fdbc" title="Permalink to this headline">¶</a></h1>
-<p><span class="flp">workstation</span> makes use of <span class="flp">fdbc</span> in order to access data stored in both <span class="flp">manager</span> and <span class="flp">database</span>. <span class="flp">fdbc</span> is a single jar file <code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1.jar</span></code> and it provides whatever is necessary to access data from any client. This includes remote access to <span class="flp">manager</span> and <span class="flp">database</span> instances, managing Flopsar environment and querying data. You can even write your own GUI client to manage your entire Flopsar environment without using <span class="flp">workstation</span>. Beside the <span class="flp">fdbc</span> jar file, the Flopsar distribution contains the FDBC API documentation in the <code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1-javadoc.jar</span></code> file.</p>
+<p><span class="flp">workstation</span> makes use of <span class="flp">fdbc</span> in order to access data stored in both <span class="flp">manager</span> and <span class="flp">database</span>. <span class="flp">fdbc</span> is a single jar file <code class="file docutils literal notranslate"><span class="pre">flopsar-fdbc-2.1.jar</span></code> and it provides whatever is necessary to access data from any client. This includes remote access to <span class="flp">manager</span> and <span class="flp">database</span> instances, managing Flopsar environment and querying data. You can even write your own GUI client to manage your entire Flopsar environment without using <span class="flp">workstation</span>. Beside the <span class="flp">fdbc</span> jar file, the Flopsar distribution contains the FDBC API documentation in the <code class="file docutils literal notranslate"><span class="pre">flopsar-fdbc-2.1-javadoc.jar</span></code> file.</p>
 <div class="section" id="api">
 <h2>3.1. API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="flp">fdbc</span> API is divided into two parts with respect to the instance it wants to access. The <span class="code">com.flopsar.fdbc.api.fsm</span> package contains classes reponsible for accessing <span class="flp">manager</span> instances, while <span class="code">com.flopsar.fdbc.api.fdb</span> package <span class="flp">database</span> instances.</p>
 <div class="section" id="manager-api">
 <h3>3.1.1. Manager API<a class="headerlink" href="#manager-api" title="Permalink to this headline">¶</a></h3>
 <p>In order to access some <span class="flp">manager</span> instance, you must use the following method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">ConnectionFSM</span> <span class="n">createConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">host</span><span class="p">,</span>\
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">ConnectionFSM</span> <span class="n">createConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">host</span><span class="p">,</span>\
         <span class="nb">int</span> <span class="n">port</span><span class="p">,</span>\
         <span class="n">String</span> <span class="n">username</span><span class="p">,</span>\
         <span class="n">String</span> <span class="n">password</span><span class="p">,</span>\
@@ -295,7 +288,7 @@
 <div class="section" id="database-api">
 <h3>3.1.2. Database API<a class="headerlink" href="#database-api" title="Permalink to this headline">¶</a></h3>
 <p>In order to access some <span class="flp">database</span> instance, you must use the following method:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">ConnectionFDB</span> <span class="n">createConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">host</span><span class="p">,</span>\
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">ConnectionFDB</span> <span class="n">createConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">host</span><span class="p">,</span>\
         <span class="nb">int</span> <span class="n">port</span><span class="p">,</span>\
         <span class="n">EventHandlerFDB</span> <span class="n">handler</span><span class="p">,</span>\
         <span class="n">long</span> <span class="n">requestTimeout</span><span class="p">);</span>
@@ -308,8 +301,8 @@
 <div class="section" id="plugins">
 <span id="id2"></span><h1>4. Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>Flopsar provides a few functionalities implemented as plugins. These implementations can be easily replaced with user defined implementations. In this version of Flopsar only <span class="flp">manager</span> supports plugins. There are two plugins currently available: <em>authentication</em> and <em>notification</em> and each of them can be replaced.</p>
-<p>Flopsar provides a C API for writing custom implementations of plugins. In order to write a pluginfootnote{Every plugin should include this header.}, you need to include in your project the main header <code class="file docutils literal"><span class="pre">fs2plugin_api.h</span></code> file, which can be found in <code class="file docutils literal"><span class="pre">FLOPSAR_HOME/resources/api</span></code> directory. This file contains prototypes of functions to implement. The function below is the most important one and must be implemented. This function is called only once when the application loads the plugin.</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">init_plugin</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">home_dir</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">plugins_conf_dir</span><span class="p">);</span>
+<p>Flopsar provides a C API for writing custom implementations of plugins. In order to write a pluginfootnote{Every plugin should include this header.}, you need to include in your project the main header <code class="file docutils literal notranslate"><span class="pre">fs2plugin_api.h</span></code> file, which can be found in <code class="file docutils literal notranslate"><span class="pre">FLOPSAR_HOME/resources/api</span></code> directory. This file contains prototypes of functions to implement. The function below is the most important one and must be implemented. This function is called only once when the application loads the plugin.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">init_plugin</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">home_dir</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">plugins_conf_dir</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>When you call the function above you will be provided with three arguments. The <span class="code">p</span> argument is a structure representing your plugin. You should keep it, since it is required when you register your plugin hooks. The <span class="code">home_dir</span> argument is a path to your <span class="flp">manager</span> environment directory. The last argument <span class="code">plugins_conf_dir</span> is a path to your <span class="flp">manager</span> configuration directory. This can be used to add any additonal configuration to your plugin (see ref{plg-ntfy} as an example).</p>
@@ -319,35 +312,35 @@
 </div>
 <p>Implement your own plugin initialization and register your functions to the application within this function.</p>
 <p>There is an optional function to implement:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_plugin_test</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_plugin_test</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>which can be registered by executing the function below:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_test_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">fs2_plugin_test</span> <span class="n">hook</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_test_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">fs2_plugin_test</span> <span class="n">hook</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This is a test function, which can be used to implement some test that will help you to check if your plugin work as expected in runtime. If the test succeeds the function should return <span class="code">0</span>, otherwise <span class="code">-1</span>. In order to trigger the test you must execute the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr --plugins test &lt;manager_home&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr --plugins test &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>This command will execute all the registered plugins test hooks.</p>
 <div class="section" id="plugin-authentication">
 <span id="plugins-auth"></span><h2>4.1. Plugin: Authentication<a class="headerlink" href="#plugin-authentication" title="Permalink to this headline">¶</a></h2>
-<p>If you want to use your own authentication system, you must implement a plugin in order to be able to authenticate your users against this system. In order to write a custom authentication plugin, you must include an additional header <code class="file docutils literal"><span class="pre">fs2plugin_api_auth.h</span></code> file. All you have to do is to implement the function below:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_user_auth</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">password</span><span class="p">);</span>
+<p>If you want to use your own authentication system, you must implement a plugin in order to be able to authenticate your users against this system. In order to write a custom authentication plugin, you must include an additional header <code class="file docutils literal notranslate"><span class="pre">fs2plugin_api_auth.h</span></code> file. All you have to do is to implement the function below:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_user_auth</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">password</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>and then register it by means of the function</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_user_auth_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">fs2_user_auth</span> <span class="n">hook</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_user_auth_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">fs2_user_auth</span> <span class="n">hook</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>in the <span class="code">init_plugin</span> function. The <span class="code">fs2_user_auth</span> takes two arguments: <span class="code">username</span> and <span class="code">password</span>. It should return <span class="code">0</span> if the credentials are valid or <span class="code">-1</span> otherwise.</p>
-<p>If your implementation is done, compile the code to a library and put it into the <code class="file docutils literal"><span class="pre">FLOPSAR_HOME/lib</span></code> directory. You must also update the manager configuration file and replace the <span class="opt">plugins</span> option value <span class="opt">libfs2plg_authbasic.so</span> with the full name of your library.</p>
+<p>If your implementation is done, compile the code to a library and put it into the <code class="file docutils literal notranslate"><span class="pre">FLOPSAR_HOME/lib</span></code> directory. You must also update the manager configuration file and replace the <span class="opt">plugins</span> option value <span class="opt">libfs2plg_authbasic.so</span> with the full name of your library.</p>
 </div>
 <div class="section" id="plugin-notification">
 <span id="plugins-notify"></span><h2>4.2. Plugin: Notification<a class="headerlink" href="#plugin-notification" title="Permalink to this headline">¶</a></h2>
-<p>Flopsar provides the SMTP plugin used for notification purposes. However, you can always implement your own plugin to replace our implementation with a new one. In order to write a custom notification plugin, you must include an additional header <code class="file docutils literal"><span class="pre">fs2plugin_api_notify.h</span></code> file. All you have to do is implement the function below:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2plg_notify</span><span class="p">)(</span><span class="kt">uint64_t</span> <span class="n">uuid1</span><span class="p">,</span>\
+<p>Flopsar provides the SMTP plugin used for notification purposes. However, you can always implement your own plugin to replace our implementation with a new one. In order to write a custom notification plugin, you must include an additional header <code class="file docutils literal notranslate"><span class="pre">fs2plugin_api_notify.h</span></code> file. All you have to do is implement the function below:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2plg_notify</span><span class="p">)(</span><span class="kt">uint64_t</span> <span class="n">uuid1</span><span class="p">,</span>\
                       <span class="kt">uint64_t</span> <span class="n">uuid2</span><span class="p">,</span>\
                       <span class="kt">uint64_t</span> <span class="n">value</span><span class="p">,</span>\
                       <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">agent</span><span class="p">,</span>\
@@ -356,7 +349,7 @@
 </pre></div>
 </div>
 <p>where <span class="code">uuid1</span> and <span class="code">uuid2</span> arguments identify an alert rule, <span class="code">value</span> denotes the evaluated rule value, <span class="code">agent</span> denotes the agents name, <span class="code">component</span> denotes a component name and <span class="code">time_window</span> denotes the rule time window. This function should be registered then using the function below:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_notify_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">fs2plg_notify</span> <span class="n">hook</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_notify_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">fs2plg_notify</span> <span class="n">hook</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>in the <span class="code">init_plugin</span> function.</p>
@@ -365,9 +358,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -405,6 +396,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'2.1',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
@@ -422,14 +414,13 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

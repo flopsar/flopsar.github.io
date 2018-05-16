@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Manager &mdash; Flopsar Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Database" href="database.html" />
+    <link rel="prev" title="1. Installation" href="admin.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/flopsar_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administrator Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#logging">2. Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#id2">3. Agent</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">4.1. Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">4.2. Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logger-messages">4.2.1. Logger messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication-and-authorization">4.3. Authentication and Authorization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-authentication">4.3.1. Internal Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-authentication">4.3.2. LDAP Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authorization">4.3.3. Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-agents">4.4. Managing Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-agent-data">4.4.1. Deleting Agent Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-clients-connections">4.5. Managing Clients Connections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alerts.html">6. Alerts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flopsar</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>4. Manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="manager">
+<h1>4. Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h1>
+<p><span class="flp">manager</span> is a key Flopsar component, which is responsible for managing the entire Flopsar environment.</p>
+<div class="section" id="configuration">
+<span id="manager-conf"></span><h2>4.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">manager</span> is managed by its configuration file <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/flopsar.conf</span></code>.</p>
+<dl class="docutils">
+<dt><span class="opt">server.bind.port</span></dt>
+<dd>Port of the TCP server.</dd>
+<dt><span class="opt">server.bind.ip</span></dt>
+<dd>IP address of the TCP server. This option is not mandatory.
+When the option is either empty or missing, the IP address is read from the license file.
+If the option value is set to <span class="opt">*</span>, the TCP server will bind to all existing IP addresses.</dd>
+<dt><span class="opt">plugins</span></dt>
+<dd>List of enabled plugins. This option contains full names of the plugins.
+Entries must be comma separated. By default only one plugin is enabled: <code class="file docutils literal notranslate"><span class="pre">libflopsar-authbasic.so</span></code>.
+If you want to use additional plugins, add their names and separate them with a comma.
+Flopsar <span class="flp">manager</span> currently uses two plugins: <em>authentication</em> and <em>notification</em>.
+The first one is used for authentication purposes and the second one is used for notification.
+You can easily replace these plugins with custom ones (see <a class="reference internal" href="developer.html#plugins"><span class="std std-ref">Plugins</span></a> for details).</dd>
+</dl>
+</div>
+<div class="section" id="logging">
+<h2>4.2. Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">manager</span> has a single log file <code class="file docutils literal notranslate"><span class="pre">fs2mgr.log</span></code>. It is stored in <code class="file docutils literal notranslate"><span class="pre">manager_home/logs</span></code> directory. The logging levels are defined in <a class="reference internal" href="admin.html#logging"><span class="std std-ref">Logging</span></a>.</p>
+<p>You can set the logger level either during the startup procedure or in runtime. For example, to set the <span class="opt">fine</span> level during <span class="flp">manager</span> startup use the following options:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr start --loglevel fine &lt;manager_home&gt;
+</pre></div>
+</div>
+<p>In order to change it in runtime, execute the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr <span class="nb">set</span> --loglevel fine &lt;manager_home&gt;
+</pre></div>
+</div>
+<div class="section" id="logger-messages">
+<h3>4.2.1. Logger messages<a class="headerlink" href="#logger-messages" title="Permalink to this headline">¶</a></h3>
+<p>Each logger message entry has the following structure:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">]</span> Message content
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">][</span>PLG<span class="o">]</span> Message content
+</pre></div>
+</div>
+<p>The only difference between these two types is an additional <span class="opt">PLG</span> entry. This entry denotes that this particular message comes from a plugin. The rest of the entries denote:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">DATE:</th><td class="field-body">current date.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">LEVEL:</th><td class="field-body">current logger level.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">PID:</th><td class="field-body">system process ID number of the logging process.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Message content:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">is self-explanatory.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="authentication-and-authorization">
+<h2>4.3. Authentication and Authorization<a class="headerlink" href="#authentication-and-authorization" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">manager</span> accepts connections from three types of clients: <span class="flp">fdbc</span>, <span class="flp">agent</span> and <span class="flp">database</span> ones. The explicit authentication is required only for <span class="flp">fdbc</span> clients. <span class="flp">workstation</span> is a <span class="flp">fdbc</span> client too, so when a user logs to the <span class="flp">workstation</span> they are required to authenticate to <span class="flp">manager</span> by providing their credentials. Flopsar supports two types of authentication mechanisms: <em>internal</em> and LDAP.</p>
+<div class="section" id="internal-authentication">
+<h3>4.3.1. Internal Authentication<a class="headerlink" href="#internal-authentication" title="Permalink to this headline">¶</a></h3>
+<p>In order to enable the internal authentication mechanism you must add the <code class="file docutils literal notranslate"><span class="pre">libflopsar-authbasic</span></code> plugin library to the configuration option in the <code class="file docutils literal notranslate"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libflopsar-authbasic</span>. This operation requires <span class="flp">manager</span> to be restarted. Users management is done by means of <strong class="command">fs2auth</strong> executable. The following operations are supported:</p>
+<div class="topic">
+<p class="topic-title first">Listing users</p>
+<p>To list all the stored users execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth list --mode users &lt;manager_home&gt;
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">Adding users</p>
+<p>To add a new <span class="opt">username</span> user execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth add --user username &lt;manager_home&gt;
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">Deleting users</p>
+<p>To delete <span class="opt">username</span> user execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth delete --user username &lt;manager_home&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ldap-authentication">
+<h3>4.3.2. LDAP Authentication<a class="headerlink" href="#ldap-authentication" title="Permalink to this headline">¶</a></h3>
+<p>In order to enable the LDAP authentication mechanism you must add the <code class="file docutils literal notranslate"><span class="pre">libflopsar-ldap</span></code> plugin library to the configuration option in the <code class="file docutils literal notranslate"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libflopsar-ldap</span>. This operation requires <span class="flp">manager</span> to be restarted.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">There can be only one authentication plugin in the <span class="flp">manager</span> configuration file. Use either <code class="file docutils literal notranslate"><span class="pre">libflopsar-authbasic</span></code> or <code class="file docutils literal notranslate"><span class="pre">libflopsar-ldap</span></code>.</p>
+</div>
+<p>Next, copy the <code class="file docutils literal notranslate"><span class="pre">/usr/share/flopsar/templates/plugins/flopsar-ldap</span></code> directory into <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/</span></code> and edit the <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/ldap.conf</span></code> file. The file has the following options to set:</p>
+<dl class="docutils">
+<dt><span class="opt">ldap.url</span></dt>
+<dd>LDAP service URL.</dd>
+<dt><span class="opt">ldap.base.dn</span></dt>
+<dd>Base DN to be appended to all LDAP requests.</dd>
+<dt><span class="opt">ldap.bind.dn</span></dt>
+<dd>LDAP user binding DN.</dd>
+<dt><span class="opt">ldap.bind.password</span></dt>
+<dd>LDAP user password.</dd>
+<dt><span class="opt">ldap.auth-type</span></dt>
+<dd>LDAP authentication mechanism. Currently, only <em>simple</em> mechanism is supported.</dd>
+<dt><span class="opt">ldap.user.attr.username</span></dt>
+<dd>Username LDAP attribute. Values of the attribute must match the ones given by users during logging to <span class="flp">manager</span>.</dd>
+<dt><span class="opt">ldap.user.search</span></dt>
+<dd>LDAP search query to find users in the LDAP service. You can user $ char in the query, which will be replaced with a username.</dd>
+</dl>
+<p>Flopsar must know which users stored in your LDAP server are allowed to login to <span class="flp">manager</span>. That means you must have (or create) a container (group) in your LDAP server. If some user is allowed to login to the database, they must be a member of this container (so-called login group). There are four options you must set in the Flopsar configuration file to set it up.</p>
+<dl class="docutils">
+<dt><span class="opt">ldap.group.name</span></dt>
+<dd>The login group name.</dd>
+<dt><span class="opt">ldap.group.attr.member</span></dt>
+<dd>This value must correspond to a username. This username must match the one used by a user to login.</dd>
+<dt><span class="opt">ldap.group.search.member</span></dt>
+<dd>LDAP filter to find a member of the login group.</dd>
+<dt><span class="opt">ldap.group.search</span></dt>
+<dd>LDAP search query to find groups. You can user $ char in the query, which will be replaced with a username.</dd>
+</dl>
+<p>Below, an example is presented:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ldap.url=ldap.mydomain.com:389
+ldap.base.dn=dc=mydomain,dc=com
+ldap.bind.dn=cn=ruser,dc=mydomain,dc=com
+ldap.bind.password=secret
+ldap.auth-type=simple
+ldap.user.attr.username=uid
+ldap.user.search=(&amp;(objectClass=person)(uid=$))
+ldap.group.attr.name=cn
+ldap.group.attr.member=memberUid
+ldap.group.search.member=(&amp;(objectClass=posixGroup)(cn=flopsar)(memberUid=$))
+ldap.group.search=(&amp;(objectClass=posixGroup)(cn=$))
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is currently only one LDAP authentication strategy supported by Flopsar, i.e. direct (bind) authentication to the LDAP server. This implies every user must be able to bind to the LDAP server.</p>
+</div>
+</div>
+<div class="section" id="authorization">
+<span id="id1"></span><h3>4.3.3. Authorization<a class="headerlink" href="#authorization" title="Permalink to this headline">¶</a></h3>
+<p>Flopsar authorization mechanism is based on permissions. The authorization process is performed by Flopsar itself.</p>
+<p>In order to list all the available permissions, execute the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth list --mode permissions
+</pre></div>
+</div>
+</div></blockquote>
+<div class="figure align-center" id="id2">
+<span id="perms-list"></span><a class="reference internal image-reference" href="_images/allperms.png"><img alt="_images/allperms.png" src="_images/allperms.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">List of Permissions</span></p>
+</div>
+<p>If you want to see which permissions users have, list all the users:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth list --mode users &lt;manager_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<div class="figure align-center" id="id3">
+<span id="users-list"></span><a class="reference internal image-reference" href="_images/users.png"><img alt="_images/users.png" src="_images/users.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">List of Users</span></p>
+</div>
+<p>If, for example, you want to allow user1 edit agents configurations, just execute the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth add --user user1 --perm P2 &lt;manager_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>In order to revoke that permission, execute the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth add --user user1 --perm ~P2 &lt;manager_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>Please, refer to <span class="opt">fs2auth</span> man page for more.</p>
+</div>
+</div>
+<div class="section" id="managing-agents">
+<span id="mgr-agents"></span><h2>4.4. Managing Agents<a class="headerlink" href="#managing-agents" title="Permalink to this headline">¶</a></h2>
+<p>Each agent must be connected to some database in order to send its data. The procedure of attaching agents to databases is performed by <span class="flp">manager</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The agent must be connected to the manager before you can attach it to any database.</p>
+</div>
+<p>Suppose you have a running <em>myAgent1</em> agent and want to attach it to a database, which server listens on <span class="opt">172.16.0.12:8000</span>. In order to do it you must execute the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr <span class="nb">set</span> --agent-type java --agent-name myAgent1 --database <span class="m">172</span>.16.0.12:8000 &lt;manager_home&gt;
+</pre></div>
+</div>
+<p>This operation will store this change in <span class="flp">manager</span> and makes the agent drop its current database connection and connect to a new database.</p>
+<p>You can always inspect your agent configurations by executing the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
+</pre></div>
+</div>
+<p>As a result you should see something similar:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>TYPE   ID                 AGENT                                DATABASE                   CONFIGURATION
+-------------------------------------------------------------------------------------------------------
+JVM  <span class="p">|</span> 49132292717FA021 <span class="p">|</span> kona1...........................   <span class="p">|</span> <span class="m">172</span>.16.0.12:8000         <span class="p">|</span> c1
+JVM  <span class="p">|</span> 9349FF5C62BEEB7C <span class="p">|</span> kona2...........................   <span class="p">|</span> <span class="m">172</span>.16.0.13:8000         <span class="p">|</span> c1
+-------------------------------------------------------------------------------------------------------
+TOTAL  <span class="m">2</span>
+</pre></div>
+</div>
+<p>where:</p>
+<dl class="docutils">
+<dt><span class="opt">TYPE</span></dt>
+<dd>Type of agent.</dd>
+<dt><span class="opt">ID</span></dt>
+<dd>Agent unique identifier. Identifier is evaluated from agent name and type.</dd>
+<dt><span class="opt">AGENT</span></dt>
+<dd>Agent name.</dd>
+<dt><span class="opt">DATABASE</span></dt>
+<dd>Database address the agent connects to.</dd>
+<dt><span class="opt">CONFIGURATION</span></dt>
+<dd>Configuration the agent is attached to.</dd>
+</dl>
+<div class="section" id="deleting-agent-data">
+<h3>4.4.1. Deleting Agent Data<a class="headerlink" href="#deleting-agent-data" title="Permalink to this headline">¶</a></h3>
+<p>If you want to delete a Java agent from the manager, just execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr delete --agent-name myAgent --agent-type java &lt;manager_home&gt;
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Before you delete an agent, make sure it is not connected to the manager.</p>
+</div>
+</div>
+</div>
+<div class="section" id="managing-clients-connections">
+<h2>4.5. Managing Clients Connections<a class="headerlink" href="#managing-clients-connections" title="Permalink to this headline">¶</a></h2>
+<p>You can always check what clients are currently connected to the manager. You can simply do it by executing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr get --target server-stats &lt;manager_home&gt;
+</pre></div>
+</div>
+<p>This operation will print a list of the connected clients to your console. The result will be similar to the one below:</p>
+<div class="figure align-center" id="id4">
+<span id="server-stats"></span><img alt="_images/server-stats.png" src="_images/server-stats.png" />
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Manager Server Statistics</span></p>
+</div>
+<p>where:</p>
+<dl class="docutils">
+<dt><span class="opt">CTYPE</span></dt>
+<dd>Client type. There are four types: <em>agent</em>, <em>fdbc</em>, <em>database</em> and <em>unknown</em>. The last one is set when a client is connected but not yet authenticated.</dd>
+<dt><span class="opt">CID</span></dt>
+<dd>Client identifier. This value is useful when you search for this client activity in the manager log files.</dd>
+<dt><span class="opt">SRC</span></dt>
+<dd>Client source socket address.</dd>
+<dt><span class="opt">CONNID</span></dt>
+<dd>Client connection identifier. This value is needed when you want to specify a client connection to drop.</dd>
+<dt><span class="opt">CONNECTION TIME</span></dt>
+<dd>Time at which a client connected to the manager.</dd>
+<dt><span class="opt">TOTAL RCV</span></dt>
+<dd>Total size of data received from a client.</dd>
+<dt><span class="opt">TOTAL SNT</span></dt>
+<dd>Total size of data sent to a client.</dd>
+</dl>
+<p>If you want to disconnect a client, you need to execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr delete --client CONNID &lt;manager_home&gt;
+</pre></div>
+</div>
+<p>where <span class="opt">CONNID</span> is a connection identifier.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You will not be asked to confirm whether you really want to drop a client connection. This operation will be executed immediately.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="database.html" class="btn btn-neutral float-right" title="5. Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="admin.html" class="btn btn-neutral" title="1. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Flopsar Technology Sp. z o.o..
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.2',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

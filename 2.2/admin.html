@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Installation &mdash; Flopsar Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Manager" href="manager.html" />
+    <link rel="prev" title="1. What is Flopsar" href="overview.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/flopsar_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administrator Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#manager-and-database-binaries-installation">1.1. Manager and Database Binaries Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flopsar-dependencies">1.1.1. Flopsar Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manager">1.1.2. Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">1.1.3. Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#agent">1.2. Agent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#logging">2. Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">3. Agent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">3.1. Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formatters">3.2. Formatters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-collecting-considerations">3.3. Data Collecting Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instrumentation">3.4. Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hot-methods">3.5. Hot Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3.6. Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logger-messages">3.6.1. Logger Messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">5. Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alerts.html">6. Alerts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flopsar</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1. Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>This part contains information about installing and maintaining Flopsar environments.</p>
+<div class="section" id="installation">
+<h1>1. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>Each component is installed separately but there is a common initial installation procedure for both <span class="flp">manager</span> and <span class="flp">database</span>. This procedure must be performed before any further steps can be made.</p>
+<p>In order to run the Flopsar environment successfully, you must prepare your network so that it allows all the required connections (<a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 5.2</span></a>) to be established:</p>
+<ul class="simple">
+<li><span class="agent-conn">outgoing</span> TCP connections from <span class="flp">agent</span> to <span class="flp">database</span> instances.</li>
+<li><span class="fdb-conn">outgoing</span> TCP connections from <span class="flp">database</span> instances to <span class="flp">manager</span>.</li>
+<li><span class="fdbc-conn">outgoing</span> TCP connections from <span class="flp">workstation</span> instances to <span class="flp">manager</span> and <span class="flp">database</span> instances.</li>
+</ul>
+<div class="section" id="manager-and-database-binaries-installation">
+<span id="bin-install"></span><h2>1.1. Manager and Database Binaries Installation<a class="headerlink" href="#manager-and-database-binaries-installation" title="Permalink to this headline">¶</a></h2>
+<p>There are two packages available for installation: <code class="file docutils literal notranslate"><span class="pre">flopsar-2.2-Linux.deb</span></code> and <code class="file docutils literal notranslate"><span class="pre">flopsar-2.2-Linux.rpm</span></code>. For Debian based distributions you can install it
+by executing the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dpkg -i flopsar-2.2-Linux.deb
+</pre></div>
+</div>
+<p>For Red Hat based distributions you can install it by executing the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rpm -ih flopsar-2.2-Linux.rpm
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zypper install flopsar-2.2-Linux.rpm
+</pre></div>
+</div>
+<p>Flopsar installs several files in your system. You can inspect these files by querying contents of the Flopsar package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rpm -qlp flopsar-2.2-Linux.rpm
+$ dpkg -c flopsar-2.2-Linux.deb
+</pre></div>
+</div>
+<div class="section" id="flopsar-dependencies">
+<h3>1.1.1. Flopsar Dependencies<a class="headerlink" href="#flopsar-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>Flopsar base configuration (without plugins) should be able to run on your system successfully.
+However, if your installation cannot run due to missing libraries, use <span class="opt">ldd</span> tool to check which libraries are missing.
+Below, a list of known Flopsar dependencies is specified:</p>
+<div class="topic">
+<p class="topic-title first">Flopsar base</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">libncurses</span>
+</pre></div>
+</div>
+</div>
+<div class="topic">
+<p class="topic-title first">SMTP plugin</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">libcurl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="manager">
+<h3>1.1.2. Manager<a class="headerlink" href="#manager" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">make sure you have completed the binaries installation procedure.</p>
+</li>
+<li><p class="first">make sure your destination machine has the same IP address as the one specified in your license file. Otherwise, <span class="flp">manager</span> will not run.</p>
+</li>
+<li><p class="first">initialize a new environment working directory <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;</span></code> by executing the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr init &lt;manager_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">put your license file into the <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/lic</span></code> directory.</p>
+</li>
+<li><p class="first"><a class="reference internal" href="manager.html#manager-conf"><span class="std std-ref">configure</span></a> the manager</p>
+</li>
+<li><p class="first">start <span class="flp">manager</span> by executing:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr start &lt;manager_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note" id="single-manager">
+<p class="first admonition-title">Note</p>
+<p class="last">There can be no multiple instances of <span class="flp">manager</span> running on the same machine and using the same licence file.</p>
+</div>
+</div>
+<div class="section" id="database">
+<h3>1.1.3. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">make sure you have completed the binaries installation procedure.</p>
+</li>
+<li><p class="first">initialize a new database working directory <code class="file docutils literal notranslate"><span class="pre">&lt;database_home&gt;</span></code> by executing the following command:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db init &lt;database_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><a class="reference internal" href="database.html#database-conf"><span class="std std-ref">configure</span></a> the database</p>
+</li>
+<li><p class="first">start <span class="flp">database</span> by executing:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db start &lt;database_home&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="agent">
+<h2>1.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
+<p>In order to install <span class="flp">agent</span>, follow carefully the instructions below:</p>
+<ol class="arabic simple">
+<li>copy the agent file <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.2.jar</span></code> to your server machine.</li>
+<li><a class="reference internal" href="#agent-conf"><span class="std std-ref">configure</span></a> the agent.</li>
+<li>optionally add your <a class="reference internal" href="#formatters"><span class="std std-ref">formatters</span></a>.</li>
+<li>restart your application.</li>
+</ol>
+<p>When the agent starts for the first time it does not have any configuration deployed. It just registers itself to the <span class="flp">manager</span>, after successful connection, and does not instrument anything.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>You can verify if the agent is registered to the <span class="flp">manager</span> by executing the following command:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="logging">
+<span id="id1"></span><h1>2. Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h1>
+<p>Each Flopsar module (application) uses logging levels. The levels are defined as follows:</p>
+<dl class="docutils">
+<dt><span class="opt">finest</span></dt>
+<dd>the most detailed logging. It should not be used during normal, production operation since it can degrade the application performance significantly. Use only in cases when you suspect some problems with the application, want to trace how it processes requests, requested by the Flopsar Technology Support to help investigate some problem, or any other problems. It prints lots of diagnostic information, which might not be covered by this manual.</dd>
+<dt><span class="opt">finer</span></dt>
+<dd>a less detailed logging than <span class="opt">finest</span>. Used to log some additional information about the application operation and data processing.</dd>
+<dt><span class="opt">fine</span></dt>
+<dd>a more detailed logging than <span class="opt">info</span>. Used to log some additional information about the application operation and data processing.</dd>
+<dt><span class="opt">info</span></dt>
+<dd>a default level used in applications. Used only to log some runtime information to verify configuration and the like. You should use this level on normal, production operation.</dd>
+<dt><span class="opt">warning</span></dt>
+<dd>used in cases when some error occurs but with no impact on the applilcation stability and data integrity.</dd>
+<dt><span class="opt">error</span></dt>
+<dd>normally, there should be no <span class="opt">error</span> messages in the log. The level is used in cases when some error occurs. These errors impact the application operation stability and data integrity but not all of them. The messages are informative, so you should know whether you can ignore it or not. Any system calls and external libraries errors are also logged in this level.</dd>
+<dt><span class="opt">fatal/severe</span></dt>
+<dd>there should be no such messages in the log. Messages of this level are only printed in cases when some fatal error occurred and the application cannot run any longer. For example, some misconfigured options can result in printing fatal messages in the log. Please, read them and fix your configuration. The messages are usually very informative.</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h1>3. Agent<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p><span class="flp">agent</span> is a core component. It runs on a JVM and its main goal is to collect data from applications running on the JVM and the JVM itself.</p>
+<div class="section" id="configuration">
+<span id="agent-conf"></span><h2>3.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Agents are configured by their runtime options. The following options are mandatory:</p>
+<dl class="docutils">
+<dt><span class="opt">-Dflopsar.id</span></dt>
+<dd>Primary identifier of a server instance. It should consist of only word characters and have no more than 62 characters. If you provide a name consisting of more characters, the agent will truncate the name.</dd>
+<dt><span class="opt">-javaagent</span></dt>
+<dd>Path to your agent file <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.2.jar</span></code>.</dd>
+<dt><span class="opt">-Dflopsar.manager</span></dt>
+<dd>Socket address of the <span class="flp">manager</span> TCP server. Agents initiate connections to this server and the connections are maintained until the agents are shutdown.</dd>
+<dt><span class="opt">-Dflopsar.home</span></dt>
+<dd>Path to the Flopsar working directory. Log files are stored in this directory.</dd>
+</dl>
+<p>The above options must by set, otherwise the agent will not work. For example, your configuration could look like this one:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>-Dflopsar.id<span class="o">=</span>MyAgent -javaagent:/path/to/flopsar-agent.jar -Dflopsar.manager<span class="o">=</span><span class="m">172</span>.16.0.1:9000 -Dflopsar.home<span class="o">=</span>/path/to/some/dir
+</pre></div>
+</div>
+<p>There are some additional options, which are not mandatory:</p>
+<dl class="docutils">
+<dt><span class="opt">-Dflopsar.id.dyn</span></dt>
+<dd>Secondary identifier of a server instance. If you use this option, you must set its value <span class="code">V</span> to only another JVM option, i.e. the agent will take the value of this option and execute the method <span class="code">java.lang.System.getProperty(V,null)</span>. The output of the method will be the effective value of the secondary identifier. If you use both identifiers, primary and secondary, the agent will combine them into a single, composite identifier. They will be concatenated by an underscore character. The composite identifier’s length is up to 62 characters.</dd>
+<dt><span class="opt">-Dflopsar.debug</span></dt>
+<dd>By default source code line numbers in exceptions stack traces are omitted. If you want the agent to preserve these line numbers set this option value to <span class="opt">true</span>.</dd>
+<dt><span class="opt">-Dflopsar.logsize</span></dt>
+<dd>Total maximum size in MB of log files. By default this value is set to 100. By setting this option you specify how much space log files can use.</dd>
+<dt><span class="opt">-Dflopsar.qsize</span></dt>
+<dd>Total maximum size of the agent outbound queue size in MB. By setting this option you specify how much memory the agent can use.</dd>
+<dt><span class="opt">-Dflopsar.qratio</span></dt>
+<dd>Ratio of <span class="flp">agent</span> outbound queue size to the maximum JVM memory size in percentages. By default this value is set to 20. By setting this option you specify how much memory the agent can use. If you specify both this option and <span class="opt">-Dflopsar.qsize</span>, the latter takes precedence.</dd>
+</dl>
+<p>For example, your extended configuration could look like this one:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>-Dflopsar.id<span class="o">=</span>MyAgent -javaagent:/path/to/flopsar-agent-VER.jar -Dflopsar.manager<span class="o">=</span><span class="m">172</span>.16.0.1:9000 -Dflopsar.home<span class="o">=</span>/path/to/some/dir -Dflopsar.logsize<span class="o">=</span><span class="m">200</span>  -Dflopsar.qsize<span class="o">=</span><span class="m">400</span> -Dflopsar.debug<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>There are various places where you can add your custom JVM options, it depends on the Java software you use. Please, refer to your Java software documentation for more details about adding extra JVM options.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Please, make sure that every agent uses its own, unique identifier. If there are multiple agents with the same identifiers and they connect to the same <span class="flp">manager</span>, their connections will be dropped by the <span class="flp">manager</span> everytime a new connection attempt appears from any of the agents.</p>
+</div>
+</div>
+<div class="section" id="formatters">
+<span id="id3"></span><h2>3.2. Formatters<a class="headerlink" href="#formatters" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">agent</span> can be used standalone or it can be extended by means of Flopsar Extensions. Flopsar <span class="flp">agent</span> is a powerful engine, which is extensible by formatters. The extensions are some extra jar files, which consist of user defined POJO classes. The jars can be then included in <span class="flp">agent</span> deployment.</p>
+<p>Formatter is a key feature. It enables to process data inside the instrumented methods. In order to take advantage of this feature, all you have to do is setup a configuration, create a simple POJO class and implement a single method (called <em>formatter</em>):</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You can give any name to the above method but the signature of the method must be preserved. Otherwise, it will not work.</p>
+</div>
+<p>The argument of the formatter is an array of the instrumented method arguments delivered to your formatter. These are your original application objects, not <em>clones</em>. When you set up the configuration correctly, <span class="flp">agent</span> will inject your formatter code into the instrumented methods during the instrumentation. It can be injected in one of the two places, i.e. at the beginning or the end of the method. Note, your formatter code is executed inside your instrumented method, so make sure your formatter code generates minimal overhead.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you crash your application because of badly written formatters, do not blame us. Formatters code can be written by anyone, that is why they are not supported by Flopsar Technology.</p>
+</div>
+<p>In fact, it is up to you what extra features <span class="flp">agent</span> will have. You can even extend your <span class="flp">agent</span> installation to cover a distributed transactions tracing.</p>
+<p>Finding the best place for formatters jars can be a bit tricky and it strongly depends on your Java enviroment. You can find some tips and tricks on our <a class="reference external" href="https://github.com/flopsar/extensions/wiki/Formatters-Tips-&amp;-Tricks">GitHub page</a>.</p>
+</div>
+<div class="section" id="data-collecting-considerations">
+<span id="data-collecting"></span><h2>3.3. Data Collecting Considerations<a class="headerlink" href="#data-collecting-considerations" title="Permalink to this headline">¶</a></h2>
+<p>Although, <span class="flp">agent</span> is designed to collect as much data as possible, we are not able to guarantee that all the instrumented methods calls data will be collected. It is because <span class="flp">agent</span> priority is not to crash the application it monitors. That has some serious implications on the <span class="flp">agent</span> design and operation. We just favor stability and reliability over data completeness.</p>
+<p>Each call of an instrumented method, symbol or metric value is represented as a serialized entity called <em>packet</em>. As soon as the packet is created it is ready to be sent to a database. In order the packet to be sent it must be first put to the outbound queue. This is the point where <span class="flp">agent</span> decides whether put it or not. The packet is put to the queue if and only if the connection to the database is established and there is enough space in the outbound queue (the size of the outbound queue can be <a class="reference internal" href="#agent-conf"><span class="std std-ref">customized</span></a>). Otherwise, the packet is dropped. This scenerio holds for each packet.</p>
+</div>
+<div class="section" id="instrumentation">
+<h2>3.4. Instrumentation<a class="headerlink" href="#instrumentation" title="Permalink to this headline">¶</a></h2>
+<p>The fundamental feature of <span class="flp">agent</span> is instrumentation. This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework. A user configuration describes what and where to instrument (see <a class="reference internal" href="user.html#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). However, there are some classes which are always excluded from instrumentation:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>com.flopsar.*
+org.objectweb.*
+javassist.*
+org.apache.bcel.*
+java.*
+javax.*
+jdk.*
+$
+com.sun.*
+sun.*
+</pre></div>
+</div>
+<p>When <span class="flp">agent</span> receives a configuration to load, it first parses it and then sorts its instrumentation rules. If there are any changes in the configuration that requires configuration reloading, <span class="flp">agent</span> reloads those classes that have been instrumented earlier and those which are required by this new configuration. This classes flow is passed through the configuration filters (<a class="reference internal" href="#instrumentation-filter"><span class="std std-numref">Fig. 3.1</span></a>). The are a few filters operating on two levels: <em>class</em> and <em>method</em> ones. The first filter excludes all the classes from packages, which match the internal exclusion set. Next, it goes through the second, user defined, exclusion class filter. At this point, we have all the classes we want to instrument. In the next step, all the methods from each, selected class are passed through the method filters. At this point, a class can also be excluded from configuration if any of its methods does not satisfy the filters conditions. At the end, we obtain a set of methods which are selected for instrumentation.</p>
+<div class="figure align-center" id="id5">
+<span id="instrumentation-filter"></span><img alt="_images/instrumentation.svg" src="_images/instrumentation.svg" /><p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Instrumentation Filter</span></p>
+</div>
+<p>The methods instrumentation is performed in a specific order (<a class="reference internal" href="#instrumentation-order"><span class="std std-numref">Fig. 3.2</span></a>). First, rules with custom formatters are applied, then rules with standard formatters and finally rules without formatters at the end. For example, if there are two method rules, one instrumenting with a custom formatter and the other one instrumenting only <span class="code">public</span> methods and our method is both <span class="code">public</span> and its signature matches the one specified in the first rule, then the rule with the formatter will be applied.</p>
+<div class="figure align-center" id="id6">
+<span id="instrumentation-order"></span><img alt="_images/instrumentation2.svg" src="_images/instrumentation2.svg" /><p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Instrumentation Order</span></p>
+</div>
+</div>
+<div class="section" id="hot-methods">
+<h2>3.5. Hot Methods<a class="headerlink" href="#hot-methods" title="Permalink to this headline">¶</a></h2>
+<p>This feature enables you to record instrumented methods executions. The Hot methods feature is very useful, when you tune your configuration for minimal performance impact. In this way, you can easily detect the most frequently executed methods and exclude them from instrumentation, unless you really need to instrument them.</p>
+<p>When <span class="flp">agent</span> starts, this feature is enabled by default. <span class="flp">agent</span> simply registers the number of instrumented methods executions. The Hot Methods statistics are dumped every 30 seconds to a log file (see the example below), provided that the logger level is set to at least <strong>fine</strong> level. This is done for 30 cycles and then is disabled. You can enable it later from <span class="flp">workstation</span> (see <a class="reference internal" href="user.html#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hot Methods Report <span class="o">[</span>Cycles left <span class="m">27</span><span class="o">]</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+HM <span class="o">[</span><span class="m">206633</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>checkClosed<span class="se">\^\_</span><span class="o">()</span>V<span class="o">]</span>
+HM <span class="o">[</span><span class="m">166145</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>versionMeetsMinimum<span class="se">\^\_</span><span class="o">(</span>III<span class="o">)</span>Z<span class="o">]</span>
+HM <span class="o">[</span><span class="m">145591</span><span class="o">]</span> -&gt; <span class="o">[</span>com/konakart/db/KKCriteria<span class="o">][</span>getAsColumns<span class="se">\^\_</span><span class="o">()</span>Ljava/util/Map<span class="p">;</span><span class="o">]</span>
+HM <span class="o">[</span><span class="m">109807</span><span class="o">]</span> -&gt; <span class="o">[</span>com/konakart/db/KKCriteria<span class="o">][</span>getDbName<span class="se">\^\_</span><span class="o">()</span>Ljava/lang/String<span class="p">;</span><span class="o">]</span>
+...........
+</pre></div>
+</div>
+<p>The values in the parentheses denote the number of times the corresponding method was called.</p>
+</div>
+<div class="section" id="id4">
+<h2>3.6. Logging<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>The logging levels are defined in <a class="reference internal" href="#logging"><span class="std std-ref">Logging</span></a>. The log files size is 100 MB in total by default but it can be changed by setting <span class="opt">flopsar.logsize</span> option. If the log file reaches its maximum size a new file is created. The logging framework maintains up to 5 log files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, <span class="flp">agent</span> always starts with <span class="opt">finest</span> logger level and after 2 minutes it is switched to <span class="opt">info</span> automatically. You can always change the level in runtime using <span class="flp">workstation</span>.</p>
+</div>
+<div class="section" id="logger-messages">
+<h3>3.6.1. Logger Messages<a class="headerlink" href="#logger-messages" title="Permalink to this headline">¶</a></h3>
+<p>Each logger message entry has the following structure:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">]</span>&lt;THREAD&gt; Message content
+</pre></div>
+</div>
+<p>where:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">DATE:</th><td class="field-body">current date.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">LEVEL:</th><td class="field-body">current logger level.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">THREAD:</th><td class="field-body">current Java thread.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Message content:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">is self-explanatory.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="manager.html" class="btn btn-neutral float-right" title="4. Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral" title="1. What is Flopsar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Flopsar Technology Sp. z o.o..
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.2',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>
