@@ -214,7 +214,7 @@
 </div>
 <div class="section" id="licensing">
 <h1>3. Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h1>
-<p>Flopsar is a proprietary software and you need a valid license to run it. The license is a <code class="docutils literal notranslate"><span class="pre">license.key</span></code> file, which should be obtained separately. There are some restrictions on the Flopsar Suite usage depending on the license type you purchased. Contact your distributor for details.</p>
+<p>Flopsar is a proprietary software and you need a valid license to run it. The license is a <code class="docutils literal"><span class="pre">license.key</span></code> file, which should be obtained separately. There are some restrictions on the Flopsar Suite usage depending on the license type you purchased. Contact your distributor for details.</p>
 </div>
 <div class="section" id="architectural-fundamentals">
 <h1>4. Architectural Fundamentals<a class="headerlink" href="#architectural-fundamentals" title="Permalink to this headline">¶</a></h1>
@@ -233,7 +233,7 @@
 </div>
 <div class="section" id="agent">
 <span id="id2"></span><h2>4.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
-<p>The agent is a single jar file <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.1.jar</span></code>. It is written entirely in Java and is based on <a class="reference external" href="http://asm.ow2.org">ASM</a> instrumentation framework. It was designed with performance in mind, so that it has a minimal impact on the JVM performance. It does not perform any processing, it just collects the data and sends them as soon as possible.</p>
+<p>The agent is a single jar file <code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code>. It is written entirely in Java and is based on <a class="reference external" href="http://asm.ow2.org">ASM</a> instrumentation framework. It was designed with performance in mind, so that it has a minimal impact on the JVM performance. It does not perform any processing, it just collects the data and sends them as soon as possible.</p>
 <p>When a JVM starts, the agent connects to the <span class="flp">manager</span> instance. It is the agent that initiates a connection to the <span class="flp">manager</span>, i.e. there is no agent internal server, waiting for connections. When the agent establishes its connection to the <span class="flp">manager</span>, it starts a separate thread which opens a channel for incoming <span class="flp">manager</span> messages. The communication between agent and <span class="flp">manager</span> is bidirectional. If the agent loses its connection to the <span class="flp">manager</span> it will try to reconnect automatically.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -312,22 +312,22 @@
 <h1>6. Distribution Package<a class="headerlink" href="#distribution-package" title="Permalink to this headline">¶</a></h1>
 <p>Flopsar distribution binaries include:</p>
 <dl class="docutils">
-<dt><code class="file docutils literal notranslate"><span class="pre">database-2.1.tar.gz</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">database-2.1.tar.gz</span></code></dt>
 <dd>Flopsar <span class="flp">manager</span> and <span class="flp">database</span> binaries.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">workstation.zip</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">workstation.zip</span></code></dt>
 <dd>Flopsar Workstation application.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.1.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-agent-2.1.jar</span></code></dt>
 <dd>Flopsar Agent.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-fdbc-2.1.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1.jar</span></code></dt>
 <dd>Flopsar Database Connector.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-fdbc-2.1-javadoc.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.1-javadoc.jar</span></code></dt>
 <dd>Flopsar Database Connector API.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">documentation.pdf</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">documentation.pdf</span></code></dt>
 <dd>Flopsar Documentation</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">SHA256</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">SHA256</span></code></dt>
 <dd>sha256 checksums of all the binaries.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">SHA256.sig</span></code></dt>
-<dd>PGP signed <code class="docutils literal notranslate"><span class="pre">SHA256</span></code> file. In order to verify the signature use our <a class="reference external" href="http://flopsar.com/pgp">PGP public key</a>. You can find it at <a class="reference external" href="http://flopsar.com/pgp">http://flopsar.com/pgp</a>.</dd>
+<dt><code class="file docutils literal"><span class="pre">SHA256.sig</span></code></dt>
+<dd>PGP signed <code class="docutils literal"><span class="pre">SHA256</span></code> file. In order to verify the signature use our <a class="reference external" href="http://flopsar.com/pgp">PGP public key</a>. You can find it at <a class="reference external" href="http://flopsar.com/pgp">http://flopsar.com/pgp</a>.</dd>
 </dl>
 </div>
 

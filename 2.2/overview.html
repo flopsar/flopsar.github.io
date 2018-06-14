@@ -230,7 +230,7 @@
 </div>
 <div class="section" id="licensing">
 <h1>4. Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h1>
-<p>Flopsar is a proprietary software and you need a valid license to run it. The license is a <code class="docutils literal notranslate"><span class="pre">license.key</span></code> file, which should be obtained separately. There are some restrictions on the Flopsar usage depending on the license type you purchased. Contact your distributor for details.</p>
+<p>Flopsar is a proprietary software and you need a valid license to run it. The license is a <code class="docutils literal"><span class="pre">license.key</span></code> file, which should be obtained separately. There are some restrictions on the Flopsar usage depending on the license type you purchased. Contact your distributor for details.</p>
 </div>
 <div class="section" id="architectural-fundamentals">
 <h1>5. Architectural Fundamentals<a class="headerlink" href="#architectural-fundamentals" title="Permalink to this headline">¶</a></h1>
@@ -249,7 +249,7 @@
 </div>
 <div class="section" id="agent">
 <span id="id2"></span><h2>5.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
-<p>The agent is a single jar file <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.2.jar</span></code>. It is written entirely in Java and is based on <a class="reference external" href="http://asm.ow2.org">ASM</a> instrumentation framework. It was designed with performance in mind, so that it has a minimal impact on the JVM performance. It does not perform any processing, it just collects the data and sends them as soon as possible.</p>
+<p>The agent is a single jar file <code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code>. It is written entirely in Java and is based on <a class="reference external" href="http://asm.ow2.org">ASM</a> instrumentation framework. It was designed with performance in mind, so that it has a minimal impact on the JVM performance. It does not perform any processing, it just collects the data and sends them as soon as possible.</p>
 <p>When a JVM starts, the agent connects to the <span class="flp">manager</span> instance. It is the agent that initiates a connection to the <span class="flp">manager</span>, i.e. there is no agent internal server, waiting for connections. When the agent establishes its connection to the <span class="flp">manager</span>, it starts a separate thread which opens a channel for incoming <span class="flp">manager</span> messages. The communication between agent and <span class="flp">manager</span> is bidirectional. If the agent loses its connection to the <span class="flp">manager</span> it will try to reconnect automatically.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -350,22 +350,22 @@ There can be multiple Flopsar environments running on the same server machine as
 <h1>7. Distribution Package<a class="headerlink" href="#distribution-package" title="Permalink to this headline">¶</a></h1>
 <p>Flopsar distribution binaries include:</p>
 <dl class="docutils">
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-2.2-Linux.deb</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-2.2-Linux.deb</span></code></dt>
 <dd>Flopsar <span class="flp">manager</span> and <span class="flp">database</span> Debian package.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-2.2-Linux.rpm</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-2.2-Linux.rpm</span></code></dt>
 <dd>Flopsar <span class="flp">manager</span> and <span class="flp">database</span> RPM package.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">workstation.zip</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">workstation.zip</span></code></dt>
 <dd>Flopsar Workstation application.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.2.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-agent-2.2.jar</span></code></dt>
 <dd>Flopsar Agent.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-fdbc-2.2.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.2.jar</span></code></dt>
 <dd>Flopsar Database Connector.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">flopsar-fdbc-2.2-javadoc.jar</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">flopsar-fdbc-2.2-javadoc.jar</span></code></dt>
 <dd>Flopsar Database Connector API.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">SHA256</span></code></dt>
+<dt><code class="file docutils literal"><span class="pre">SHA256</span></code></dt>
 <dd>sha256 checksums of all the binaries.</dd>
-<dt><code class="file docutils literal notranslate"><span class="pre">SHA256.sig</span></code></dt>
-<dd>PGP signed <code class="docutils literal notranslate"><span class="pre">SHA256</span></code> file. In order to verify the signature use our <a class="reference external" href="http://flopsar.com/pgp">PGP public key</a>. You can find it at <a class="reference external" href="http://flopsar.com/pgp">http://flopsar.com/pgp</a>.</dd>
+<dt><code class="file docutils literal"><span class="pre">SHA256.sig</span></code></dt>
+<dd>PGP signed <code class="docutils literal"><span class="pre">SHA256</span></code> file. In order to verify the signature use our <a class="reference external" href="http://flopsar.com/pgp">PGP public key</a>. You can find it at <a class="reference external" href="http://flopsar.com/pgp">http://flopsar.com/pgp</a>.</dd>
 </dl>
 </div>
 <div class="section" id="release-notes">
@@ -409,7 +409,7 @@ There can be multiple Flopsar environments running on the same server machine as
 <p>Before you start upgrading you should stop all your running Flopsar instances, delete your current Flopsar binaries and install the new ones according to the <a class="reference internal" href="admin.html#bin-install"><span class="std std-ref">instructions</span></a>.</p>
 <div class="section" id="upgrading-database">
 <h3>8.1.1. Upgrading Database<a class="headerlink" href="#upgrading-database" title="Permalink to this headline">¶</a></h3>
-<p>The easiest way to upgrade your database is to replace its configuration file with a new one. You can override the configuration file with a template <code class="file docutils literal notranslate"><span class="pre">/usr/share/flopsar/templates/fs2db.conf</span></code> and set your options. Please note, the following options have changed their names:</p>
+<p>The easiest way to upgrade your database is to replace its configuration file with a new one. You can override the configuration file with a template <code class="file docutils literal"><span class="pre">/usr/share/flopsar/templates/fs2db.conf</span></code> and set your options. Please note, the following options have changed their names:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="55%" />
@@ -438,16 +438,16 @@ There can be multiple Flopsar environments running on the same server machine as
 <p>In order to migrate your <span class="flp">manager</span> instance, you need to take a few steps:</p>
 <blockquote>
 <div><ul>
-<li><p class="first">replace your current <code class="docutils literal notranslate"><span class="pre">license.key</span></code> with a new one.</p>
+<li><p class="first">replace your current <code class="docutils literal"><span class="pre">license.key</span></code> with a new one.</p>
 </li>
 <li><p class="first">migrate your users database by executing the following command:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth set --migrate &lt;manager_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth set --migrate &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">replace the authentication plugin name in the <code class="file docutils literal notranslate"><span class="pre">fs2mgr.conf</span></code> file:</p>
+<li><p class="first">replace the authentication plugin name in the <code class="file docutils literal"><span class="pre">fs2mgr.conf</span></code> file:</p>
 </li>
 </ul>
 <table border="1" class="docutils">
@@ -470,7 +470,7 @@ There can be multiple Flopsar environments running on the same server machine as
 </tbody>
 </table>
 <ul class="simple">
-<li>replace the following configuration option in the <code class="file docutils literal notranslate"><span class="pre">fs2mgr.conf</span></code>:</li>
+<li>replace the following configuration option in the <code class="file docutils literal"><span class="pre">fs2mgr.conf</span></code>:</li>
 </ul>
 <table border="1" class="docutils">
 <colgroup>

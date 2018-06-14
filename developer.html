@@ -193,8 +193,8 @@
             
   <div class="section" id="agent-api">
 <span id="id1"></span><h1>1. Agent API<a class="headerlink" href="#agent-api" title="Permalink to this headline">¶</a></h1>
-<p>If you want to provide your own, non-JVM, data and store them in the Flopsar environment, you can do it using the agent API. This functionality is embedded in the Flopsar Agent. In order to make use of the API, you must add <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.3.jar</span></code> as a dependency to your project. The API contains a single class <span class="code">com.flopsar.agent.api.Agent</span> with the following methods:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Agent</span> <span class="nf">createConnection</span><span class="o">(</span><span class="n">String</span> <span class="n">flopsarId</span><span class="o">,</span><span class="n">String</span> <span class="n">fsmHost</span><span class="o">,</span>
+<p>If you want to provide your own, non-JVM, data and store them in the Flopsar environment, you can do it using the agent API. This functionality is embedded in the Flopsar Agent. In order to make use of the API, you must add <code class="file docutils literal"><span class="pre">flopsar-agent-2.3.jar</span></code> as a dependency to your project. The API contains a single class <span class="code">com.flopsar.agent.api.Agent</span> with the following methods:</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Agent</span> <span class="nf">createConnection</span><span class="o">(</span><span class="n">String</span> <span class="n">flopsarId</span><span class="o">,</span><span class="n">String</span> <span class="n">fsmHost</span><span class="o">,</span>
                                         <span class="kt">int</span> <span class="n">fsmPort</span><span class="o">,</span><span class="kt">long</span> <span class="n">outboundQueueSize</span><span class="o">);</span>
 
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setupLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">loggerDirectory</span><span class="o">,</span><span class="kt">int</span> <span class="n">logSize</span><span class="o">,</span>
@@ -214,7 +214,7 @@
 </div>
 <p>The first method is used to create a new <span class="code">Agent</span> object. When you call this method, a new connection to your manager is established asynchronously. That means the method returns immediately, so you must make sure the connection is established by calling the <span class="code">isConnected</span> method.</p>
 <p>There is a simple example below:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* First you must setup a logger */</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/* First you must setup a logger */</span>
 <span class="n">Agent</span><span class="o">.</span><span class="na">setupLogger</span><span class="o">(</span><span class="s">&quot;/some/directory&quot;</span><span class="o">,</span><span class="mi">10</span><span class="o">,</span><span class="n">AbstractLoggerLevel</span><span class="o">.</span><span class="na">INFO</span><span class="o">);</span>
 
 <span class="cm">/* Next, connect to the manager */</span>
@@ -235,7 +235,7 @@
 <div class="section" id="standard">
 <h2>2.1. Standard<a class="headerlink" href="#standard" title="Permalink to this headline">¶</a></h2>
 <p>The <em>standard</em> formatter is embedded in <span class="flp">agent</span>. This formatter will execute the following method on each argument it gets:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">valueOf</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">);</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">valueOf</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">);</span>
 </pre></div>
 </div>
 <p>and return a result in a form of concatenated pairs of parameter identifier and the corresponding <span class="code">valueOf</span> function result. The following parameters are returned (in order of appearance):</p>
@@ -252,11 +252,11 @@
 <h2>2.2. Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
 <p>If you are not satisfied with the standard formatter and you want to extract some additional information (or make some preprocessing) you must implement your own, <em>custom</em> formatter.</p>
 <p>Suppose, you have some method</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">FooBar</span> <span class="nf">foo</span><span class="o">(</span><span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object1</span><span class="o">,</span> <span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object2</span><span class="o">,</span> <span class="o">...);</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">FooBar</span> <span class="nf">foo</span><span class="o">(</span><span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object1</span><span class="o">,</span> <span class="n">foo</span><span class="o">.</span><span class="na">bar</span><span class="o">.</span><span class="na">Object2</span><span class="o">,</span> <span class="o">...);</span>
 </pre></div>
 </div>
 <p>and you are interested in some additional information extracted from the first and second arguments. Your formatter implementation can look like the one below:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
 
         <span class="kd">final</span> <span class="kt">char</span> <span class="n">SEPARATOR</span> <span class="o">=</span> <span class="mh">0x1E</span><span class="o">;</span>
 
@@ -310,8 +310,8 @@
 <div class="section" id="plugins">
 <span id="id2"></span><h1>4. Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>Flopsar provides a few functionalities implemented as plugins. These implementations can be easily replaced with user defined implementations. In this version of Flopsar only <span class="flp">manager</span> supports plugins. There is one plugin currently available: <em>authentication</em> and it can be replaced.</p>
-<p>Flopsar provides a C API for writing custom implementations of plugins. In order to write a plugin, you need to include in your project the main header <code class="file docutils literal notranslate"><span class="pre">fs2plugin_api.h</span></code> file, which can be found in <code class="file docutils literal notranslate"><span class="pre">/usr/include/flopsar/</span></code> directory. This file contains prototypes of functions to implement. The function below is the most important one and must be implemented. This function is called only once when the application loads the plugin.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">init_plugin</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">home_dir</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">plugins_conf_dir</span><span class="p">);</span>
+<p>Flopsar provides a C API for writing custom implementations of plugins. In order to write a plugin, you need to include in your project the main header <code class="file docutils literal"><span class="pre">fs2plugin_api.h</span></code> file, which can be found in <code class="file docutils literal"><span class="pre">/usr/include/flopsar/</span></code> directory. This file contains prototypes of functions to implement. The function below is the most important one and must be implemented. This function is called only once when the application loads the plugin.</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">init_plugin</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">home_dir</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">plugins_conf_dir</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>When you call the function above you will be provided with three arguments. The <span class="code">p</span> argument is a structure representing your plugin. You should keep it, since it is required when you register your plugin hooks. The <span class="code">home_dir</span> argument is a path to your <span class="flp">manager</span> environment directory. The last argument <span class="code">plugins_conf_dir</span> is a path to your <span class="flp">manager</span> configuration directory. This can be used to add any additonal configuration to your plugin (see ref{plg-ntfy} as an example).</p>
@@ -321,30 +321,30 @@
 </div>
 <p>Implement your own plugin initialization and register your functions to the application within this function.</p>
 <p>There is an optional function to implement:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_plugin_test</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_plugin_test</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>which can be registered by executing the function below:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_test_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">fs2_plugin_test</span> <span class="n">hook</span><span class="p">);</span>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_test_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">fs2_plugin_test</span> <span class="n">hook</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This is a test function, which can be used to implement some test that will help you to check if your plugin work as expected in runtime. If the test succeeds the function should return <span class="code">0</span>, otherwise <span class="code">-1</span>. In order to trigger the test you must execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr set --plugins-test &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr set --plugins-test &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>This command will execute all the registered plugins test hooks.</p>
 <div class="section" id="plugin-authentication">
 <span id="plugins-auth"></span><h2>4.1. Plugin: Authentication<a class="headerlink" href="#plugin-authentication" title="Permalink to this headline">¶</a></h2>
-<p>If you want to use your own authentication system, you must implement a plugin in order to be able to authenticate your users against this system. In order to write a custom authentication plugin, you must include an additional header <code class="file docutils literal notranslate"><span class="pre">fs2plugin_api_auth.h</span></code> file. All you have to do is to implement the function below:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_user_auth</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">password</span><span class="p">);</span>
+<p>If you want to use your own authentication system, you must implement a plugin in order to be able to authenticate your users against this system. In order to write a custom authentication plugin, you must include an additional header <code class="file docutils literal"><span class="pre">fs2plugin_api_auth.h</span></code> file. All you have to do is to implement the function below:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fs2_user_auth</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">password</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>and then register it by means of the function</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_user_auth_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">fs2_user_auth</span> <span class="n">hook</span><span class="p">);</span>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fs2_register_user_auth_hook</span><span class="p">(</span><span class="k">struct</span> <span class="n">plugin_fs2</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">fs2_user_auth</span> <span class="n">hook</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>in the <span class="code">init_plugin</span> function. The <span class="code">fs2_user_auth</span> takes two arguments: <span class="code">username</span> and <span class="code">password</span>. It should return <span class="code">0</span> if the credentials are valid or <span class="code">-1</span> otherwise.</p>
-<p>If your implementation is done, compile the code to a library and put it into the <code class="file docutils literal notranslate"><span class="pre">FLOPSAR_HOME/lib</span></code> directory. You must also update the manager configuration file and replace the <span class="opt">plugins</span> option value <span class="opt">libfs2plg_authbasic.so</span> with the full name of your library.</p>
+<p>If your implementation is done, compile the code to a library and put it into the <code class="file docutils literal"><span class="pre">FLOPSAR_HOME/lib</span></code> directory. You must also update the manager configuration file and replace the <span class="opt">plugins</span> option value <span class="opt">libfs2plg_authbasic.so</span> with the full name of your library.</p>
 </div>
 </div>
 

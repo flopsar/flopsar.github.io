@@ -207,7 +207,7 @@
 <p><span class="flp">manager</span> is a key Flopsar component, which is responsible for managing the entire Flopsar environment.</p>
 <div class="section" id="configuration">
 <span id="manager-conf"></span><h2>4.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">manager</span> is managed by its configuration file <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/flopsar.conf</span></code>.</p>
+<p><span class="flp">manager</span> is managed by its configuration file <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/flopsar.conf</span></code>.</p>
 <dl class="docutils">
 <dt><span class="opt">server.bind.port</span></dt>
 <dd>Port of the TCP server.</dd>
@@ -217,30 +217,30 @@ When the option is either empty or missing, the IP address is read from the lice
 If the option value is set to <span class="opt">*</span>, the TCP server will bind to all existing IP addresses.</dd>
 <dt><span class="opt">plugins</span></dt>
 <dd>List of enabled plugins. This option contains full names of the plugins.
-Entries must be comma separated. By default only one plugin is enabled: <code class="file docutils literal notranslate"><span class="pre">libflopsar-authbasic.so</span></code>.
+Entries must be comma separated. By default only one plugin is enabled: <code class="file docutils literal"><span class="pre">libflopsar-authbasic.so</span></code>.
 If you want to use additional plugins, add their names and separate them with a comma.
 Flopsar <span class="flp">manager</span> currently uses one plugin: <em>authentication</em>. You can easily replace this plugin with a custom one (see <a class="reference internal" href="developer.html#plugins"><span class="std std-ref">Plugins</span></a> for details).</dd>
 </dl>
 </div>
 <div class="section" id="logging">
 <h2>4.2. Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
-<p><span class="flp">manager</span> has a single log file <code class="file docutils literal notranslate"><span class="pre">fs2mgr.log</span></code>. It is stored in <code class="file docutils literal notranslate"><span class="pre">manager_home/logs</span></code> directory. The logging levels are defined in <a class="reference internal" href="admin.html#logging"><span class="std std-ref">Logging</span></a>.</p>
+<p><span class="flp">manager</span> has a single log file <code class="file docutils literal"><span class="pre">fs2mgr.log</span></code>. It is stored in <code class="file docutils literal"><span class="pre">manager_home/logs</span></code> directory. The logging levels are defined in <a class="reference internal" href="admin.html#logging"><span class="std std-ref">Logging</span></a>.</p>
 <p>You can set the logger level either during the startup procedure or in runtime. For example, to set the <span class="opt">fine</span> level during <span class="flp">manager</span> startup use the following options:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr start --loglevel fine &lt;manager_home&gt;
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr start --loglevel fine &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>In order to change it in runtime, execute the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr <span class="nb">set</span> --loglevel fine &lt;manager_home&gt;
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr <span class="nb">set</span> --loglevel fine &lt;manager_home&gt;
 </pre></div>
 </div>
 <div class="section" id="logger-messages">
 <h3>4.2.1. Logger messages<a class="headerlink" href="#logger-messages" title="Permalink to this headline">¶</a></h3>
 <p>Each logger message entry has the following structure:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">]</span> Message content
+<div class="highlight-shell"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">]</span> Message content
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">][</span>PLG<span class="o">]</span> Message content
+<div class="highlight-shell"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">][</span>PID<span class="o">][</span>PLG<span class="o">]</span> Message content
 </pre></div>
 </div>
 <p>The only difference between these two types is an additional <span class="opt">PLG</span> entry. This entry denotes that this particular message comes from a plugin. The rest of the entries denote:</p>
@@ -266,32 +266,32 @@ Flopsar <span class="flp">manager</span> currently uses one plugin: <em>authenti
 <p><span class="flp">manager</span> accepts connections from three types of clients: <span class="flp">fdbc</span>, <span class="flp">agent</span> and <span class="flp">database</span> ones. The explicit authentication is required only for <span class="flp">fdbc</span> clients. <span class="flp">workstation</span> is a <span class="flp">fdbc</span> client too, so when a user logs to the <span class="flp">workstation</span> they are required to authenticate to <span class="flp">manager</span> by providing their credentials. Flopsar supports two types of authentication mechanisms: <em>internal</em> and LDAP.</p>
 <div class="section" id="internal-authentication">
 <h3>4.3.1. Internal Authentication<a class="headerlink" href="#internal-authentication" title="Permalink to this headline">¶</a></h3>
-<p>In order to enable the internal authentication mechanism you must add the <code class="file docutils literal notranslate"><span class="pre">libflopsar-authbasic</span></code> plugin library to the configuration option in the <code class="file docutils literal notranslate"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libflopsar-authbasic</span>. This operation requires <span class="flp">manager</span> to be restarted. Users management is done by means of <strong class="command">fs2auth</strong> executable. The following operations are supported:</p>
+<p>In order to enable the internal authentication mechanism you must add the <code class="file docutils literal"><span class="pre">libflopsar-authbasic</span></code> plugin library to the configuration option in the <code class="file docutils literal"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libflopsar-authbasic</span>. This operation requires <span class="flp">manager</span> to be restarted. Users management is done by means of <strong class="command">fs2auth</strong> executable. The following operations are supported:</p>
 <div class="topic">
 <p class="topic-title first">Listing users</p>
 <p>To list all the stored users execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth list --mode users &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth list --mode users &lt;manager_home&gt;
 </pre></div>
 </div>
 </div>
 <div class="topic">
 <p class="topic-title first">Adding users</p>
 <p>To add a new <span class="opt">username</span> user execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth add --user username &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth add --user username &lt;manager_home&gt;
 </pre></div>
 </div>
 </div>
 <div class="topic">
 <p class="topic-title first">Setting user password</p>
 <p>To set a <span class="opt">username</span> user password execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth set --user username --password &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth set --user username --password &lt;manager_home&gt;
 </pre></div>
 </div>
 </div>
 <div class="topic">
 <p class="topic-title first">Deleting users</p>
 <p>To delete <span class="opt">username</span> user execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth delete --user username &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth delete --user username &lt;manager_home&gt;
 </pre></div>
 </div>
 </div>
@@ -302,12 +302,12 @@ Flopsar <span class="flp">manager</span> currently uses one plugin: <em>authenti
 </div>
 <div class="section" id="ldap-authentication">
 <h3>4.3.2. LDAP Authentication<a class="headerlink" href="#ldap-authentication" title="Permalink to this headline">¶</a></h3>
-<p>In order to enable the LDAP authentication mechanism you must add the <code class="file docutils literal notranslate"><span class="pre">libflopsar-ldap</span></code> plugin library to the configuration option in the <code class="file docutils literal notranslate"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libflopsar-ldap</span>. This operation requires <span class="flp">manager</span> to be restarted.</p>
+<p>In order to enable the LDAP authentication mechanism you must add the <code class="file docutils literal"><span class="pre">libflopsar-ldap</span></code> plugin library to the configuration option in the <code class="file docutils literal"><span class="pre">flopsar.conf</span></code> file, i.e. <span class="opt">plugins=libflopsar-ldap</span>. This operation requires <span class="flp">manager</span> to be restarted.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">There can be only one authentication plugin in the <span class="flp">manager</span> configuration file. Use either <code class="file docutils literal notranslate"><span class="pre">libflopsar-authbasic</span></code> or <code class="file docutils literal notranslate"><span class="pre">libflopsar-ldap</span></code>.</p>
+<p class="last">There can be only one authentication plugin in the <span class="flp">manager</span> configuration file. Use either <code class="file docutils literal"><span class="pre">libflopsar-authbasic</span></code> or <code class="file docutils literal"><span class="pre">libflopsar-ldap</span></code>.</p>
 </div>
-<p>Next, copy the <code class="file docutils literal notranslate"><span class="pre">/usr/share/flopsar/templates/plugins/flopsar-ldap</span></code> directory into <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/</span></code> and edit the <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/ldap.conf</span></code> file. The file has the following options to set:</p>
+<p>Next, copy the <code class="file docutils literal"><span class="pre">/usr/share/flopsar/templates/plugins/flopsar-ldap</span></code> directory into <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/</span></code> and edit the <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/ldap.conf</span></code> file. The file has the following options to set:</p>
 <dl class="docutils">
 <dt><span class="opt">ldap.url</span></dt>
 <dd>LDAP service URL.</dd>
@@ -337,7 +337,7 @@ Flopsar <span class="flp">manager</span> currently uses one plugin: <em>authenti
 </dl>
 <p>Below, an example is presented:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ldap.url=ldap.mydomain.com:389
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>ldap.url=ldap.mydomain.com:389
 ldap.base.dn=dc=mydomain,dc=com
 ldap.bind.dn=cn=ruser,dc=mydomain,dc=com
 ldap.bind.password=secret
@@ -361,7 +361,7 @@ ldap.group.search=(&amp;(objectClass=posixGroup)(cn=$))
 <p>Flopsar authorization mechanism is based on permissions. The authorization process is performed by Flopsar itself.</p>
 <p>In order to list all the available permissions, execute the following command:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth list --mode permissions
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth list --mode permissions
 
  Available permissions:
 
@@ -372,7 +372,7 @@ ldap.group.search=(&amp;(objectClass=posixGroup)(cn=$))
 </div></blockquote>
 <p>If you want to see which permissions users have, list all the users:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth list --mode users &lt;manager_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth list --mode users &lt;manager_home&gt;
 
 Users list:
 
@@ -391,13 +391,13 @@ Users list:
 </div></blockquote>
 <p>If, for example, you want to allow user1 edit agents configurations, just execute the following command:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth add --user user1 --perm P2 &lt;manager_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth add --user user1 --perm P2 &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
 <p>In order to revoke that permission, execute the following command:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2auth add --user user1 --perm ~P2 &lt;manager_home&gt;
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2auth add --user user1 --perm ~P2 &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -421,16 +421,16 @@ Users list:
 </ul>
 <p>Then, the agent is attached to one of the connected databases automatically. If there are more than one database connection, manager selects a database randomly. In all other cases, agents must be attached to the database manually.</p>
 <p>Suppose you have a running <em>myAgent1</em> agent and want to attach it to a database, which server listens on <span class="opt">172.16.0.12:8000</span>. In order to do it you must execute the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr <span class="nb">set</span> --agent-type java --agent-name myAgent1 --database <span class="m">172</span>.16.0.12:8000 &lt;manager_home&gt;
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr <span class="nb">set</span> --agent-type java --agent-name myAgent1 --database <span class="m">172</span>.16.0.12:8000 &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>This operation will store this change in <span class="flp">manager</span> and makes the agent drop its current database connection and connect to a new database.</p>
 <p>You can always inspect your agent configurations by executing the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>As a result you should see something similar:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>TYPE   ID                 AGENT                                DATABASE                   CONFIGURATION
+<div class="highlight-shell"><div class="highlight"><pre><span></span>TYPE   ID                 AGENT                                DATABASE                   CONFIGURATION
 -------------------------------------------------------------------------------------------------------
 JVM  <span class="p">|</span> 49132292717FA021 <span class="p">|</span> kona1...........................   <span class="p">|</span> <span class="m">172</span>.16.0.12:8000         <span class="p">|</span> c1
 JVM  <span class="p">|</span> 9349FF5C62BEEB7C <span class="p">|</span> kona2...........................   <span class="p">|</span> <span class="m">172</span>.16.0.13:8000         <span class="p">|</span> c1
@@ -454,7 +454,7 @@ TOTAL  <span class="m">2</span>
 <div class="section" id="deleting-agent-data">
 <h3>4.4.1. Deleting Agent Data<a class="headerlink" href="#deleting-agent-data" title="Permalink to this headline">¶</a></h3>
 <p>If you want to delete an agent of &lt;agent-type&gt; type from the manager, just execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr delete --agent-name myAgent --agent-type &lt;agent-type&gt; &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr delete --agent-name myAgent --agent-type &lt;agent-type&gt; &lt;manager_home&gt;
 </pre></div>
 </div>
 <div class="admonition important">
@@ -466,7 +466,7 @@ TOTAL  <span class="m">2</span>
 <div class="section" id="managing-clients-connections">
 <h2>4.5. Managing Clients Connections<a class="headerlink" href="#managing-clients-connections" title="Permalink to this headline">¶</a></h2>
 <p>You can always check what clients are currently connected to the manager. You can simply do it by executing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr get --target server-stats &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr get --target server-stats &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>This operation will print a list of the connected clients to your console. The result will be similar to the one below:</p>
@@ -492,7 +492,7 @@ TOTAL  <span class="m">2</span>
 <dd>Total size of data sent to a client.</dd>
 </dl>
 <p>If you want to disconnect a client, you need to execute the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr delete --client CONNID &lt;manager_home&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr delete --client CONNID &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>where <span class="opt">CONNID</span> is a connection identifier.</p>
