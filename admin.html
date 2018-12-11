@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -63,7 +62,7 @@
             
             
               <div class="version">
-                2.3
+                2.4
               </div>
             
           
@@ -128,13 +127,20 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#accessing-flopsar-environment">2. Accessing Flopsar Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#start-page">3. Start Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#settings">4. Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#configurations">5. Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#galaxies">6. Galaxies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#agents">7. Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#queries">8. Queries</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#database-api">3. Database API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -216,30 +222,33 @@
 </ul>
 <div class="section" id="manager-and-database-binaries-installation">
 <span id="bin-install"></span><h2>1.1. Manager and Database Binaries Installation<a class="headerlink" href="#manager-and-database-binaries-installation" title="Permalink to this headline">¶</a></h2>
-<p>There are two packages available for installation: <code class="file docutils literal"><span class="pre">flopsar-2.3-Linux.deb</span></code> and <code class="file docutils literal"><span class="pre">flopsar-2.3-Linux.rpm</span></code>. For Debian based distributions you can install it
+<p>There are two packages available for installation: <code class="file docutils literal notranslate"><span class="pre">flopsar-2.4-Linux.deb</span></code> and <code class="file docutils literal notranslate"><span class="pre">flopsar-2.4-Linux.rpm</span></code>. For Debian based distributions you can install it
 by executing the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ dpkg -i flopsar-2.3-Linux.deb
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dpkg -i flopsar-2.4-Linux.deb
 </pre></div>
 </div>
-<p>For Red Hat based distributions you can install it by executing the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ rpm -ih flopsar-2.3-Linux.rpm
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ zypper[yum] install flopsar-2.3-Linux.rpm
+<p>For Red Hat based distributions you can install it by executing one of the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rpm -ih flopsar-2.4-Linux.rpm
+$ zypper install flopsar-2.4-Linux.rpm
+$ yum install flopsar-2.4-Linux.rpm
 </pre></div>
 </div>
 <p>Flopsar installs several files in your system. You can inspect these files by querying contents of the Flopsar package:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ rpm -qlp flopsar-2.3-Linux.rpm
-$ dpkg -c flopsar-2.3-Linux.deb
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rpm -qlp flopsar-2.4-Linux.rpm
+$ dpkg -c flopsar-2.4-Linux.deb
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You will not be able to run Flopsar unless you accept the Flopsar End User License Agreement (EULA).
+In order to accept the license you must set the environment variable <span class="opt">FLOPSAR_EULA_ACCEPT</span> to <span class="opt">YES</span>.</p>
 </div>
 <div class="section" id="flopsar-dependencies">
 <h3>1.1.1. Flopsar Dependencies<a class="headerlink" href="#flopsar-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>Flopsar base configuration (without plugins) should be able to run on your system successfully.
 However, if your installation cannot run due to missing libraries, use <span class="opt">ldd</span> tool to check which libraries are missing.
 You can also check all dependencies by executing the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ rpm -qp --requires flopsar-2.3-Linux.rpm
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rpm -qp --requires flopsar-2.4-Linux.rpm
 </pre></div>
 </div>
 </div>
@@ -250,20 +259,20 @@ You can also check all dependencies by executing the following command:</p>
 </li>
 <li><p class="first">make sure your destination machine has the same IP address as the one specified in your license file. Otherwise, <span class="flp">manager</span> will not run.</p>
 </li>
-<li><p class="first">initialize a new environment working directory <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;</span></code> by executing the following command:</p>
+<li><p class="first">initialize a new environment working directory <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;</span></code> by executing the following command:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr init &lt;manager_home&gt;
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr init &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">put your license file into the <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/lic</span></code> directory.</p>
+<li><p class="first">put your license file into the <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/lic</span></code> directory.</p>
 </li>
 <li><p class="first"><a class="reference internal" href="manager.html#manager-conf"><span class="std std-ref">configure</span></a> the manager</p>
 </li>
 <li><p class="first">start <span class="flp">manager</span> by executing:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr start &lt;manager_home&gt;
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr start &lt;manager_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -279,9 +288,9 @@ You can also check all dependencies by executing the following command:</p>
 <ol class="arabic">
 <li><p class="first">make sure you have completed the binaries installation procedure.</p>
 </li>
-<li><p class="first">initialize a new database working directory <code class="file docutils literal"><span class="pre">&lt;database_home&gt;</span></code> by executing the following command:</p>
+<li><p class="first">initialize a new database working directory <code class="file docutils literal notranslate"><span class="pre">&lt;database_home&gt;</span></code> by executing the following command:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db init &lt;database_home&gt;
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db init &lt;database_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -290,7 +299,7 @@ You can also check all dependencies by executing the following command:</p>
 </li>
 <li><p class="first">start <span class="flp">database</span> by executing:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span>$ fs2db start &lt;database_home&gt;
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db start &lt;database_home&gt;
 </pre></div>
 </div>
 </div></blockquote>
@@ -302,23 +311,24 @@ You can also check all dependencies by executing the following command:</p>
 <h2>1.2. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h2>
 <p>In order to install <span class="flp">agent</span>, follow carefully the instructions below:</p>
 <ol class="arabic simple">
-<li>copy the agent file <code class="file docutils literal"><span class="pre">flopsar-agent-2.3.jar</span></code> to your server machine.</li>
-<li>create a directory and <code class="file docutils literal"><span class="pre">ext</span></code> subdirectory for the agent data.</li>
+<li>copy the agent file <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.4.jar</span></code> to your server machine.</li>
+<li>create a directory and <code class="file docutils literal notranslate"><span class="pre">ext</span></code> subdirectory for the agent data.</li>
 <li><a class="reference internal" href="#agent-conf"><span class="std std-ref">configure</span></a> the agent.</li>
-<li>optionally put all your <a class="reference internal" href="#formatters"><span class="std std-ref">formatters</span></a> into the <code class="file docutils literal"><span class="pre">ext</span></code> directory.</li>
+<li>optionally put all your <a class="reference internal" href="#formatters"><span class="std std-ref">formatters</span></a> into the <code class="file docutils literal notranslate"><span class="pre">ext</span></code> directory.</li>
 <li>restart your application.</li>
 </ol>
 <p>When the agent starts for the first time it does not have any configuration deployed. It just registers itself to the <span class="flp">manager</span>, after successful connection, and does not instrument anything.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>You can verify if the agent is registered to the <span class="flp">manager</span> by executing the following command:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2mgr get --target agents &lt;manager_home&gt;
 </pre></div>
 </div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">If you plan to install agent in OSGi environments, make sure to add <span class="code">com.flopsar</span> classes to the OSGi container classpath.</p>
+<p class="last">If you plan to install agent in OSGi environments, make sure to add <span class="code">com.flopsar</span> classes to the OSGi container classpath.
+Please, refer to your OSGi environment documentation for details.</p>
 </div>
 </div>
 </div>
@@ -352,25 +362,25 @@ You can also check all dependencies by executing the following command:</p>
 <dt><span class="opt">-Dflopsar.id</span></dt>
 <dd>Primary identifier of a server instance. It should consist of only word characters and have no more than 62 characters. If you provide a name consisting of more characters, the agent will truncate the name.</dd>
 <dt><span class="opt">-javaagent</span></dt>
-<dd>Path to your agent file <code class="file docutils literal"><span class="pre">flopsar-agent-2.3.jar</span></code>.</dd>
+<dd>Path to your agent file <code class="file docutils literal notranslate"><span class="pre">flopsar-agent-2.4.jar</span></code>.</dd>
 <dt><span class="opt">-Dflopsar.manager</span></dt>
 <dd>Socket address of the <span class="flp">manager</span> TCP server. Agents initiate connections to this server and the connections are maintained until the agents are shutdown.</dd>
 <dt><span class="opt">-Dflopsar.home</span></dt>
 <dd><p class="first">Path to the Flopsar working directory. Log files are stored in this directory.</p>
 <div class="last admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">This directory must contain <code class="file docutils literal"><span class="pre">ext</span></code> subdirectory. This is the place you put all your formatter classes.</p>
+<p class="last">This directory must contain <code class="file docutils literal notranslate"><span class="pre">ext</span></code> subdirectory. This is the place you put all your formatter classes.</p>
 </div>
 </dd>
 </dl>
 <p>The above options must by set, otherwise the agent will not work. For example, your configuration could look like this one:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>-Dflopsar.id<span class="o">=</span>MyAgent -javaagent:/path/to/flopsar-agent.jar -Dflopsar.manager<span class="o">=</span><span class="m">172</span>.16.0.1:9000 -Dflopsar.home<span class="o">=</span>/path/to/some/dir
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>-Dflopsar.id<span class="o">=</span>MyAgent -javaagent:/path/to/flopsar-agent.jar -Dflopsar.manager<span class="o">=</span><span class="m">172</span>.16.0.1:9000 -Dflopsar.home<span class="o">=</span>/path/to/some/dir
 </pre></div>
 </div>
 <p>There are some additional options, which are not mandatory:</p>
 <dl class="docutils">
 <dt><span class="opt">-Dflopsar.ext.packages</span></dt>
-<dd><p class="first">Comma-separated list of packages, which all formatter classes come from. If not specified or empty, it contains only <span class="code">org.flopsar.ext</span> package by default. Classes from these packages will be loaded by the agent from the <code class="file docutils literal"><span class="pre">ext</span></code> subdirectory.</p>
+<dd><p class="first">Comma-separated list of packages, which all formatter classes come from. If not specified or empty, it contains only <span class="code">org.flopsar.ext</span> package by default. Classes from these packages will be loaded by the agent from the <code class="file docutils literal notranslate"><span class="pre">ext</span></code> subdirectory.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">No class coming from any of the specified packages will be instrumented, since the agent assumes these are formatter classes.</p>
@@ -394,7 +404,7 @@ You can also check all dependencies by executing the following command:</p>
 <dd>Ratio of <span class="flp">agent</span> outbound queue size to the maximum JVM memory size in percentages. By default this value is set to 20. By setting this option you specify how much memory the agent can use. If you specify both this option and <span class="opt">-Dflopsar.qsize</span>, the latter takes precedence.</dd>
 </dl>
 <p>For example, your extended configuration could look like this one:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>-Dflopsar.id<span class="o">=</span>MyAgent -javaagent:/path/to/flopsar-agent-VER.jar -Dflopsar.manager<span class="o">=</span><span class="m">172</span>.16.0.1:9000 -Dflopsar.home<span class="o">=</span>/path/to/some/dir -Dflopsar.logsize<span class="o">=</span><span class="m">200</span>  -Dflopsar.qsize<span class="o">=</span><span class="m">400</span> -Dflopsar.debug<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>-Dflopsar.id<span class="o">=</span>MyAgent -javaagent:/path/to/flopsar-agent-VER.jar -Dflopsar.manager<span class="o">=</span><span class="m">172</span>.16.0.1:9000 -Dflopsar.home<span class="o">=</span>/path/to/some/dir -Dflopsar.logsize<span class="o">=</span><span class="m">200</span>  -Dflopsar.qsize<span class="o">=</span><span class="m">400</span> -Dflopsar.debug<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>There are various places where you can add your custom JVM options, it depends on the Java software you use. Please, refer to your Java software documentation for more details about adding extra JVM options.</p>
@@ -407,7 +417,7 @@ You can also check all dependencies by executing the following command:</p>
 <span id="id3"></span><h2>3.2. Formatters<a class="headerlink" href="#formatters" title="Permalink to this headline">¶</a></h2>
 <p><span class="flp">agent</span> can be used standalone or it can be extended by means of Flopsar Extensions. Flopsar <span class="flp">agent</span> is a powerful engine, which is extensible by formatters. The extensions are some extra jar files, which consist of user defined POJO classes. The jars can be then included in <span class="flp">agent</span> deployment.</p>
 <p>Formatter is a key feature. It enables to process data inside the instrumented methods. In order to take advantage of this feature, all you have to do is setup a configuration, create a simple POJO class and implement a single method (called <em>formatter</em>):</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="nf">myFormatter</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -443,14 +453,21 @@ You can also check all dependencies by executing the following command:</p>
 </div>
 <div class="section" id="instrumentation">
 <h2>3.4. Instrumentation<a class="headerlink" href="#instrumentation" title="Permalink to this headline">¶</a></h2>
-<p>The fundamental feature of <span class="flp">agent</span> is instrumentation. This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework. A user configuration describes what and where to instrument (see <a class="reference internal" href="user.html#manage-agent-conf"><span class="std std-ref">Managing Agent Configurations</span></a> for details). However, there are some classes which are always excluded from instrumentation:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>com.flopsar.*
+<p>The fundamental feature of <span class="flp">agent</span> is instrumentation.
+This feature makes use of <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html">java.lang.instrument</a> framework.
+A user configuration describes what and where to instrument (see <a class="reference internal" href="user.html#manage-agent-conf"><span class="std std-ref">Configurations</span></a> for details).
+However, there are some classes which are always excluded from instrumentation:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>com.flopsar.*
 org.objectweb.*
 javassist.*
 org.apache.bcel.*
 jdk.internal.org.objectweb.asm.*
 <span class="nv">$*</span>
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">All exception classes are ignored and not instrumented.</p>
 </div>
 <p>When <span class="flp">agent</span> receives a configuration to load, it first parses it and then sorts its instrumentation rules. If there are any changes in the configuration that requires configuration reloading, <span class="flp">agent</span> reloads those classes that have been instrumented earlier and those which are required by this new configuration. This classes flow is passed through the configuration filters (<a class="reference internal" href="#instrumentation-filter"><span class="std std-numref">Fig. 3.1</span></a>). The are a few filters operating on two levels: <em>class</em> and <em>method</em> ones. The first filter excludes all the classes from packages, which match the internal exclusion set. Next, it goes through the second, user defined, exclusion class filter. At this point, we have all the classes we want to instrument. In the next step, all the methods from each, selected class are passed through the method filters. At this point, a class can also be excluded from configuration if any of its methods does not satisfy the filters conditions. At the end, we obtain a set of methods which are selected for instrumentation.</p>
 <div class="figure align-center" id="id5">
@@ -465,7 +482,7 @@ jdk.internal.org.objectweb.asm.*
 <h2>3.5. Hot Methods<a class="headerlink" href="#hot-methods" title="Permalink to this headline">¶</a></h2>
 <p>This feature enables you to record instrumented methods executions. The Hot methods feature is very useful, when you tune your configuration for minimal performance impact. In this way, you can easily detect the most frequently executed methods and exclude them from instrumentation, unless you really need to instrument them.</p>
 <p>When <span class="flp">agent</span> starts, this feature is enabled by default. <span class="flp">agent</span> simply registers the number of instrumented methods executions. The Hot Methods statistics are dumped every 30 seconds to a log file (see the example below), provided that the logger level is set to at least <strong>fine</strong> level. This is done for 30 cycles and then is disabled. You can enable it later from <span class="flp">workstation</span> (see <a class="reference internal" href="user.html#gui-hot-methods"><span class="std std-ref">Hot Methods</span></a> for details).</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hot Methods Report <span class="o">[</span>Cycles left <span class="m">27</span><span class="o">]</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hot Methods Report <span class="o">[</span>Cycles left <span class="m">27</span><span class="o">]</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
 HM <span class="o">[</span><span class="m">206633</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>checkClosed<span class="se">\^\_</span><span class="o">()</span>V<span class="o">]</span>
 HM <span class="o">[</span><span class="m">166145</span><span class="o">]</span> -&gt; <span class="o">[</span>com/mysql/jdbc/ConnectionImpl<span class="o">][</span>versionMeetsMinimum<span class="se">\^\_</span><span class="o">(</span>III<span class="o">)</span>Z<span class="o">]</span>
 HM <span class="o">[</span><span class="m">145591</span><span class="o">]</span> -&gt; <span class="o">[</span>com/konakart/db/KKCriteria<span class="o">][</span>getAsColumns<span class="se">\^\_</span><span class="o">()</span>Ljava/util/Map<span class="p">;</span><span class="o">]</span>
@@ -485,7 +502,7 @@ HM <span class="o">[</span><span class="m">109807</span><span class="o">]</span>
 <div class="section" id="logger-messages">
 <h3>3.6.1. Logger Messages<a class="headerlink" href="#logger-messages" title="Permalink to this headline">¶</a></h3>
 <p>Each logger message entry has the following structure:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">]</span>&lt;THREAD&gt; Message content
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>DATE <span class="o">[</span>LEVEL<span class="o">]</span>&lt;THREAD&gt; Message content
 </pre></div>
 </div>
 <p>where:</p>
@@ -549,7 +566,7 @@ HM <span class="o">[</span><span class="m">109807</span><span class="o">]</span>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.3',
+            VERSION:'2.4',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -563,10 +580,7 @@ HM <span class="o">[</span><span class="m">109807</span><span class="o">]</span>
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

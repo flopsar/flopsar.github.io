@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Database &mdash; Flopsar Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Workstation" href="user.html" />
+    <link rel="prev" title="4. Manager" href="manager.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/flopsar_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. What is Flopsar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#versioning">2. Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#releasing">3. Releasing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#licensing">4. Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#architectural-fundamentals">5. Architectural Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Administrator Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="admin.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#logging">2. Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html#id2">3. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager.html">4. Manager</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">5.1. Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">5.2. Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logger-messages">5.2.1. Logger messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#database-management">5.3. Database Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage">5.4. Storage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-archiving">5.4.1. Data Archiving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database-dump">5.4.2. Database Dump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extraction">5.4.3. Extraction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contrib.html">Third-party Components</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flopsar</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>5. Database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="database">
+<h1>5. Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h1>
+<p><span class="flp">database</span> is a component, which provides persistence features to the Flopsar environment.</p>
+<div class="section" id="configuration">
+<span id="database-conf"></span><h2>5.1. Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p><span class="flp">database</span> is configured in its configuration file <code class="file docutils literal notranslate"><span class="pre">&lt;database_home&gt;/conf/flopsar.conf</span></code>. The file contains the following options:</p>
+<dl class="docutils">
+<dt><span class="opt">agent.bind.address</span></dt>
+<dd>Socket address of a TCP server, which receives agents data (see <a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 5.2</span></a>).</dd>
+<dt><span class="opt">ui.bind.address</span></dt>
+<dd>Socket address of a TCP server, which handles <span class="flp">fdbc</span> requests (see <a class="reference internal" href="overview.html#id1"><span class="std std-numref">Fig. 5.2</span></a>).
+Every <span class="flp">workstation</span> client connects to this socket automatically.</dd>
+<dt><span class="opt">ui.rdr.address</span></dt>
+<dd>Socket address all <span class="flp">workstation</span> clients should connect to instead of <span class="opt">ui.bind.address</span>.
+If not specified, the <span class="opt">ui.bind.address</span> value will be taken.
+This feature is useful, when your <span class="flp">workstation</span> clients are outside database network and are unable to connect to it directly.</dd>
+<dt><span class="opt">name</span></dt>
+<dd>Database instance label. You can name your database instance by setting this option.
+If not specifed, it will take your machine hostname as its name.</dd>
+<dt><span class="opt">manager.address</span></dt>
+<dd><span class="flp">manager</span> socket address. You must set this option value to your manager TCP server address,
+which should be consistent with <span class="opt">server.bind.*</span> options from <span class="flp">manager</span> <a class="reference internal" href="manager.html#manager-conf"><span class="std std-ref">configuration</span></a>.</dd>
+<dt><span class="opt">archive.enable</span></dt>
+<dd>Enables/disables the data archiving feature. It can take one of the two values: <span class="opt">true</span> or <span class="opt">false</span>.</dd>
+<dt><span class="opt">archive.schedule.time</span></dt>
+<dd>Sets the time of day to start the data archiving procedure.
+This option is ignored if the <span class="opt">archive</span> option is set to <span class="opt">false</span>.
+It takes the value in the form <span class="opt">HH:MM</span>, where <span class="opt">HH</span> denotes an hour (0-23) and <span class="opt">MM</span> denotes minutes (0-59).
+If, for example, you want the procedure to start every day at 5:20, you just need to set this option as follows <span class="opt">archive.schedule.time=5:20</span>.</dd>
+<dt><span class="opt">archive.base.retention</span></dt>
+<dd>Sets the number of hours the <span class="opt">base</span> data should be archived if they are older than the specified hours value.
+See <a class="reference internal" href="#archive"><span class="std std-ref">Data Archiving</span></a> for details.</dd>
+<dt><span class="opt">archive.ext.retention</span></dt>
+<dd>Sets the number of hours the <span class="opt">ext</span> data should be archived if they are older than the specified hours value. See <a class="reference internal" href="#archive"><span class="std std-ref">Data Archiving</span></a> for details.</dd>
+<dt><span class="opt">archive.retention.policy</span></dt>
+<dd>Sets the data archiving policy. It can take one of the two values: <span class="opt">archive</span> or <span class="opt">purge</span>. If the latter value is set, then the procedure will remove all the data that would be archived in the former case. In other words, if you want to keep your database volume size under control and you are not interested in archiving old data, you just need to set <span class="opt">archive.retention.policy=purge</span>. Otherwise, you must use <span class="opt">archive</span> value.</dd>
+</dl>
+</div>
+<div class="section" id="logging">
+<h2>5.2. Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>There is a single log file <code class="file docutils literal notranslate"><span class="pre">fs2db.log</span></code> for <span class="flp">database</span>. It is stored in <code class="file docutils literal notranslate"><span class="pre">database_home/logs</span></code> directory. The logging levels are defined in <a class="reference internal" href="admin.html#logging"><span class="std std-ref">Logging</span></a> section.</p>
+<p>You can set the logger level either during the startup procedure or in runtime. For example, to set the <strong>fine</strong> level during <span class="flp">database</span> startup use the following options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db start --loglevel fine &lt;database_home&gt;
+</pre></div>
+</div>
+<p>In order to change it in runtime, execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db set --loglevel fine &lt;database_home&gt;
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Database log file is not rolled over, so you must control its size.</p>
+</div>
+<div class="section" id="logger-messages">
+<h3>5.2.1. Logger messages<a class="headerlink" href="#logger-messages" title="Permalink to this headline">¶</a></h3>
+<p>Each logger message entry has the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATE</span> <span class="p">[</span><span class="n">LEVEL</span><span class="p">][</span><span class="n">PID</span><span class="p">]</span> <span class="n">Message</span> <span class="n">content</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATE</span> <span class="p">[</span><span class="n">LEVEL</span><span class="p">][</span><span class="n">PID</span><span class="p">][</span><span class="n">PLG</span><span class="p">]</span> <span class="n">Message</span> <span class="n">content</span>
+</pre></div>
+</div>
+<p>The only difference between these two types is an additional <span class="opt">PLG</span> entry. This entry denotes that this particular message comes from a plugin. The rest of the entries denote:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">DATE:</th><td class="field-body">current date.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">LEVEL:</th><td class="field-body">current logger level.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">PID:</th><td class="field-body">system process ID number of the logging process.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Message content:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">is self-explanatory.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="database-management">
+<h2>5.3. Database Management<a class="headerlink" href="#database-management" title="Permalink to this headline">¶</a></h2>
+<p>You can monitor a database instance health by dumping various statistics. These statistics include collectors subsystem states and others. You can dump the statistics on the console by executing the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db get --target database-stats &lt;database_home&gt;
+</pre></div>
+</div>
+<p>The output <a class="reference internal" href="#stats-out"><span class="std std-numref">Fig. 5.5</span></a> consists of collectors and overall statistics. Each collector is a matrix, whose rows represent 5-minute slots and columns 1-hour slots. When a call arrives its collector cell must be found. When the cell is found, it is appended to its execution stack and stays there until its root call arrives. Then the entire execution stack is removed from the collector. Collectors are combined into workers, which manage the collectors. Each worker has its own queue of incoming calls to process. The numbers in cells show how many execution stacks (root calls) are being collected.</p>
+<div class="figure align-center" id="id1">
+<span id="stats-out"></span><img alt="_images/stats.png" src="_images/stats.png" />
+<p class="caption"><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Flopsar <span class="flp">database</span> Statistics Dump</span></p>
+</div>
+<p>For each worker, there are three metrics, which give information about its state:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Collectors registry:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">index of the worker.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Collectors registry capacity:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">number of collectors.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Data queue depth:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">worker’s queue depth.</td>
+</tr>
+</tbody>
+</table>
+<p>For each collector, there are two metrics, which give information about the collector state:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">TRC:</th><td class="field-body">Total Root Calls: the number of root calls being collected.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">TS:</th><td class="field-body">Total Size: the total size of the collector.</td>
+</tr>
+</tbody>
+</table>
+<p>The overall statistics (covering all the available collectors) contain the following information:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Number of collector threads:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of collecting threads (workers). Each thread can handle multiple collectors.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Total IPC writes:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of root calls transferred to the FPU process successfully.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Total IPC write errors:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of failures in transferring root calls to the FPU process due to write error.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Total IPC writes dropped:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of failures in transferring root calls to the FPU process due to thread contention.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Total collected root calls:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of root calls collected and removed from their collectors.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Total persistence root calls fails:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of root calls, which have not been persisted. If this value is greater than zero, investigate the database logs.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Total received calls:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">total number of calls, received by collectors.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Total dropped calls:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">total number of dropped calls. A call is dropped when it is corrupted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="storage">
+<h2>5.4. Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<p>If you want to inspect your database storage, just execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db get --target storage-stats &lt;database_home&gt;
+</pre></div>
+</div>
+<p>You should get a similar result:</p>
+<div class="figure align-center" id="id2">
+<span id="storage-stats"></span><img alt="_images/db_storage.png" src="_images/db_storage.png" />
+<p class="caption"><span class="caption-number">Fig. 5.6 </span><span class="caption-text">Database Storage Statistics</span></p>
+</div>
+<p>This view contains both symbols and agent data statistics. For symbols, it presents a total number of threads, class names, method names and keys.
+For agent data a little more statistics is available. A table of all agents is presented where columns denote:</p>
+<dl class="docutils">
+<dt><span class="opt">TYPE</span></dt>
+<dd>Type of agent.</dd>
+<dt><span class="opt">AGENT</span></dt>
+<dd>Agent name.</dd>
+<dt><span class="opt">MCP</span></dt>
+<dd>Method calls percentage. This value shows percentage share method calls data in <span class="opt">CXS</span>.</dd>
+<dt><span class="opt">MXP</span></dt>
+<dd>Method extensions (parameters and exceptions stack traces) percentage. This value shows percentage share method extensions data in <span class="opt">CXS</span>.</dd>
+<dt><span class="opt">CXS</span></dt>
+<dd>Method calls and extensions size.</dd>
+<dt><span class="opt">KVS</span></dt>
+<dd>Key-value data size.</dd>
+</dl>
+<div class="section" id="data-archiving">
+<span id="archive"></span><h3>5.4.1. Data Archiving<a class="headerlink" href="#data-archiving" title="Permalink to this headline">¶</a></h3>
+<p>Data archiving is a feature, which helps you to keep your database volume under control. If enabled, it runs every day at the scheduled time, compresses part of the data and moves the compressed data to the <code class="file docutils literal notranslate"><span class="pre">&lt;database_home&gt;/storage/arch</span></code> directory. After this operation, your database volume is smaller. There are a few configuration options, which govern this procedure, the ones with prefix <span class="opt">archive</span>.</p>
+<p>First of all, in order to enable the archive feature, you must set <span class="opt">archive.enable=true</span> option in the configuration file. To make the archiving procedure start at the <span class="opt">HH:MM</span> time, you must set the option <span class="opt">archive.schedule.time=HH:MM</span>. When the time comes, the <span class="flp">database</span> master process spawns a new archive process, which does the archiving. When the archiving procedure starts, it must know which data it should archive. This is managed by two, additional options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">archive</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">retention</span>
+<span class="n">archive</span><span class="o">.</span><span class="n">ext</span><span class="o">.</span><span class="n">retention</span>
+</pre></div>
+</div>
+<p>We distinguish two tiers of data to archive: <em>base</em> and <em>ext</em>. The latter covers all the extensions data, which are parameters and exceptions stack traces, while the former covers the remaining data. First, the procedure archives the <em>ext</em> data which are older than the specified number of hours of the <span class="opt">archive.ext.retention</span> option. Next, it archives the rest of the data, which are older than the specified number of hours of the <span class="opt">archive.base.retention</span> option. The idea standing behind these tiers of data is to keep the base data a little longer than parameters and exceptions. This imposes a condition on the values of these retention options, namely:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">archive</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">retention</span> <span class="o">&gt;=</span> <span class="n">archive</span><span class="o">.</span><span class="n">ext</span><span class="o">.</span><span class="n">retention</span>
+</pre></div>
+</div>
+<p>The procedure always produces a single file. The file is stored in the directory <code class="file docutils literal notranslate"><span class="pre">&lt;database_home&gt;/storage/arch</span></code> and its name is of the form <code class="file docutils literal notranslate"><span class="pre">fs2.arch-YYYY-MM-DD_HHMM</span></code>, where <span class="opt">YYYY-MM-DD_HHMM</span> is a date time of the procedure beginning. Besides the output file, there is a log file <code class="file docutils literal notranslate"><span class="pre">fs2.arch-YYYY-MM-DD_HHMM.log</span></code> created in the same directory. The log file contains some information about the archiving operation.</p>
+<p>If you want to only keep your database volume under control and you are not interested in old data, then you can set the option <span class="opt">archive.retention.policy=purge</span>. This policy makes the database delete the old data.</p>
+</div>
+<div class="section" id="database-dump">
+<h3>5.4.2. Database Dump<a class="headerlink" href="#database-dump" title="Permalink to this headline">¶</a></h3>
+<p>If you want to dump all your database data to a single file, you can do it by executing the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db start --action database-dump &lt;database_home&gt;
+</pre></div>
+</div>
+<p>This command will dump and compress all the data. The result will be stored in a single file <code class="file docutils literal notranslate"><span class="pre">&lt;database_name&gt;_YYYY-MM-DD_HHMM.arch</span></code>. Additionally, a log file is also created <code class="file docutils literal notranslate"><span class="pre">&lt;database_name&gt;_YYYY-MM-DD_HHMM.arch.log</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Database dump should be executed when the database instance is not running.</p>
+</div>
+<p>If you want to specify a time range for the dump, you must add two extra options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$  fs2db start --action database-dump --from YYYY-MM-dd --to YYYY-MM-dd &lt;database_home&gt;
+</pre></div>
+</div>
+<p>The above command will dump only those data, which are within the specified time range.</p>
+<p>If you want to dump the data only for some selected agents, you must add another option, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$  fs2db start --action database-dump --from YYYY-MM-dd --to YYYY-MM-dd --agents agent1,agent2,agent3 &lt;database_home&gt;
+</pre></div>
+</div>
+<p>The above command will dump the data only from the specified agents. Agent names must be separated with a comma.</p>
+</div>
+<div class="section" id="extraction">
+<h3>5.4.3. Extraction<a class="headerlink" href="#extraction" title="Permalink to this headline">¶</a></h3>
+<p>If you want to extract the archived file, you just need to execute the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db start --action database-extract &lt;arch&gt;
+</pre></div>
+</div>
+<p>This command will extract the specified <code class="file docutils literal notranslate"><span class="pre">&lt;arch&gt;</span></code> file in the current working directory. A new <code class="file docutils literal notranslate"><span class="pre">storage</span></code> directory will be created with extracted database data. Additionally, a log file <code class="file docutils literal notranslate"><span class="pre">fs2-arch-extract.log</span></code> will be stored with extraction procedure logs. Optionally, you can set the logger level, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fs2db start --loglevel fine --action database-extract &lt;arch&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="user.html" class="btn btn-neutral float-right" title="1. Workstation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manager.html" class="btn btn-neutral" title="4. Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Flopsar Technology Sp. z o.o..
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.3',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Flopsar 2.3 Documentation &mdash; Flopsar Documentation</title>
+  <title>Flopsar 2.4 Documentation &mdash; Flopsar Documentation</title>
   
 
   
@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -62,7 +61,7 @@
             
             
               <div class="version">
-                2.3
+                2.4
               </div>
             
           
@@ -107,13 +106,20 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#accessing-flopsar-environment">2. Accessing Flopsar Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#start-page">3. Start Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#settings">4. Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#configurations">5. Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#galaxies">6. Galaxies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#agents">7. Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#queries">8. Queries</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="developer.html">1. Agent API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#agent-formatters">2. Agent Formatters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#database-api">3. Database API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -166,7 +172,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Flopsar 2.3 Documentation</li>
+      <li>Flopsar 2.4 Documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,9 +190,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="flopsar-release-documentation">
-<h1>Flopsar 2.3 Documentation<a class="headerlink" href="#flopsar-release-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Flopsar 2.4 Documentation<a class="headerlink" href="#flopsar-release-documentation" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://docs.flopsar.com"><img alt="docs-latest" src="https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat" /></a></p>
-<p><a class="reference external" href="http://docs.flopsar.com/2.2"><img alt="docs-22" src="https://img.shields.io/badge/docs-2.2-lightgrey.svg?style-flat" /></a> <a class="reference external" href="http://docs.flopsar.com/2.1"><img alt="docs-21" src="https://img.shields.io/badge/docs-2.1-lightgrey.svg?style=flat" /></a></p>
+<p><a class="reference external" href="http://docs.flopsar.com/2.3"><img alt="docs-23" src="https://img.shields.io/badge/docs-2.3-lightgrey.svg?style-flat" /></a> <a class="reference external" href="http://docs.flopsar.com/2.2"><img alt="docs-22" src="https://img.shields.io/badge/docs-2.2-lightgrey.svg?style-flat" /></a> <a class="reference external" href="http://docs.flopsar.com/2.1"><img alt="docs-21" src="https://img.shields.io/badge/docs-2.1-lightgrey.svg?style=flat" /></a></p>
 <p>This is the official Flopsar documentation.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Overview</span></p>
@@ -206,7 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html#supported-platforms-and-requirements">6. Supported Platforms and Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html#distribution-package">7. Distribution Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html#release-notes">8. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#how-to-upgrade-from-flopsar-2-2">8.1. How to upgrade from Flopsar 2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#how-to-upgrade-from-flopsar-2-3">8.1. How to upgrade from Flopsar 2.3</a></li>
 </ul>
 </li>
 </ul>
@@ -276,56 +282,50 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user.html#installation">1.1. Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#accessing-flopsar-environment">1.2. Accessing Flopsar Environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#remote-access">1.2.1. Remote Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#local-access">1.2.2. Local Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">1. Workstation Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#accessing-flopsar-environment">2. Accessing Flopsar Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#remote-access">2.1. Remote Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#local-access">2.2. Local Access</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#start-page">1.3. Start Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#settings">1.4. Settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#general">1.4.1. General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#connections">1.4.2. Connections</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#permissions">1.4.3. Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#start-page">3. Start Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#settings">4. Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#general">4.1. General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#connections">4.2. Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#permissions">4.3. Permissions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#managing-agent-configurations">1.5. Managing Agent Configurations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#instrumentation-rules">1.5.1. Instrumentation Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#hot-methods">1.5.2. Hot Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#jmx">1.5.3. JMX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#deploying-configurations">1.5.4. Deploying Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#configurations">5. Configurations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#instrumentation-rules">5.1. Instrumentation Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#hot-methods">5.2. Hot Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#jmx">5.3. JMX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#deploying-configurations">5.4. Deploying Configurations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#galaxies">1.6. Galaxies</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#online-galaxy">1.6.1. Online Galaxy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#historical-galaxy">1.6.2. Historical Galaxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#galaxies">6. Galaxies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#agents">7. Agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#charts">7.1. Charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#system-properties">7.2. System Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#application-packages">7.3. Application Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#class-loaders">7.4. Class Loaders</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#exploring-method-invocations">1.7. Exploring Method Invocations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#execution-stack-interpretation">1.7.1. Execution Stack Interpretation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#flame-graph">1.7.2. Flame Graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#threads-subview">1.7.3. Threads Subview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#components-subview">1.7.4. Components Subview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#errors-subview">1.7.5. Errors Subview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#root-cause">1.7.6. Root Cause</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#time-and-duration-subviews">1.7.7. Time and Duration Subviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html#queries">8. Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#flame-graph-of-transactions">8.1. Flame Graph of Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#galaxy-of-transactions">8.2. Galaxy of Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#garbage-collector">8.3. Garbage Collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#generic-key-value-metric">8.4. Generic Key-Value Metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#method-execution-analysis">8.5. Method Execution Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#transactions">8.6. Transactions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user.html#execution-stack-interpretation">8.6.1. Execution Stack Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html#threads-subview">8.6.2. Threads Subview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html#components-subview">8.6.3. Components Subview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html#errors-subview">8.6.4. Errors Subview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html#time-and-duration-subviews">8.6.5. Time and Duration Subviews</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#exploring-environment-data">1.8. Exploring Environment Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#exceptions-analysis">1.9. Exceptions Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#monitoring-agents-health">1.10. Monitoring Agents Health</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#charts">1.10.1. Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#system-properties">1.10.2. System Properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#threads-dump">1.10.3. Threads Dump</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#application-packages">1.10.4. Application Packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html#class-loaders">1.10.5. Class Loaders</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="user.html#analytics">1.11. Analytics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user.html#managing-analytics-sets">1.11.1. Managing Analytics Sets</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#threads-dump">8.7. Threads Dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html#top-30-exceptions">8.8. Top 30 Exceptions</a></li>
 </ul>
 </li>
 </ul>
@@ -339,7 +339,11 @@
 <li class="toctree-l2"><a class="reference internal" href="developer.html#custom">2.2. Custom</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html#fdbc">3. FDBC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html#database-api">3. Database API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#java">3.1. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#c-c">3.2. C/C++</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html#plugins">4. Plugins</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="developer.html#plugin-authentication">4.1. Plugin: Authentication</a></li>
 </ul>
@@ -417,7 +421,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.3',
+            VERSION:'2.4',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -431,10 +435,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

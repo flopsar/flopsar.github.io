@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/hacks.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -194,7 +193,7 @@
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>You can always check what alert rules are currently deployed on a database by executing the following command:</p>
-<div class="last highlight-shell"><div class="highlight"><pre><span></span>$ fs2db get --target alerts &lt;database_home&gt;
+<div class="last highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2db get --target alerts &lt;database_home&gt;
 </pre></div>
 </div>
 </div>
@@ -204,11 +203,11 @@
 <p>The <em>notification</em> plugin is an SMTP client, which sends emails when some conditions are fulfilled. The plugin makes use of <a class="reference external" href="https://curl.haxx.s">CURL</a> library.</p>
 <p>If you plan to use this feature, you must enable this plugin as well. Follow the instructions below to enable the <em>notification</em> plugin:</p>
 <ol class="arabic">
-<li><p class="first">update the plugins option to include the <code class="file docutils literal"><span class="pre">libflopsar-smtp.so</span></code> value.</p>
+<li><p class="first">update the plugins option to include the <code class="file docutils literal notranslate"><span class="pre">libflopsar-smtp.so</span></code> value.</p>
 </li>
-<li><p class="first">copy <code class="file docutils literal"><span class="pre">/usr/share/flopsar/templates/plugins/flopsar-smtp</span></code> directory to <code class="file docutils literal"><span class="pre">&lt;manager_home&gt;/conf/</span></code>.</p>
+<li><p class="first">copy <code class="file docutils literal notranslate"><span class="pre">/usr/share/flopsar/templates/plugins/flopsar-smtp</span></code> directory to <code class="file docutils literal notranslate"><span class="pre">&lt;manager_home&gt;/conf/</span></code>.</p>
 </li>
-<li><p class="first">edit <code class="file docutils literal"><span class="pre">smtp.conf</span></code> file and set your SMTP server options:</p>
+<li><p class="first">edit <code class="file docutils literal notranslate"><span class="pre">smtp.conf</span></code> file and set your SMTP server options:</p>
 <blockquote>
 <div><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -241,9 +240,9 @@
 </table>
 </div></blockquote>
 </li>
-<li><p class="first">edit the <code class="file docutils literal"><span class="pre">smtp.recipients</span></code> and add subscribers’ email addresses (one per line).</p>
+<li><p class="first">edit the <code class="file docutils literal notranslate"><span class="pre">smtp.recipients</span></code> and add subscribers’ email addresses (one per line).</p>
 </li>
-<li><p class="first">edit the <code class="file docutils literal"><span class="pre">smtp.text</span></code> and set your own message template.</p>
+<li><p class="first">edit the <code class="file docutils literal notranslate"><span class="pre">smtp.text</span></code> and set your own message template.</p>
 </li>
 </ol>
 <p>When you set your own message template, you have some variables at your disposal:</p>
@@ -265,8 +264,8 @@
 </tr>
 </tbody>
 </table>
-<p>These variables will be replaced with their corresponding values. Below, you can see a sample message (<code class="file docutils literal"><span class="pre">smtp.text</span></code> content):</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<p>These variables will be replaced with their corresponding values. Below, you can see a sample message (<code class="file docutils literal notranslate"><span class="pre">smtp.text</span></code> content):</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 This is my sample alert message template!<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
 <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Agent<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>: $FS2_AGENT<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
@@ -276,7 +275,7 @@ This is my sample alert message template!<span class="p">&lt;</span><span class=
 </pre></div>
 </div>
 <p>If you want to check if the plugin configuration is valid, you can execute the following command (see <a class="reference internal" href="developer.html#plugins"><span class="std std-ref">Plugins</span></a> for more details):</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>$ fs2mgr --plugins <span class="nb">test</span> &lt;manager_home&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fs2mgr --plugins <span class="nb">test</span> &lt;manager_home&gt;
 </pre></div>
 </div>
 <p>In this case, this command will make the plugin send an email to all the subscribers.</p>
@@ -342,10 +341,7 @@ This is my sample alert message template!<span class="p">&lt;</span><span class=
 
   
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
